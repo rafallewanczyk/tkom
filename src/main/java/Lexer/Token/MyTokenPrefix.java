@@ -10,7 +10,7 @@ public class MyTokenPrefix {
     }
 
     public static boolean isNumber(char c) {
-        return Character.isDigit(c) || c == '.';
+        return Character.isDigit(c) ;
     }
 
     public static boolean isEOF(char c) {
@@ -21,6 +21,9 @@ public class MyTokenPrefix {
         return c == ' ' ||  c == '\r' || c == '\n';
     }
 
+    public static boolean isNotWhiteAndSpecial(char c){
+        return isNotWhite(c) && !isSpecial(c);
+    }
     public static boolean isNotWhite(char c){
         return c != ' ' && c != '\r' && c != '\n';
     }
@@ -40,7 +43,7 @@ public class MyTokenPrefix {
         return !isRoman(c) && Character.isUpperCase(c);
     }
 
-    public static boolean isSingleSpecial(char c) {
+    public static boolean isSpecial(char c) {
         return  c == '!' ||
                 c == '+' ||
                 c == '-' ||
@@ -53,15 +56,13 @@ public class MyTokenPrefix {
                 c == '.' ||
                 c == ';' ||
                 c == ',' ||
-                c == '\"';
-    }
-    public static boolean isDoubleSpecial(char c) {
-        return  c == '=' ||
+                c == '\"'||
+                c == '=' ||
                 c == '|' ||
                 c == '&' ||
                 c == '<' ||
                 c == '/' ||
                 c == '>';
-
     }
+
 }

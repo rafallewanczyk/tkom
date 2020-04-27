@@ -16,6 +16,7 @@ public class MyLexer {
 
     private MyScanner scanner;
     private char character;
+    private char character_buffer = '\0';
     private MyTokenType type;
     private StringBuilder token;
     private int x = 0, y = 0;
@@ -25,49 +26,126 @@ public class MyLexer {
         scanner = new MyScanner(path);
     }
 
-    public MyToken nextToken(){
-        character = scanner.getNextSymbol();
-
-        if(character == ' '){
-            return nextToken();
+    public MyToken nextToken() {
+        if (character_buffer != '\0') {
+            character = character_buffer;
+            character_buffer = '\0';
+        } else {
+            character = scanner.getNextSymbol();
         }
-        else if(character == '\n' || character == '\r'){
+
+        //Single character tokens
+        if (character == ' ') {
+            return nextToken();
+        } else if (character == '\n' || character == '\r') {
             y++;
             return nextToken();
-        }
-        else if(character == ','){
+        } else if (character == ',') {
             return new MyToken(MyTokenType.COMMA, ",", x++, y);
-        }
-        else if(character == ';'){
+        } else if (character == ';') {
             return new MyToken(MyTokenType.SEMICOLLON, ";", x++, y);
-        }
-        else if(character == '('){
+        } else if (character == '(') {
             return new MyToken(MyTokenType.LEFT_PARENTESIS, "(", x++, y);
-        }
-        else if(character == ')'){
+        } else if (character == ')') {
             return new MyToken(MyTokenType.RIGHT_PARENTESIS, ")", x++, y);
-        }
-        else if(character == '{'){
+        } else if (character == '{') {
             return new MyToken(MyTokenType.LEFT_BRACE, "{", x++, y);
-        }
-        else if(character == '}'){
+        } else if (character == '}') {
             return new MyToken(MyTokenType.RIGHT_BRACE, "}", x++, y);
-        }
-        else if(character == '!'){
+        } else if (character == '!') {
             return new MyToken(MyTokenType.UNARY_OP, "!", x++, y);
-        }
-        else if(character == '+'){
-            return new MyToken(MyTokenType.ADDITIVE_OP, "+", x++, y);
-        }
-        else if(character == '-'){
-            return new MyToken(MyTokenType.ADDITIVE_OP, "-", x++, y);
-        }
-        else if(character == '*'){
+        } else if (character == '+' || character == '-') {
+            return new MyToken(MyTokenType.ADDITIVE_OP, Character.toString(character), x++, y);
+        } else if (character == '*' || character == '%') {
+            return new MyToken(MyTokenType.MULTIPLICATIVE_OP, Character.toString(character), x++, y);
+        } else if (character == '\"') {
+            return new MyToken(MyTokenType.QUOTE, "\"", x++, y);
+        } else if (character == '*') {
             return new MyToken(MyTokenType.MULTIPLICATIVE_OP, "*", x++, y);
         }
+
+        //Double or single character token
+        else if (character == '=') {
+            character_buffer = scanner.getNextSymbol();
+            if (character_buffer == '=') {
+                character_buffer = '\0';
+                return new MyToken(MyTokenType.EQUAL_OP, "==", x++, y);
+            }
+            return new MyToken(MyTokenType.ASSIGNMENT_OP, "=", x++, y);
+
+        } else if (character == '/') {
+            character_buffer = scanner.getNextSymbol();
+            if (character_buffer == '/') {
+                character_buffer = '\0';
+                return new MyToken(MyTokenType.COMMENT, "//", x++, y);
+            }
+            return new MyToken(MyTokenType.MULTIPLICATIVE_OP, "/", x++, y);
+        } else if (character == '>' || character == '<') {
+            character_buffer = scanner.getNextSymbol();
+            if (character_buffer == '=') {
+                character_buffer = '\0';
+                return new MyToken(MyTokenType.REALTION_OP, Character.toString(character) + Character.toString(character_buffer), x++, y);
+            }
+            return new MyToken(MyTokenType.REALTION_OP, Character.toString(character), x++, y);
+        } else if (character == '&') {
+            character_buffer = scanner.getNextSymbol();
+            if (character_buffer == '&') {
+                character_buffer = '\0';
+                return new MyToken(MyTokenType.AND_OP, "&&", x++, y);
+            }
+            return new MyToken(MyTokenType.UNKNOWN, Character.toString(character), x++, y);
+        } else if (character == '|') {
+            character_buffer = scanner.getNextSymbol();
+            if (character_buffer == '|') {
+                character_buffer = '\0';
+                return new MyToken(MyTokenType.OR_OP, "||", x++, y);
+            }
+            return new MyToken(MyTokenType.UNKNOWN, Character.toString(character), x++, y);
+        }
+        //Numbers
+        StringBuilder number = new StringBuilder();
+        StringBuilder afterDot = new StringBuilder();
+
+        if (character == '0') {
+            type = MyTokenType.NUMBER;
+            number.append(character);
+            character = scanner.getNextSymbol();
+            if (character == '.') {
+                afterDot.append(readWord(MyTokenPrefix::isNumber));
+                if (afterDot.toString().equals(".")) {
+                    type = MyTokenType.UNKNOWN;
+                }
+            } else if (MyTokenPrefix.isNotWhite(character)) {
+                type = MyTokenType.UNKNOWN;
+                afterDot.append(readWord(MyTokenPrefix::isNotWhite));
+            }
+            number.append(afterDot);
+            return new MyToken(type, number.toString(), x++, y);
+        } else if (MyTokenPrefix.isNumber(character)) {
+            type = MyTokenType.NUMBER;
+            number.append(readWord(MyTokenPrefix::isNumber));
+            if (character == '.') {
+                afterDot.append(readWord(MyTokenPrefix::isNumber));
+                if (afterDot.toString().equals(".")) {
+                    type = MyTokenType.UNKNOWN;
+                }
+            }
+            number.append(afterDot);
+            return new MyToken(type, number.toString(), x++, y);
+
+        }
+
+
+
+        //ID
+        else if (MyTokenPrefix.isLetter(character)) {
+            StringBuilder name = new StringBuilder();
+            name = readWord(MyTokenPrefix::isNotWhiteAndSpecial);
+            return new MyToken(findSpecialType(name), name.toString(), x++, y);
+        }
+
+        return new MyToken(MyTokenType.UNKNOWN, Character.toString(character), x++, y);
     }
-
-
 
 
     private StringBuilder readWord(Function<Character, Boolean> condition) {
@@ -75,31 +153,13 @@ public class MyLexer {
         do {
             word.append(character);
             character = scanner.getNextSymbol();
-        } while (condition.apply(character));
+        } while (condition.apply(character) && !MyTokenPrefix.isEOF(character));
+        character_buffer = character;
         return word;
     }
 
-    private MyTokenType findSpecialType() {
-        switch (token.toString()) {
-            case "//":
-                return MyTokenType.COMMENT;
-            case "=":
-                return MyTokenType.ASSIGNMENT_OP;
-            case "||":
-                return MyTokenType.OR_OP;
-            case "&&":
-                return MyTokenType.AND_OP;
-            case "==":
-                return MyTokenType.EQUAL_OP;
-            case "<":
-            case ">":
-            case ">=":
-            case "<=":
-                return MyTokenType.REALTION_OP;
-            case "/":
-                return MyTokenType.MULTIPLICATIVE_OP;
-            case "\"":
-                return MyTokenType.QUOTE;
+    private MyTokenType findSpecialType(StringBuilder name) {
+        switch (name.toString()) {
             case "if":
                 return MyTokenType.IF;
             case "while":
@@ -113,8 +173,12 @@ public class MyLexer {
             case "return":
                 return MyTokenType.RETURN;
         }
-        return MyTokenType.UNKNOWN;
+        return MyTokenType.ID;
     }
+
+
+
+
 
 
 }
