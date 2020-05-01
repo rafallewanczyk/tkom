@@ -127,5 +127,16 @@ public class LexerTests extends Specification {
         lexer.nextToken() == new MyToken(MyTokenType.SEMICOLLON, ";", 10, 1);
     }
 
+    def "empty input"(){
+        given:
+        FileWriter writer = new FileWriter("test.txt");
+        writer.close();
+
+        MyLexer lexer = new MyLexer("test.txt");
+        expect:
+        lexer.nextToken() == new MyToken(MyTokenType.EOF, "EOF", 0, 0);
+        lexer.nextToken() == new MyToken(MyTokenType.EOF, "EOF", 0, 0);
+    }
+
 
 }

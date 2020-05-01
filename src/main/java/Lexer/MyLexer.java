@@ -23,17 +23,31 @@ public class MyLexer {
     private StringBuilder token;
     private int x = 0, y = 0;
     private RomanLexer romanLexer = new RomanLexer();
+    private boolean block = false;
 
     public MyLexer(String path) throws FileNotFoundException {
         scanner = new MyScanner(path);
     }
 
     public MyToken nextToken() {
+
+        //Found EOF, don't read any more tokens
+        if(block){
+            return new MyToken(MyTokenType.EOF, "EOF", x, y);
+        }
+
+
         if (character_buffer != '\0') {
             character = character_buffer;
             character_buffer = '\0';
         } else {
             character = scanner.getNextSymbol();
+        }
+
+        //EOF
+        if (MyTokenPrefix.isEOF(character)) {
+            block = true;
+            return new MyToken(MyTokenType.EOF, "EOF", x, y);
         }
 
         //Single character tokens
@@ -137,10 +151,10 @@ public class MyLexer {
 
         }
         //Roman numerals
-        else if(MyTokenPrefix.isRoman(character)){
+        else if (MyTokenPrefix.isRoman(character)) {
 
             MyToken ret = romanLexer.readRoman(scanner, character, MyTokenPrefix::isRoman);
-            ret.setCordinates(x ++, y);
+            ret.setCordinates(x++, y);
             character_buffer = romanLexer.current;
             return ret;
         }
@@ -184,10 +198,6 @@ public class MyLexer {
         }
         return MyTokenType.ID;
     }
-
-
-
-
 
 
 }

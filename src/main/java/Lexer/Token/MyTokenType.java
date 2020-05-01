@@ -26,6 +26,7 @@ public enum MyTokenType {
     ROMMAN,//IVX..
     QUOTE,// " "
     RETURN,
+    EOF,
     UNKNOWN
 
 }

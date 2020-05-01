@@ -1,2 +1,0 @@
-var zmienna = VI;
-zmienna = zmienna + MMCDX;

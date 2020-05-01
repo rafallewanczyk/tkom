@@ -1,0 +1,27 @@
+function pow(rom x, int y)
+{
+    var res = x;
+    var counter = 1;
+    while(counter < y)
+    {
+        res = res * x;
+        counter = counter + 1;
+    }
+    return res;
+}
+
+function main()
+{
+    var base = XV;
+    var exponent = 2;
+    var result = pow(base, exponent);
+    if(result > XX)
+    {
+        //this is a comment
+        return result;
+    }
+    else
+    {
+        return 0;
+    }
+}
