@@ -2,25 +2,21 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="901d7ea8-dce2-45c8-8810-4a1262e58aba" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/.name" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Lexer/RomanNumerals/RomanLexer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Lexer/RomanNumerals/RomanNumeralsLookup.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/Lexer/Add.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/classes/Lexer/MyLexer.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/Lexer/MyLexer.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/Lexer/Token/MyToken.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/Lexer/Token/MyToken.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/Lexer/Token/MyTokenPrefix.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/Lexer/Token/MyTokenPrefix.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/Lexer/RomanNumerals/RomanLexer.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/Lexer/RomanNumerals/RomanLexer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/Lexer/RomanNumerals/RomanNumeralsLookup$HUNDREDS.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/Lexer/RomanNumerals/RomanNumeralsLookup$HUNDREDS.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/Lexer/RomanNumerals/RomanNumeralsLookup$ONES.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/Lexer/RomanNumerals/RomanNumeralsLookup$ONES.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/Lexer/RomanNumerals/RomanNumeralsLookup$TENS.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/Lexer/RomanNumerals/RomanNumeralsLookup$TENS.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/Lexer/RomanNumerals/RomanNumeralsLookup$THAUSENDS.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/Lexer/RomanNumerals/RomanNumeralsLookup$THAUSENDS.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/test/classes/LexerTests.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/test/classes/LexerTests.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Lexer/Add.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Lexer/MyLexer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Lexer/MyLexer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Lexer/RomanNumerals/RomanLexer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Lexer/RomanNumerals/RomanLexer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Lexer/RomanNumerals/RomanNumeralsLookup.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Lexer/RomanNumerals/RomanNumeralsLookup.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Lexer/Token/MyToken.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Lexer/Token/MyToken.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Lexer/Token/MyTokenPrefix.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Lexer/Token/MyTokenPrefix.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/LexerTests.groovy" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/LexerTests.groovy" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test.txt" beforeDir="false" afterPath="$PROJECT_DIR$/test.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -148,7 +144,8 @@
       <workItem from="1587827891293" duration="1324000" />
       <workItem from="1587829942163" duration="9574000" />
       <workItem from="1587898273240" duration="12078000" />
-      <workItem from="1587974998655" duration="4079000" />
+      <workItem from="1587974998655" duration="9710000" />
+      <workItem from="1588324177085" duration="14704000" />
     </task>
     <servers />
   </component>
@@ -160,10 +157,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="149" y="213" key="#Project_Structure/0.0.1920.1040@0.0.1920.1040" timestamp="1587731736782" />
-    <state x="175" y="115" width="774" height="840" key="#com.intellij.execution.junit2.states.ComparisonFailureState$DiffDialog" timestamp="1587832760771">
+    <state x="818" y="138" width="774" height="840" key="#com.intellij.execution.junit2.states.ComparisonFailureState$DiffDialog" timestamp="1588339697733">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="175" y="115" width="774" height="840" key="#com.intellij.execution.junit2.states.ComparisonFailureState$DiffDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1587832760771" />
+    <state x="818" y="138" width="774" height="840" key="#com.intellij.execution.junit2.states.ComparisonFailureState$DiffDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1588339697733" />
     <state x="690" y="271" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1587815892062">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -172,46 +169,50 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="740" y="279" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1587808363546" />
-    <state width="1877" height="301" key="GridCell.Tab.0.bottom" timestamp="1587980855018">
+    <state width="1877" height="301" key="GridCell.Tab.0.bottom" timestamp="1588339700556">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="301" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1587980855018" />
-    <state width="1877" height="301" key="GridCell.Tab.0.center" timestamp="1587980855017">
+    <state width="1877" height="301" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1588339700556" />
+    <state width="1877" height="301" key="GridCell.Tab.0.center" timestamp="1588339700556">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="301" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1587980855017" />
-    <state width="1877" height="301" key="GridCell.Tab.0.left" timestamp="1587980855017">
+    <state width="1877" height="301" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1588339700556" />
+    <state width="1877" height="301" key="GridCell.Tab.0.left" timestamp="1588339700556">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="301" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1587980855017" />
-    <state width="1877" height="301" key="GridCell.Tab.0.right" timestamp="1587980855017">
+    <state width="1877" height="301" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1588339700556" />
+    <state width="1877" height="301" key="GridCell.Tab.0.right" timestamp="1588339700556">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="301" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1587980855017" />
-    <state width="1877" height="348" key="GridCell.Tab.1.bottom" timestamp="1587940138543">
+    <state width="1877" height="301" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1588339700556" />
+    <state width="1877" height="316" key="GridCell.Tab.1.bottom" timestamp="1588338520918">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="348" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1587940138543" />
-    <state width="1877" height="348" key="GridCell.Tab.1.center" timestamp="1587940138543">
+    <state width="1877" height="316" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1588338520918" />
+    <state width="1877" height="316" key="GridCell.Tab.1.center" timestamp="1588338520917">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="348" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1587940138543" />
-    <state width="1877" height="348" key="GridCell.Tab.1.left" timestamp="1587940138543">
+    <state width="1877" height="316" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1588338520917" />
+    <state width="1877" height="316" key="GridCell.Tab.1.left" timestamp="1588338520917">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="348" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1587940138543" />
-    <state width="1877" height="348" key="GridCell.Tab.1.right" timestamp="1587940138543">
+    <state width="1877" height="316" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1588338520917" />
+    <state width="1877" height="316" key="GridCell.Tab.1.right" timestamp="1588338520918">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="348" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1587940138543" />
+    <state width="1877" height="316" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1588338520918" />
     <state x="41" y="146" key="SettingsEditor" timestamp="1587733168281">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="41" y="146" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1587733168281" />
-    <state x="0" y="0" key="com.intellij.ide.util.TipDialog" timestamp="1587974998296">
+    <state x="0" y="0" key="com.intellij.ide.util.TipDialog" timestamp="1588324194157">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="0" y="0" key="com.intellij.ide.util.TipDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1587974998296" />
+    <state x="0" y="0" key="com.intellij.ide.util.TipDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1588324194157" />
+    <state x="601" y="246" width="700" height="530" key="recent.locations.popup" timestamp="1588327942021">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="601" y="246" width="700" height="530" key="recent.locations.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1588327942021" />
     <state x="143" y="230" width="672" height="678" key="search.everywhere.popup" timestamp="1587846094378">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -220,13 +221,25 @@
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
-        <line-breakpoint enabled="true" type="java-method">
-          <url>file://$PROJECT_DIR$/src/main/java/Lexer/MyLexer.java</url>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/Lexer/RomanNumerals/RomanLexer.java</url>
+          <line>26</line>
+          <option name="timeStamp" value="13" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/Lexer/RomanNumerals/RomanLexer.java</url>
+          <line>27</line>
+          <option name="timeStamp" value="14" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/Lexer/RomanNumerals/RomanLexer.java</url>
           <line>28</line>
-          <properties class="Lexer.MyLexer" method="nextToken">
-            <option name="EMULATED" value="true" />
-          </properties>
-          <option name="timeStamp" value="6" />
+          <option name="timeStamp" value="15" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/Lexer/RomanNumerals/RomanLexer.java</url>
+          <line>25</line>
+          <option name="timeStamp" value="16" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

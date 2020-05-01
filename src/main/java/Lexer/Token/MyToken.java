@@ -14,6 +14,11 @@ public class MyToken {
         this.y = y;
     }
 
+    public void setCordinates(int x, int y){
+       this.x = x;
+       this.y = y;
+    }
+
     @Override
     public String toString() {
         return "(" + type.toString() + ")" + value + "(" + x + "," + y + ")";

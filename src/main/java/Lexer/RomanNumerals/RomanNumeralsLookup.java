@@ -1,9 +1,9 @@
 package Lexer.RomanNumerals;
 
 public enum RomanNumeralsLookup {
+;
 
-    ;
-    public enum THAUSENDS{
+    public enum THAUSENDS implements get{
         M(1000),
         MM(2000),
         MMM(3000);
@@ -12,11 +12,16 @@ public enum RomanNumeralsLookup {
         private THAUSENDS(int value){
             this.value = value;
         }
+
+        @Override
         public int getValue(){
             return value;
         }
     }
-    public enum HUNDREDS{
+
+
+
+    public static enum HUNDREDS implements get{
         C(100),
         CC(200),
         CCC(300),
@@ -31,11 +36,13 @@ public enum RomanNumeralsLookup {
         private HUNDREDS(int value){
             this.value = value;
         }
+
+        @Override
         public int getValue(){
             return value;
         }
     }
-    public enum TENS{
+    public enum TENS implements get{
         X(10),
         XX(20),
         XXX(30),
@@ -50,11 +57,13 @@ public enum RomanNumeralsLookup {
         private TENS(int value){
             this.value = value;
         }
+
+        @Override
         public int getValue(){
             return value;
         }
     }
-    public enum ONES{
+    public enum ONES implements get{
         I(1),
         II(2),
         III(3),
@@ -69,9 +78,15 @@ public enum RomanNumeralsLookup {
         private ONES(int value){
             this.value = value;
         }
+
+        @Override
         public int getValue(){
             return value;
         }
     }
 
+}
+
+interface get{
+    public abstract int getValue();
 }

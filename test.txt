@@ -1,1 +1,2 @@
-if zmienna return 123
+var zmienna = VI;
+zmienna = zmienna + MMCDX;

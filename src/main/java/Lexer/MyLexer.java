@@ -1,6 +1,8 @@
 package Lexer;
 
 
+import Lexer.RomanNumerals.RomanLexer;
+import Lexer.RomanNumerals.RomanNumeralsLookup;
 import Lexer.Scanner.MyScanner;
 import Lexer.Token.MyToken;
 import Lexer.Token.MyTokenPrefix;
@@ -20,7 +22,7 @@ public class MyLexer {
     private MyTokenType type;
     private StringBuilder token;
     private int x = 0, y = 0;
-    private List<MyToken> tokens = new ArrayList<MyToken>();
+    private RomanLexer romanLexer = new RomanLexer();
 
     public MyLexer(String path) throws FileNotFoundException {
         scanner = new MyScanner(path);
@@ -134,7 +136,14 @@ public class MyLexer {
             return new MyToken(type, number.toString(), x++, y);
 
         }
+        //Roman numerals
+        else if(MyTokenPrefix.isRoman(character)){
 
+            MyToken ret = romanLexer.readRoman(scanner, character, MyTokenPrefix::isRoman);
+            ret.setCordinates(x ++, y);
+            character_buffer = romanLexer.current;
+            return ret;
+        }
 
 
         //ID

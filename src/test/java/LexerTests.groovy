@@ -36,6 +36,7 @@ public class LexerTests extends Specification {
         lexer.nextToken() == new MyToken(MyTokenType.UNKNOWN, "0123", 3, 0);
         lexer.nextToken() == new MyToken(MyTokenType.UNKNOWN, "123.", 4, 0);
         lexer.nextToken() == new MyToken(MyTokenType.NUMBER, "1.3", 5, 0);
+        lexer.nextToken() == new MyToken(MyTokenType.ID, "a123", 6, 0);
     }
 
     def "number with mulitple dots"(){
@@ -90,13 +91,41 @@ public class LexerTests extends Specification {
 
     def "roman numeral test"() {
         given:
-        RomanLexer lexer = new RomanLexer();
+        FileWriter writer = new FileWriter("test.txt");
+        writer.write("MCDXI; IX IXa");
+        writer.close();
+
+        MyLexer lexer = new MyLexer("test.txt");
+
         expect:
-        lexer.parse("XVI") == 16
-        lexer.parse("IXI") == -1
-        lexer.parse("MMMCMXCIX") == 3999
-        lexer.parse("XXa") == -1
+        lexer.nextToken() == new MyToken(MyTokenType.ROMMAN, "1411", 0, 0);
+        lexer.nextToken() == new MyToken(MyTokenType.SEMICOLLON, ";", 1, 0);
+        lexer.nextToken() == new MyToken(MyTokenType.ROMMAN, "9", 2, 0);
+        lexer.nextToken() == new MyToken(MyTokenType.ID, "IXa", 3, 0);
 
 
     }
+
+    def "test for y"(){
+        given:
+        FileWriter writer = new FileWriter("test.txt");
+        writer.write("var zmienna = VI;\nzmienna = zmienna + MMCDX;");
+        writer.close();
+
+        MyLexer lexer = new MyLexer("test.txt");
+        expect:
+        lexer.nextToken() == new MyToken(MyTokenType.VAR, "var", 0, 0);
+        lexer.nextToken() == new MyToken(MyTokenType.ID, "zmienna", 1, 0);
+        lexer.nextToken() == new MyToken(MyTokenType.ASSIGNMENT_OP, "=", 2, 0);
+        lexer.nextToken() == new MyToken(MyTokenType.ROMMAN, "6", 3, 0);
+        lexer.nextToken() == new MyToken(MyTokenType.SEMICOLLON, ";", 4, 0);
+        lexer.nextToken() == new MyToken(MyTokenType.ID, "zmienna", 5, 1);
+        lexer.nextToken() == new MyToken(MyTokenType.ASSIGNMENT_OP, "=", 6, 1);
+        lexer.nextToken() == new MyToken(MyTokenType.ID, "zmienna", 7, 1);
+        lexer.nextToken() == new MyToken(MyTokenType.ADDITIVE_OP, "+", 8, 1);
+        lexer.nextToken() == new MyToken(MyTokenType.ROMMAN, "2410", 9, 1);
+        lexer.nextToken() == new MyToken(MyTokenType.SEMICOLLON, ";", 10, 1);
+    }
+
+
 }

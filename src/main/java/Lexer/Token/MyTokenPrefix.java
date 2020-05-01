@@ -22,7 +22,7 @@ public class MyTokenPrefix {
     }
 
     public static boolean isNotWhiteAndSpecial(char c){
-        return isNotWhite(c) && !isSpecial(c);
+        return isNotWhite(c) && !isSpecial(c) && !isEOF(c);
     }
     public static boolean isNotWhite(char c){
         return c != ' ' && c != '\r' && c != '\n';
