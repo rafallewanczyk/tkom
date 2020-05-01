@@ -14,9 +14,13 @@ public class MyToken {
         this.y = y;
     }
 
-    public void setCordinates(int x, int y){
-       this.x = x;
-       this.y = y;
+    public MyTokenType getType() {
+        return type;
+    }
+
+    public void setCordinates(int x, int y) {
+        this.x = x;
+        this.y = y;
     }
 
     @Override

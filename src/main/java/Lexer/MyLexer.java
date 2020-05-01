@@ -131,9 +131,9 @@ public class MyLexer {
                 if (afterDot.toString().equals(".")) {
                     type = MyTokenType.UNKNOWN;
                 }
-            } else if (MyTokenPrefix.isNotWhite(character)) {
-                type = MyTokenType.UNKNOWN;
-                afterDot.append(readWord(MyTokenPrefix::isNotWhite));
+            } else {
+                character_buffer = character;
+                return new MyToken(type, number.toString(), x++, y);
             }
             number.append(afterDot);
             return new MyToken(type, number.toString(), x++, y);

@@ -2,15 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="901d7ea8-dce2-45c8-8810-4a1262e58aba" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/example.rom" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/Lexer/MyLexer.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/Lexer/MyLexer.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/classes/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/Main.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/test/classes/LexerTests.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/test/classes/LexerTests.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Lexer/MyLexer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Lexer/MyLexer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Lexer/Token/MyTokenType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Lexer/Token/MyTokenType.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Lexer/Token/MyToken.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Lexer/Token/MyToken.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/LexerTests.groovy" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/LexerTests.groovy" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test.txt" beforeDir="false" afterPath="$PROJECT_DIR$/test.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -54,7 +53,14 @@
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="reference.settingsdialog.project.gradle" />
   </component>
-  <component name="RunManager" selected="JUnit.LexerTests.empty input">
+  <component name="RunManager" selected="JUnit.LexerTests">
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Main" />
+      <module name="TKOM1.main" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="LexerTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="TKOM1.test" />
       <option name="PACKAGE_NAME" value="" />
@@ -69,16 +75,6 @@
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="LexerTests" />
       <option name="METHOD_NAME" value="empty input" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="LexerTests.id test" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="TKOM1.test" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="LexerTests" />
-      <option name="METHOD_NAME" value="id test" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -106,11 +102,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.LexerTests.empty input" />
         <item itemvalue="JUnit.LexerTests" />
+        <item itemvalue="Application.Main" />
+        <item itemvalue="JUnit.LexerTests.empty input" />
         <item itemvalue="JUnit.LexerTests.roman numeral test" />
         <item itemvalue="JUnit.LexerTests.roman numeral parser" />
-        <item itemvalue="JUnit.LexerTests.id test" />
       </list>
     </recent_temporary>
   </component>
@@ -143,7 +139,7 @@
       <workItem from="1587829942163" duration="9574000" />
       <workItem from="1587898273240" duration="12078000" />
       <workItem from="1587974998655" duration="9710000" />
-      <workItem from="1588324177085" duration="15334000" />
+      <workItem from="1588324177085" duration="16270000" />
     </task>
     <servers />
   </component>
@@ -170,22 +166,22 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="740" y="279" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1587808363546" />
-    <state width="1877" height="301" key="GridCell.Tab.0.bottom" timestamp="1588340441880">
+    <state width="1877" height="393" key="GridCell.Tab.0.bottom" timestamp="1588341195720">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="301" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1588340441880" />
-    <state width="1877" height="301" key="GridCell.Tab.0.center" timestamp="1588340441880">
+    <state width="1877" height="393" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1588341195720" />
+    <state width="1877" height="393" key="GridCell.Tab.0.center" timestamp="1588341195720">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="301" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1588340441880" />
-    <state width="1877" height="301" key="GridCell.Tab.0.left" timestamp="1588340441880">
+    <state width="1877" height="393" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1588341195720" />
+    <state width="1877" height="393" key="GridCell.Tab.0.left" timestamp="1588341195720">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="301" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1588340441880" />
-    <state width="1877" height="301" key="GridCell.Tab.0.right" timestamp="1588340441880">
+    <state width="1877" height="393" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1588341195720" />
+    <state width="1877" height="393" key="GridCell.Tab.0.right" timestamp="1588341195720">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="301" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1588340441880" />
+    <state width="1877" height="393" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1588341195720" />
     <state width="1877" height="316" key="GridCell.Tab.1.bottom" timestamp="1588338520918">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -218,31 +214,5 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="143" y="230" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1587846094378" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/Lexer/RomanNumerals/RomanLexer.java</url>
-          <line>26</line>
-          <option name="timeStamp" value="13" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/Lexer/RomanNumerals/RomanLexer.java</url>
-          <line>27</line>
-          <option name="timeStamp" value="14" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/Lexer/RomanNumerals/RomanLexer.java</url>
-          <line>28</line>
-          <option name="timeStamp" value="15" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/Lexer/RomanNumerals/RomanLexer.java</url>
-          <line>25</line>
-          <option name="timeStamp" value="16" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>

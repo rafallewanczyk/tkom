@@ -33,10 +33,11 @@ public class LexerTests extends Specification {
         lexer.nextToken() == new MyToken(MyTokenType.NUMBER, "1234", 0, 0);
         lexer.nextToken() == new MyToken(MyTokenType.NUMBER, "12.84", 1, 0);
         lexer.nextToken() == new MyToken(MyTokenType.NUMBER, "0", 2, 0);
-        lexer.nextToken() == new MyToken(MyTokenType.UNKNOWN, "0123", 3, 0);
-        lexer.nextToken() == new MyToken(MyTokenType.UNKNOWN, "123.", 4, 0);
-        lexer.nextToken() == new MyToken(MyTokenType.NUMBER, "1.3", 5, 0);
-        lexer.nextToken() == new MyToken(MyTokenType.ID, "a123", 6, 0);
+        lexer.nextToken() == new MyToken(MyTokenType.NUMBER, "0", 3, 0);
+        lexer.nextToken() == new MyToken(MyTokenType.NUMBER, "123", 4, 0);
+        lexer.nextToken() == new MyToken(MyTokenType.UNKNOWN, "123.", 5, 0);
+        lexer.nextToken() == new MyToken(MyTokenType.NUMBER, "1.3", 6, 0);
+        lexer.nextToken() == new MyToken(MyTokenType.ID, "a123", 7, 0);
     }
 
     def "number with mulitple dots"(){
