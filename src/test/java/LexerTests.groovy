@@ -93,7 +93,7 @@ public class LexerTests extends Specification {
     def "roman numeral test"() {
         given:
         FileWriter writer = new FileWriter("test.txt");
-        writer.write("MCDXI; IX IXa");
+        writer.write("MCDXI; IX IXI");
         writer.close();
 
         MyLexer lexer = new MyLexer("test.txt");
@@ -102,7 +102,7 @@ public class LexerTests extends Specification {
         lexer.nextToken() == new MyToken(MyTokenType.ROMMAN, "1411", 0, 0);
         lexer.nextToken() == new MyToken(MyTokenType.SEMICOLLON, ";", 1, 0);
         lexer.nextToken() == new MyToken(MyTokenType.ROMMAN, "9", 2, 0);
-        lexer.nextToken() == new MyToken(MyTokenType.ID, "IXa", 3, 0);
+        lexer.nextToken() == new MyToken(MyTokenType.ID, "IXI", 3, 0);
 
 
     }
