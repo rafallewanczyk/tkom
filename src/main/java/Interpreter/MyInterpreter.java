@@ -1,20 +1,20 @@
 package Interpreter;
 
 import Parser.AST;
-import Parser.AST_node;
+import Parser.AST_node.*;
 
-import static Parser.AST.*;
+
 
 
 public class MyInterpreter {
-    AST_node root;
+    AST root;
 
-    public MyInterpreter(AST_node root) {
+    public MyInterpreter(AST root) {
         this.root = root;
         System.out.println(visit(root));
     }
 
-    int visit(AST_node node) {
+    int visit(AST node) {
         if (node instanceof BinOperator) {
             BinOperator casted = (BinOperator) node;
             System.out.println(casted.operation);

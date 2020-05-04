@@ -2,15 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="901d7ea8-dce2-45c8-8810-4a1262e58aba" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/Parser/AST_node.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/InterpreterTests.groovy" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/Parser/AST.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/Parser/AST.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/test/classes/InterpreterTests.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/test/classes/InterpreterTests.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Interpreter/MyInterpreter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Interpreter/MyInterpreter.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Parser/AST.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Parser/AST.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Parser/AST_nodes.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Parser/AST_node.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Parser/AST_node.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Parser/MyParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Parser/MyParser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/InterpreterTests.groovy" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/InterpreterTests.groovy" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test.txt" beforeDir="false" afterPath="$PROJECT_DIR$/test.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -146,7 +145,7 @@
       <workItem from="1588324177085" duration="17237000" />
       <workItem from="1588408236096" duration="5285000" />
       <workItem from="1588502308702" duration="11259000" />
-      <workItem from="1588581494228" duration="15912000" />
+      <workItem from="1588581494228" duration="19928000" />
     </task>
     <servers />
   </component>
@@ -177,22 +176,22 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="740" y="279" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1587808363546" />
-    <state width="914" height="334" key="GridCell.Tab.0.bottom" timestamp="1588598877075">
+    <state width="1877" height="334" key="GridCell.Tab.0.bottom" timestamp="1588610170597">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="914" height="334" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1588598877075" />
-    <state width="914" height="334" key="GridCell.Tab.0.center" timestamp="1588598877075">
+    <state width="1877" height="334" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1588610170597" />
+    <state width="1877" height="334" key="GridCell.Tab.0.center" timestamp="1588610170596">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="914" height="334" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1588598877075" />
-    <state width="914" height="334" key="GridCell.Tab.0.left" timestamp="1588598877074">
+    <state width="1877" height="334" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1588610170596" />
+    <state width="1877" height="334" key="GridCell.Tab.0.left" timestamp="1588610170596">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="914" height="334" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1588598877074" />
-    <state width="914" height="334" key="GridCell.Tab.0.right" timestamp="1588598877075">
+    <state width="1877" height="334" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1588610170596" />
+    <state width="1877" height="334" key="GridCell.Tab.0.right" timestamp="1588610170596">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="914" height="334" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1588598877075" />
+    <state width="1877" height="334" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1588610170596" />
     <state width="1877" height="315" key="GridCell.Tab.1.bottom" timestamp="1588593150339">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

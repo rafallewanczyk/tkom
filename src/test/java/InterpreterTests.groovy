@@ -7,7 +7,7 @@ class InterpreterTests extends Specification{
     def "expression test"(){
         given:
         FileWriter writer = new FileWriter("test.txt");
-        writer.write(" 8 + 4 * (8--9)");
+        writer.write(" 8 + 4 * (8---9)");
         writer.close();
 
         MyLexer lexer = new MyLexer("test.txt");
