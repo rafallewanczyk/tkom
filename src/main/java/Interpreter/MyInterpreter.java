@@ -1,41 +1,56 @@
 package Interpreter;
 
 import Parser.AST;
-import Parser.BinOperator;
-import Parser.Num;
+import Parser.AST_node;
+
+import static Parser.AST.*;
+
 
 public class MyInterpreter {
-    AST root;
-    public MyInterpreter(AST root){
+    AST_node root;
+
+    public MyInterpreter(AST_node root) {
         this.root = root;
+        System.out.println(visit(root));
     }
-    int visit(AST node) {
-        int ret = 0;
+
+    int visit(AST_node node) {
         if (node instanceof BinOperator) {
-
-            System.out.println(((BinOperator) node).operation);
-            if (((BinOperator) node).operation.getValue().equals("+")) {
-                ret = visit(((BinOperator) node).left) + visit(((BinOperator) node).right);
+            BinOperator casted = (BinOperator) node;
+            System.out.println(casted.operation);
+            if (casted.operation.getValue().equals("+")) {
+                return visit(casted.left) + visit(casted.right);
             }
 
-            if (((BinOperator) node).operation.getValue().equals("-")) {
-                ret = visit(((BinOperator) node).left) - visit(((BinOperator) node).right);
+            if (casted.operation.getValue().equals("-")) {
+                return visit(casted.left) - visit(casted.right);
             }
 
-            if (((BinOperator) node).operation.getValue().equals("*")) {
-                ret = visit(((BinOperator) node).left) * visit(((BinOperator) node).right);
+            if (casted.operation.getValue().equals("*")) {
+                return visit(casted.left) * visit(casted.right);
             }
 
-            if (((BinOperator) node).operation.getValue().equals("/")) {
-                ret = visit(((BinOperator) node).left) / visit(((BinOperator) node).right);
+            if (casted.operation.getValue().equals("/")) {
+                return visit(casted.left) / visit(casted.right);
             }
 
         }
         if (node instanceof Num) {
-            System.out.println(((Num) node).value);
-            ret = ((Num) node).value;
+            Num casted = (Num) node;
+            System.out.println(casted.value);
+            return casted.value;
         }
-        return ret;
+
+        if (node instanceof UnOperator) {
+            UnOperator casted = (UnOperator) node;
+            if (casted.getType().equals("-")) {
+                return -visit(casted.getExpression());
+            } else {
+                return visit(casted.getExpression());
+            }
+        }
+        return 0;
+
     }
 
 }

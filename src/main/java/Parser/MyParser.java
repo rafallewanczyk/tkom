@@ -39,61 +39,71 @@ public class MyParser {
         System.out.println("found error");
     }
 
-    private AST factor() {
+    private AST_node factor() {
         MyToken token = current;
+        if(current.getValue().equals("+")){
+            eat(MyTokenType.ADDITIVE_OP);
+            AST_node node = new AST.UnOperator(token, factor());
+            return node;
+        }
+        if(current.getValue().equals("-")){
+            eat(MyTokenType.ADDITIVE_OP);
+            AST_node node = new AST.UnOperator(token, factor());
+            return node;
+        }
         if (current.getType() == MyTokenType.NUMBER) {
             eat(MyTokenType.NUMBER);
-            return new Num(token);
+            return new AST.Num(token);
         } else if (token.getType() == MyTokenType.LEFT_PARENTESIS) {
             eat(MyTokenType.LEFT_PARENTESIS);
-            AST node = expression();
+            AST_node node = expression();
             eat(MyTokenType.RIGHT_PARENTESIS);
             return node;
         }else{
-            AST node = variable();
+            AST_node node = variable();
             return node;
         }
     }
 
-    private AST term() {
-        AST node = factor();
+    private AST_node term() {
+        AST_node node = factor();
 
         while (current.getType() == MyTokenType.MULTIPLICATIVE_OP) {
             MyToken token = current;
             eat(MyTokenType.MULTIPLICATIVE_OP);
-            node = new BinOperator(node, token, factor());
+            node = new AST.BinOperator(node, token, factor());
         }
         return node;
     }
 
-    private AST expression() {
-        AST node = term();
+    public AST_node expression() {//todo set privaate
+        AST_node node = term();
 
         while (current.getType() == MyTokenType.ADDITIVE_OP) {
             MyToken token = current;
             eat(MyTokenType.ADDITIVE_OP);
-            node = new BinOperator(node, token, term());
+            node = new AST.BinOperator(node, token, term());
         }
         return node;
     }
 
-    private AST program() {
-        AST node = compound_statement();
+    private AST_node program() {
+        AST_node node = compound_statement();
         return node;
     }
 
-    private AST compound_statement() {
+    private AST_node compound_statement() {
         eat(MyTokenType.LEFT_BRACE);
-        ArrayList<AST> nodes = statement_list();
+        ArrayList<AST_node> nodes = statement_list();
         eat(MyTokenType.RIGHT_BRACE);
-        AST root = new Compound();
+        AST_node root = new AST.Compound();
         return root;
     }
 
-    private ArrayList<AST> statement_list(){
-        AST node = statement();
+    private ArrayList<AST_node> statement_list(){
+        AST_node node = statement();
 
-        ArrayList<AST> result = new ArrayList<AST>();
+        ArrayList<AST_node> result = new ArrayList<AST_node>();
         result.add(node);
 
         while(current.getType() == MyTokenType.SEMICOLLON){
@@ -106,8 +116,8 @@ public class MyParser {
         return result;
     }
 
-    private AST statement(){
-        AST node;
+    private AST_node statement(){
+        AST_node node;
         if(current.getType() == MyTokenType.ID){
            node = assignmentStatement();
            return node;
@@ -115,25 +125,25 @@ public class MyParser {
         return null;
     }
 
-    private AST assignmentStatement(){
+    private AST_node assignmentStatement(){
         MyToken left;
-        AST right;
+        AST_node right;
         left = current;
         eat(MyTokenType.ID);
         eat(MyTokenType.ASSIGNMENT_OP);
         right = expression();
-        return new AssignStatement(left, right);
+        return new AST.AssignStatement(left, right);
     }
 
-    private AST variable(){
-        AST node = new Variable(current);
+    private AST_node variable(){
+        AST_node node = new AST.Variable(current);
         eat(MyTokenType.ID);
         return node;
 
     }
 
-    public AST parse() {
-        AST node = program();
+    public AST_node parse() {
+        AST_node node = program();
         if(current.getType() != MyTokenType.EOF){
             error();
         }
@@ -164,63 +174,7 @@ public class MyParser {
 
 
 
- class BinOperator implements AST {
-    public AST right, left; // todo set private
-    public MyToken operation; //todo set private
 
-    public BinOperator(AST left, MyToken operation, AST right) {
-        this.right = right;
-        this.left = left;
-        this.operation = operation;
-    }
-
-    @Override
-    public String toString() {
-        return operation.getValue();
-    }
-
-}
-
-
-class Num implements AST {
-    MyToken token;
-    public int value;
-
-    public Num(MyToken token) {
-        this.token = token;
-        value = Integer.parseInt(token.getValue());
-    }
-
-    @Override
-    public String toString() {
-        return token.getValue();
-    }
-
-}
-
-class Compound implements AST {
-    List<AST> children = new ArrayList<AST>();
-
-}
-
-class AssignStatement implements AST {
-    MyToken token;
-    AST value;
-
-    public AssignStatement(MyToken token, AST value) {
-        this.token = token;
-        this.value = value;
-    }
-}
-
-class Variable implements AST{
-    MyToken token;
-    String value;
-    public Variable(MyToken token){
-        this.token = token;
-        value = token.getValue();
-    }
-}
 
 
 
