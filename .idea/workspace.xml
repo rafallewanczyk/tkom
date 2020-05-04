@@ -2,9 +2,21 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="901d7ea8-dce2-45c8-8810-4a1262e58aba" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Interpreter/MyInterpreter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Parser/AST.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Parser/MyParser.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/ParserTests.groovy" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/Lexer/Token/MyToken.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/Lexer/Token/MyToken.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/Lexer/Token/MyTokenType.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/Lexer/Token/MyTokenType.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/Main.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/test/classes/LexerTests.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/test/classes/LexerTests.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Lexer/Token/MyToken.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Lexer/Token/MyToken.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Lexer/Token/MyTokenType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Lexer/Token/MyTokenType.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/LexerTests.groovy" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/LexerTests.groovy" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test.txt" beforeDir="false" afterPath="$PROJECT_DIR$/test.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -21,6 +33,7 @@
       <list>
         <option value="Enum" />
         <option value="Class" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
@@ -46,9 +59,10 @@
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
+    <property name="restartRequiresConfirmation" value="false" />
     <property name="settings.editor.selected.configurable" value="reference.settingsdialog.project.gradle" />
   </component>
-  <component name="RunManager" selected="JUnit.LexerTests">
+  <component name="RunManager" selected="JUnit.ParserTests.parse expression">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Main" />
       <module name="TKOM1.main" />
@@ -65,31 +79,31 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="LexerTests.empty input" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="ParserTests.first program" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="TKOM1.test" />
       <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="LexerTests" />
-      <option name="METHOD_NAME" value="empty input" />
+      <option name="MAIN_CLASS_NAME" value="ParserTests" />
+      <option name="METHOD_NAME" value="first program" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="LexerTests.roman numeral parser" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="ParserTests.parse expression" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="TKOM1.test" />
       <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="LexerTests" />
-      <option name="METHOD_NAME" value="roman numeral parser" />
+      <option name="MAIN_CLASS_NAME" value="ParserTests" />
+      <option name="METHOD_NAME" value="parse expression" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="LexerTests.roman numeral test" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="ParserTests.parse simple function" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="TKOM1.test" />
       <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="LexerTests" />
-      <option name="METHOD_NAME" value="roman numeral test" />
+      <option name="MAIN_CLASS_NAME" value="ParserTests" />
+      <option name="METHOD_NAME" value="parse simple function" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -97,11 +111,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.LexerTests" />
-        <item itemvalue="JUnit.LexerTests.roman numeral test" />
+        <item itemvalue="JUnit.ParserTests.parse expression" />
+        <item itemvalue="JUnit.ParserTests.first program" />
+        <item itemvalue="JUnit.ParserTests.parse simple function" />
         <item itemvalue="Application.Main" />
-        <item itemvalue="JUnit.LexerTests.empty input" />
-        <item itemvalue="JUnit.LexerTests.roman numeral parser" />
+        <item itemvalue="JUnit.LexerTests" />
       </list>
     </recent_temporary>
   </component>
@@ -135,7 +149,9 @@
       <workItem from="1587898273240" duration="12078000" />
       <workItem from="1587974998655" duration="9710000" />
       <workItem from="1588324177085" duration="17237000" />
-      <workItem from="1588408236096" duration="841000" />
+      <workItem from="1588408236096" duration="5285000" />
+      <workItem from="1588502308702" duration="11259000" />
+      <workItem from="1588581494228" duration="12971000" />
     </task>
     <servers />
   </component>
@@ -154,6 +170,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="818" y="138" width="774" height="840" key="#com.intellij.execution.junit2.states.ComparisonFailureState$DiffDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1588339697733" />
+    <state x="318" y="243" key="#com.intellij.ide.util.MemberChooser" timestamp="1588504321002">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="318" y="243" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1588504321002" />
     <state x="690" y="271" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1587815892062">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -162,38 +182,38 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="740" y="279" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1587808363546" />
-    <state width="1877" height="199" key="GridCell.Tab.0.bottom" timestamp="1588408408162">
+    <state width="1877" height="327" key="GridCell.Tab.0.bottom" timestamp="1588594782896">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="199" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1588408408162" />
-    <state width="1877" height="199" key="GridCell.Tab.0.center" timestamp="1588408408162">
+    <state width="1877" height="327" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1588594782896" />
+    <state width="1877" height="327" key="GridCell.Tab.0.center" timestamp="1588594782896">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="199" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1588408408162" />
-    <state width="1877" height="199" key="GridCell.Tab.0.left" timestamp="1588408408161">
+    <state width="1877" height="327" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1588594782896" />
+    <state width="1877" height="327" key="GridCell.Tab.0.left" timestamp="1588594782896">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="199" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1588408408161" />
-    <state width="1877" height="199" key="GridCell.Tab.0.right" timestamp="1588408408162">
+    <state width="1877" height="327" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1588594782896" />
+    <state width="1877" height="327" key="GridCell.Tab.0.right" timestamp="1588594782896">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="199" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1588408408162" />
-    <state width="1877" height="316" key="GridCell.Tab.1.bottom" timestamp="1588338520918">
+    <state width="1877" height="327" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1588594782896" />
+    <state width="1877" height="315" key="GridCell.Tab.1.bottom" timestamp="1588593150339">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="316" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1588338520918" />
-    <state width="1877" height="316" key="GridCell.Tab.1.center" timestamp="1588338520917">
+    <state width="1877" height="315" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1588593150339" />
+    <state width="1877" height="315" key="GridCell.Tab.1.center" timestamp="1588593150339">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="316" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1588338520917" />
-    <state width="1877" height="316" key="GridCell.Tab.1.left" timestamp="1588338520917">
+    <state width="1877" height="315" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1588593150339" />
+    <state width="1877" height="315" key="GridCell.Tab.1.left" timestamp="1588593150339">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="316" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1588338520917" />
-    <state width="1877" height="316" key="GridCell.Tab.1.right" timestamp="1588338520918">
+    <state width="1877" height="315" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1588593150339" />
+    <state width="1877" height="315" key="GridCell.Tab.1.right" timestamp="1588593150339">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="316" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1588338520918" />
+    <state width="1877" height="315" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1588593150339" />
     <state x="41" y="146" key="SettingsEditor" timestamp="1587733168281">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -202,10 +222,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="552" y="257" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1588416105428" />
-    <state x="0" y="0" key="com.intellij.ide.util.TipDialog" timestamp="1588408234545">
+    <state x="0" y="0" key="com.intellij.ide.util.TipDialog" timestamp="1588581785946">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="0" y="0" key="com.intellij.ide.util.TipDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1588408234545" />
+    <state x="0" y="0" key="com.intellij.ide.util.TipDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1588581785946" />
     <state x="741" y="237" key="git4idea.branch.GitSmartOperationDialog" timestamp="1588416121313">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -214,9 +234,31 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="601" y="246" width="700" height="530" key="recent.locations.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1588327942021" />
-    <state x="143" y="230" width="672" height="678" key="search.everywhere.popup" timestamp="1587846094378">
+    <state x="143" y="230" width="672" height="678" key="search.everywhere.popup" timestamp="1588507612159">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="143" y="230" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1587846094378" />
+    <state x="143" y="230" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1588507612159" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/main/java/Parser/MyParser.java</url>
+          <line>68</line>
+          <properties class="Parser.MyParser" method="expression">
+            <option name="EMULATED" value="true" />
+          </properties>
+          <option name="timeStamp" value="8" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/main/java/Parser/MyParser.java</url>
+          <line>134</line>
+          <properties class="Parser.MyParser" method="parse">
+            <option name="EMULATED" value="true" />
+          </properties>
+          <option name="timeStamp" value="9" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

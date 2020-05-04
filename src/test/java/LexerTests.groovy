@@ -1,10 +1,9 @@
 import Lexer.MyLexer
-import Lexer.RomanNumerals.RomanLexer
 import Lexer.Token.MyToken
 import Lexer.Token.MyTokenType
 import spock.lang.Specification;
 
-public class LexerTests extends Specification {
+class LexerTests extends Specification {
     def "test single and double equals"() {
         given:
         FileWriter writer = new FileWriter("test.txt");

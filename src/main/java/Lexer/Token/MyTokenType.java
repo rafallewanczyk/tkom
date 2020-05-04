@@ -27,6 +27,7 @@ public enum MyTokenType {
     QUOTE,// " "
     RETURN,
     EOF,
+    EMPTY,
     UNKNOWN
 
 }

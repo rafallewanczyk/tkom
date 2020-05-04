@@ -18,14 +18,26 @@ public class MyToken {
         return type;
     }
 
+    public boolean isEmpty(){
+       return (type == MyTokenType.EMPTY);
+    }
+
+    public void setEmpty(){
+        type = MyTokenType.EMPTY;
+    }
+
     public void setCordinates(int x, int y) {
         this.x = x;
         this.y = y;
     }
 
+    public String getValue(){
+        return value;
+    }
+
     @Override
     public String toString() {
-        return "(" + type.toString() + ")" + value + "(" + x + "," + y + ")";
+        return "(" + type.toString() + ")" + value /*+ "(" + x + "," + y + ")"*/;
     }
 
     @Override
