@@ -100,9 +100,9 @@ public class MyLexer {
             character_buffer = scanner.getNextSymbol();
             if (character_buffer == '=') {
                 character_buffer = '\0';
-                return new MyToken(MyTokenType.REALTION_OP, Character.toString(character) + Character.toString(character_buffer), x++, y);
+                return new MyToken(MyTokenType.RELATION_OP, Character.toString(character) + Character.toString(character_buffer), x++, y);
             }
-            return new MyToken(MyTokenType.REALTION_OP, Character.toString(character), x++, y);
+            return new MyToken(MyTokenType.RELATION_OP, Character.toString(character), x++, y);
         } else if (character == '&') {
             character_buffer = scanner.getNextSymbol();
             if (character_buffer == '&') {

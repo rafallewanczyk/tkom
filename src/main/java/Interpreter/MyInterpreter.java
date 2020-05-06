@@ -9,11 +9,16 @@ import java.util.HashMap;
 
 public class MyInterpreter {
     AST root;
+    int out;
     HashMap<MyToken, Integer> GLOBAL_SCOPE = new HashMap<MyToken, Integer>();
+
+    public int getOut() {
+        return out;
+    }
 
     public MyInterpreter(AST root) {
         this.root = root;
-        visit(root);
+        out = visit(root);
     }
 
     int visit(AST node) {
@@ -62,6 +67,39 @@ public class MyInterpreter {
             }else{
                 GLOBAL_SCOPE.put(token, visit(casted.getExpression()));
             }
+        } else if(node instanceof BinLogicOperator){
+            BinLogicOperator casted = (BinLogicOperator)node;
+            if(casted.operation.getValue().equals("||")){
+                return (visit(casted.left) != 0 || visit(casted.right) !=0) ? 1 : 0;
+            }
+            if(casted.operation.getValue().equals("&&")){
+                return (visit(casted.left) != 0 && visit(casted.right) !=0) ? 1 : 0;
+            }
+            if(casted.operation.getValue().equals("==")){
+                return (visit(casted.left) == visit(casted.right)) ? 1 : 0;
+            }
+            if(casted.operation.getValue().equals(">")){
+                return (visit(casted.left) > visit(casted.right)) ? 1 : 0;
+            }
+
+            if(casted.operation.getValue().equals("<")){
+                return (visit(casted.left) < visit(casted.right)) ? 1 : 0;
+            }
+
+            if(casted.operation.getValue().equals(">=")){
+                return (visit(casted.left) >= visit(casted.right)) ? 1 : 0;
+            }
+
+            if(casted.operation.getValue().equals("!=")){
+                return (visit(casted.left) != visit(casted.right)) ? 1 : 0;
+            }
+
+            if(casted.operation.getValue().equals("<=")){
+                return (visit(casted.left) <= visit(casted.right)) ? 1 : 0;
+            }
+        } else if(node instanceof Bool){
+            Bool casted = (Bool)node;
+            return casted.isValue() ? 1 : 0;
         }
 
         return 0;

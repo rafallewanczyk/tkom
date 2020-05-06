@@ -33,26 +33,81 @@ public class MyParser {
 
     }
 
-    private void eatAny(){
-       current = lexer.nextToken();
+    private void eatAny() {
+        current = lexer.nextToken();
     }
 
-    private void error(){
+    private void error() {
         System.out.println("found error");
     }
 
+
+    public AST condition() { //todo set private
+        AST node = andCondition();
+
+        while (current.getType() == MyTokenType.OR_OP) {
+            MyToken token = current;
+            eat(MyTokenType.OR_OP);
+            node = new BinLogicOperator(node, token, andCondition());
+        }
+        return node;
+    }
+
+    private AST andCondition() {
+        AST node = equalityCondition();
+
+        while (current.getType() == MyTokenType.AND_OP) {
+            MyToken token = current;
+            eat(MyTokenType.AND_OP);
+            node = new BinLogicOperator(node, token, equalityCondition());
+        }
+        return node;
+    }
+
+    private AST equalityCondition() {
+        AST node = relationalCondition();
+
+        while (current.getType() == MyTokenType.EQUAL_OP) {
+            MyToken token = current;
+            eat(MyTokenType.EQUAL_OP);
+            node = new BinLogicOperator(node, token, relationalCondition());
+        }
+        return node;
+    }
+
+    private AST relationalCondition() {
+        AST node = primaryCondition();
+
+        while (current.getType() == MyTokenType.RELATION_OP) {
+            MyToken token = current;
+            eat(MyTokenType.RELATION_OP);
+            node = new BinLogicOperator(node, token, relationalCondition());
+        }
+        return node;
+    }
+
+    private AST primaryCondition() {
+        MyToken token = current;
+
+        if (current.getType() == MyTokenType.INT_NUMBER) {
+            eat(MyTokenType.INT_NUMBER);
+            return new Bool(token);
+        } else if (token.getType() == MyTokenType.LEFT_PARENTESIS) {
+            eat(MyTokenType.LEFT_PARENTESIS);
+            AST node = condition();
+            eat(MyTokenType.RIGHT_PARENTESIS);
+            return node;
+        } else {
+            AST node = variable();
+            return node;
+        }
+
+    }
+
+
     private AST factor() {
         MyToken token = current;
-        if(current.getValue().equals("+")){
-            eat(MyTokenType.ADDITIVE_OP);
-            AST node = new UnOperator(token, factor());
-            return node;
-        }
-        if(current.getValue().equals("-")){
-            eat(MyTokenType.ADDITIVE_OP);
-            AST node = new UnOperator(token, factor());
-            return node;
-        }
+
         if (current.getType() == MyTokenType.INT_NUMBER) {
             eat(MyTokenType.INT_NUMBER);
             return new Num(token);
@@ -61,7 +116,7 @@ public class MyParser {
             AST node = expression();
             eat(MyTokenType.RIGHT_PARENTESIS);
             return node;
-        }else{
+        } else {
             AST node = variable();
             return node;
         }
@@ -102,44 +157,44 @@ public class MyParser {
         return root;
     }
 
-    private ArrayList<AST> statement_list(){
+    private ArrayList<AST> statement_list() {
         AST node = statement();
 
         ArrayList<AST> result = new ArrayList<AST>();
         result.add(node);
 
-        while(current.getType() == MyTokenType.SEMICOLLON){
+        while (current.getType() == MyTokenType.SEMICOLLON) {
             eat(MyTokenType.SEMICOLLON);
             result.add(statement());
         }
-        if(current.getType() == MyTokenType.ID){
+        if (current.getType() == MyTokenType.ID) {
             error();
         }
         return result;
     }
 
-    private AST statement(){
+    private AST statement() {
         AST node;
-        if(current.getType() == MyTokenType.ID){
-           node = assignmentStatement();
-           return node;
+        if (current.getType() == MyTokenType.ID) {
+            node = assignmentStatement();
+            return node;
         }
 
-        if(current.getType() == MyTokenType.INT || current.getType() == MyTokenType.REAL){
+        if (current.getType() == MyTokenType.INT || current.getType() == MyTokenType.REAL) {
             node = initStatement();
             return node;
         }
         return null;
     }
 
-    private AST initStatement(){
+    private AST initStatement() {
         MyToken type = current;
         eat(type.getType());
         MyToken var = current;
         eat(MyTokenType.ID);
 
 
-        if(current.getType() == MyTokenType.ASSIGNMENT_OP){
+        if (current.getType() == MyTokenType.ASSIGNMENT_OP) {
             eat(MyTokenType.ASSIGNMENT_OP);
             return new VarDeclaration(new Variable(var), new Type(type), expression());
         }
@@ -147,7 +202,7 @@ public class MyParser {
         return new VarDeclaration(new Variable(var), new Type(type), null);
     }
 
-    private AST assignmentStatement(){
+    private AST assignmentStatement() {
         MyToken left;
         AST right;
         left = current;
@@ -157,7 +212,7 @@ public class MyParser {
         return new AssignStatement(left, right);
     }
 
-    private AST variable(){
+    private AST variable() {
         AST node = new Variable(current);
         eat(MyTokenType.ID);
         return node;
@@ -166,7 +221,7 @@ public class MyParser {
 
     public AST parse() {
         AST node = program();
-        if(current.getType() != MyTokenType.EOF){
+        if (current.getType() != MyTokenType.EOF) {
             error();
         }
         return node;

@@ -6,7 +6,7 @@ public enum MyTokenType {
     OR_OP, //||
     AND_OP, //&&
     EQUAL_OP, //==
-    REALTION_OP, //< > <= >=
+    RELATION_OP, //< > <= >=
     ADDITIVE_OP, //+ -
     MULTIPLICATIVE_OP, //* / %
     COMMENT, // //
