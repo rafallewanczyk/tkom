@@ -21,8 +21,10 @@ public enum MyTokenType {
     SEMICOLLON,//;
     LOOP,//while
     FUNCTION,//function
-    VAR,//var
-    NUMBER,//[0..9]*[.]
+    INT,//int
+    REAL,//float
+    INT_NUMBER,//[0..9]
+    REAL_NUMBER,//[0..9]
     ROMMAN,//IVX..
     QUOTE,// " "
     RETURN,

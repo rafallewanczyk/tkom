@@ -45,14 +45,12 @@ public class MyToken {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         MyToken myToken = (MyToken) o;
-        return x == myToken.x &&
-                y == myToken.y &&
-                type == myToken.type &&
+        return type == myToken.type &&
                 value.equals(myToken.value);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(type, value, x, y);
+        return Objects.hash(type, value);
     }
 }

@@ -3,12 +3,24 @@
   <component name="ChangeListManager">
     <list default="true" id="901d7ea8-dce2-45c8-8810-4a1262e58aba" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/Interpreter/MyInterpreter.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/Interpreter/MyInterpreter.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/Lexer/Token/MyToken.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/Lexer/Token/MyToken.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/Parser/AST_node$AssignStatement.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/Parser/AST_node$AssignStatement.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/Parser/AST_node$Compound.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/Parser/AST_node$Compound.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/Parser/AST_node$Variable.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/Parser/AST_node$Variable.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/Parser/MyParser.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/Parser/MyParser.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/test/classes/InterpreterTests.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/test/classes/InterpreterTests.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/test/classes/LexerTests.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/test/classes/LexerTests.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/test/classes/ParserTests.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/test/classes/ParserTests.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Interpreter/MyInterpreter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Interpreter/MyInterpreter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Parser/AST.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Parser/AST.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Lexer/MyLexer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Lexer/MyLexer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Lexer/Token/MyToken.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Lexer/Token/MyToken.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Lexer/Token/MyTokenType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Lexer/Token/MyTokenType.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Parser/AST_node.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Parser/AST_node.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Parser/MyParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Parser/MyParser.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/InterpreterTests.groovy" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/InterpreterTests.groovy" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/LexerTests.groovy" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/LexerTests.groovy" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/ParserTests.groovy" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/ParserTests.groovy" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/test.txt" beforeDir="false" afterPath="$PROJECT_DIR$/test.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -56,9 +68,11 @@
     <property name="settings.editor.selected.configurable" value="reference.settingsdialog.project.gradle" />
   </component>
   <component name="RunManager" selected="JUnit.InterpreterTests.expression test">
-    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Main" />
-      <module name="TKOM1.main" />
+    <configuration name="InterpreterTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="TKOM1.test" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="InterpreterTests" />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -68,6 +82,16 @@
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="InterpreterTests" />
       <option name="METHOD_NAME" value="expression test" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="LexerTests.string parse test" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="TKOM1.test" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="LexerTests" />
+      <option name="METHOD_NAME" value="string parse test" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -93,23 +117,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ParserTests.parse simple function" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="TKOM1.test" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="ParserTests" />
-      <option name="METHOD_NAME" value="parse simple function" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="JUnit.InterpreterTests.expression test" />
-        <item itemvalue="JUnit.ParserTests.parse expression" />
         <item itemvalue="JUnit.ParserTests.first program" />
-        <item itemvalue="JUnit.ParserTests.parse simple function" />
-        <item itemvalue="Application.Main" />
+        <item itemvalue="JUnit.InterpreterTests" />
+        <item itemvalue="JUnit.LexerTests.string parse test" />
+        <item itemvalue="JUnit.ParserTests.parse expression" />
       </list>
     </recent_temporary>
   </component>
@@ -145,7 +159,8 @@
       <workItem from="1588324177085" duration="17237000" />
       <workItem from="1588408236096" duration="5285000" />
       <workItem from="1588502308702" duration="11259000" />
-      <workItem from="1588581494228" duration="19928000" />
+      <workItem from="1588581494228" duration="26873000" />
+      <workItem from="1588778611123" duration="5314000" />
     </task>
     <servers />
   </component>
@@ -164,10 +179,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="818" y="138" width="774" height="840" key="#com.intellij.execution.junit2.states.ComparisonFailureState$DiffDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1588339697733" />
-    <state x="318" y="243" key="#com.intellij.ide.util.MemberChooser" timestamp="1588504321002">
+    <state x="318" y="243" key="#com.intellij.ide.util.MemberChooser" timestamp="1588782264427">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="318" y="243" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1588504321002" />
+    <state x="318" y="243" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1588782264427" />
     <state x="690" y="271" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1587815892062">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -176,38 +191,38 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="740" y="279" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1587808363546" />
-    <state width="1877" height="334" key="GridCell.Tab.0.bottom" timestamp="1588610170597">
+    <state width="1877" height="312" key="GridCell.Tab.0.bottom" timestamp="1588783179994">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="334" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1588610170597" />
-    <state width="1877" height="334" key="GridCell.Tab.0.center" timestamp="1588610170596">
+    <state width="1877" height="312" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1588783179994" />
+    <state width="1877" height="312" key="GridCell.Tab.0.center" timestamp="1588783179993">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="334" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1588610170596" />
-    <state width="1877" height="334" key="GridCell.Tab.0.left" timestamp="1588610170596">
+    <state width="1877" height="312" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1588783179993" />
+    <state width="1877" height="312" key="GridCell.Tab.0.left" timestamp="1588783179993">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="334" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1588610170596" />
-    <state width="1877" height="334" key="GridCell.Tab.0.right" timestamp="1588610170596">
+    <state width="1877" height="312" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1588783179993" />
+    <state width="1877" height="312" key="GridCell.Tab.0.right" timestamp="1588783179993">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="334" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1588610170596" />
-    <state width="1877" height="315" key="GridCell.Tab.1.bottom" timestamp="1588593150339">
+    <state width="1877" height="312" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1588783179993" />
+    <state width="1877" height="315" key="GridCell.Tab.1.bottom" timestamp="1588783137816">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="315" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1588593150339" />
-    <state width="1877" height="315" key="GridCell.Tab.1.center" timestamp="1588593150339">
+    <state width="1877" height="315" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1588783137816" />
+    <state width="1877" height="315" key="GridCell.Tab.1.center" timestamp="1588783137816">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="315" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1588593150339" />
-    <state width="1877" height="315" key="GridCell.Tab.1.left" timestamp="1588593150339">
+    <state width="1877" height="315" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1588783137816" />
+    <state width="1877" height="315" key="GridCell.Tab.1.left" timestamp="1588783137816">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="315" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1588593150339" />
-    <state width="1877" height="315" key="GridCell.Tab.1.right" timestamp="1588593150339">
+    <state width="1877" height="315" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1588783137816" />
+    <state width="1877" height="315" key="GridCell.Tab.1.right" timestamp="1588783137816">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="315" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1588593150339" />
+    <state width="1877" height="315" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1588783137816" />
     <state x="41" y="146" key="SettingsEditor" timestamp="1587733168281">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -216,21 +231,41 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="552" y="257" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1588416105428" />
-    <state x="0" y="0" key="com.intellij.ide.util.TipDialog" timestamp="1588581785946">
+    <state x="0" y="0" key="com.intellij.ide.util.TipDialog" timestamp="1588778609819">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="0" y="0" key="com.intellij.ide.util.TipDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1588581785946" />
+    <state x="0" y="0" key="com.intellij.ide.util.TipDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1588778609819" />
+    <state x="524" y="260" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2" timestamp="1588782949554">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="524" y="260" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2/0.0.1920.1040@0.0.1920.1040" timestamp="1588782949554" />
     <state x="741" y="237" key="git4idea.branch.GitSmartOperationDialog" timestamp="1588416121313">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="741" y="237" key="git4idea.branch.GitSmartOperationDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1588416121313" />
-    <state x="601" y="246" width="700" height="530" key="recent.locations.popup" timestamp="1588327942021">
+    <state x="601" y="246" width="700" height="530" key="recent.locations.popup" timestamp="1588614088930">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="601" y="246" width="700" height="530" key="recent.locations.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1588327942021" />
+    <state x="601" y="246" width="700" height="530" key="recent.locations.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1588614088930" />
     <state x="143" y="230" width="672" height="678" key="search.everywhere.popup" timestamp="1588507612159">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="143" y="230" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1588507612159" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/Parser/MyParser.java</url>
+          <line>121</line>
+          <option name="timeStamp" value="20" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/Parser/MyParser.java</url>
+          <line>122</line>
+          <option name="timeStamp" value="21" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

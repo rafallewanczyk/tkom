@@ -11,9 +11,9 @@ class ParserTests extends Specification{
         FileWriter writer = new FileWriter("test.txt");
         writer.write("" +
                 "{" +
-                "a = 5;" +
-                "b = 8;" +
-                "c = a + b;" +
+                "a = 8;" +
+                "b = 8 - 5;" +
+                "c = a + (b -10);" +
                 "}"
         );
 

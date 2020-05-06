@@ -6,13 +6,24 @@ import spock.lang.Specification;
 class InterpreterTests extends Specification{
     def "expression test"(){
         given:
-        FileWriter writer = new FileWriter("test.txt");
-        writer.write(" 8 + 4 * (8---9)");
+        FileWriter writer = new FileWriter("test.txt")
+        writer.write("" +
+                "{" +
+                "int v;" +
+                "int a = 8;" +
+                "int b = 8-5;" +
+                "int c = a + (b-9);" +
+                "}"
+        )
+
         writer.close();
 
-        MyLexer lexer = new MyLexer("test.txt");
+        MyLexer lexer = new MyLexer("test.txt")
         MyParser parser = new MyParser(lexer)
-        MyInterpreter intepreter = new MyInterpreter(parser.expression());
+        MyInterpreter interpreter = new MyInterpreter(parser.program())
+        interpreter.results()
+
+
 
 
     }

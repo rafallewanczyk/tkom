@@ -53,8 +53,8 @@ public class MyParser {
             AST node = new UnOperator(token, factor());
             return node;
         }
-        if (current.getType() == MyTokenType.NUMBER) {
-            eat(MyTokenType.NUMBER);
+        if (current.getType() == MyTokenType.INT_NUMBER) {
+            eat(MyTokenType.INT_NUMBER);
             return new Num(token);
         } else if (token.getType() == MyTokenType.LEFT_PARENTESIS) {
             eat(MyTokenType.LEFT_PARENTESIS);
@@ -98,7 +98,7 @@ public class MyParser {
         eat(MyTokenType.LEFT_BRACE);
         ArrayList<AST> nodes = statement_list();
         eat(MyTokenType.RIGHT_BRACE);
-        AST root = new Compound();
+        AST root = new Compound(nodes);
         return root;
     }
 
@@ -124,7 +124,27 @@ public class MyParser {
            node = assignmentStatement();
            return node;
         }
+
+        if(current.getType() == MyTokenType.INT || current.getType() == MyTokenType.REAL){
+            node = initStatement();
+            return node;
+        }
         return null;
+    }
+
+    private AST initStatement(){
+        MyToken type = current;
+        eat(type.getType());
+        MyToken var = current;
+        eat(MyTokenType.ID);
+
+
+        if(current.getType() == MyTokenType.ASSIGNMENT_OP){
+            eat(MyTokenType.ASSIGNMENT_OP);
+            return new VarDeclaration(new Variable(var), new Type(type), expression());
+        }
+
+        return new VarDeclaration(new Variable(var), new Type(type), null);
     }
 
     private AST assignmentStatement(){

@@ -123,24 +123,25 @@ public class MyLexer {
         StringBuilder afterDot = new StringBuilder();
 
         if (character == '0') {
-            type = MyTokenType.NUMBER;
             number.append(character);
             character = scanner.getNextSymbol();
             if (character == '.') {
+                type = MyTokenType.REAL_NUMBER;
                 afterDot.append(readWord(MyTokenPrefix::isNumber));
                 if (afterDot.toString().equals(".")) {
                     type = MyTokenType.UNKNOWN;
                 }
             } else {
                 character_buffer = character;
-                return new MyToken(type, number.toString(), x++, y);
+                return new MyToken(MyTokenType.INT_NUMBER, number.toString(), x++, y);
             }
             number.append(afterDot);
             return new MyToken(type, number.toString(), x++, y);
         } else if (MyTokenPrefix.isNumber(character)) {
-            type = MyTokenType.NUMBER;
+            type = MyTokenType.INT_NUMBER;
             number.append(readWord(MyTokenPrefix::isNumber));
             if (character == '.') {
+                type = MyTokenType.REAL_NUMBER;
                 afterDot.append(readWord(MyTokenPrefix::isNumber));
                 if (afterDot.toString().equals(".")) {
                     type = MyTokenType.UNKNOWN;
@@ -189,8 +190,12 @@ public class MyLexer {
                 return MyTokenType.LOOP;
             case "function":
                 return MyTokenType.FUNCTION;
-            case "var":
-                return MyTokenType.VAR;
+            case "int":
+                return MyTokenType.INT;
+            case "real":
+                return MyTokenType.REAL;
+            case "rom":
+                return MyTokenType.ROMMAN;
             case "else":
                 return MyTokenType.ELSE;
             case "return":

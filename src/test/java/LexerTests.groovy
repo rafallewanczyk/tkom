@@ -138,5 +138,22 @@ class LexerTests extends Specification {
         lexer.nextToken() == new MyToken(MyTokenType.EOF, "EOF", 0, 0);
     }
 
+    def "string parse test"(){
+        given:
+        FileWriter writer = new FileWriter("test.txt");
+        writer.write("var test = \"zmienna\"");
+        writer.close();
+
+        MyLexer lexer = new MyLexer("test.txt");
+        expect:
+        System.out.println(lexer.nextToken())
+        System.out.println(lexer.nextToken())
+        System.out.println(lexer.nextToken())
+        System.out.println(lexer.nextToken())
+        System.out.println(lexer.nextToken())
+        System.out.println(lexer.nextToken())
+
+    }
+
 
 }

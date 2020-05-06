@@ -1,11 +1,17 @@
 package Parser;
 
 import Lexer.Token.MyToken;
+import Lexer.Token.MyTokenType;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class AST_node{
+
+
+
+
+
     public static class BinOperator implements AST{
         public AST right, left; // todo set private
         public MyToken operation; //todo set private
@@ -56,7 +62,15 @@ public class AST_node{
     }
 
     public static class Compound implements AST{
-        List<AST> children = new ArrayList<AST>();
+        ArrayList<AST> children ;
+
+        public Compound(ArrayList<AST> children){
+            this.children = children;
+        }
+
+        public ArrayList<AST> getChildren(){
+            return children;
+        }
 
     }
 
@@ -68,6 +82,13 @@ public class AST_node{
             this.token = token;
             this.value = value;
         }
+
+        public AST getValue(){
+            return value;
+        }
+        public MyToken getToken(){
+            return token;
+        }
     }
 
     public static class Variable implements AST{
@@ -76,6 +97,40 @@ public class AST_node{
         public Variable(MyToken token){
             this.token = token;
             value = token.getValue();
+        }
+
+        public MyToken getToken(){
+            return token;
+        }
+
+        public String getValue(){
+            return value;
+        }
+    }
+
+    public static class VarDeclaration implements AST{
+        AST variable;
+        AST type;
+        AST expression;
+        public VarDeclaration(AST variable, AST type, AST expression){
+            this.variable = variable;
+            this.type = type;
+            this.expression = expression;
+        }
+
+        public AST getVariable() {
+            return variable;
+        }
+
+        public AST getExpression() {
+            return expression;
+        }
+    }
+
+    public static class Type implements AST{
+        MyToken token;
+        public Type(MyToken token){
+            this.token = token;
         }
     }
 }
