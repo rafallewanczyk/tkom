@@ -22,8 +22,8 @@ public class MyToken {
        return (type == MyTokenType.EMPTY);
     }
 
-    public void setEmpty(){
-        type = MyTokenType.EMPTY;
+    public void setType(MyTokenType type){
+        this.type = type;
     }
 
     public void setCordinates(int x, int y) {

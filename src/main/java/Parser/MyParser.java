@@ -91,7 +91,7 @@ public class MyParser {
 
         if (current.getType() == MyTokenType.INT_NUMBER) {
             eat(MyTokenType.INT_NUMBER);
-            return new Bool(token);
+            return new Num(token);
         } else if (token.getType() == MyTokenType.LEFT_PARENTESIS) {
             eat(MyTokenType.LEFT_PARENTESIS);
             AST node = condition();
@@ -144,12 +144,60 @@ public class MyParser {
         return node;
     }
 
+    private AST function(){
+        eat(MyTokenType.FUNCTION);
+        MyToken name = current;
+        eat(MyTokenType.ID);
+        AST parameters= function_parameters();
+
+
+        return new FunDeclaration(name, parameters, compound_statement());
+    }
+
+    private AST function_parameters(){
+        eat(MyTokenType.LEFT_PARENTESIS);
+        if(current.getType() == MyTokenType.RIGHT_PARENTESIS){
+            eat(MyTokenType.RIGHT_PARENTESIS);
+            return null;
+        }
+
+        MyToken type = current;
+        if(type.getType() == MyTokenType.ROMMAN || type.getType() == MyTokenType.INT){
+            eat(type.getType());
+        }else {
+            //todo throw error
+        }
+        MyToken id = current;
+        eat(MyTokenType.ID);
+        ArrayList<AST> parameters = new ArrayList<AST>();
+        parameters.add(new Parameter(id, new Type(type)));
+
+        while(current.getType() == MyTokenType.COMMA){
+            eat(MyTokenType.COMMA);
+            type = current;
+            if(type.getType() == MyTokenType.ROMMAN || type.getType() == MyTokenType.INT){
+                eat(type.getType());
+            }else {
+                //todo throw error
+            }
+            id = current;
+            eat(MyTokenType.ID);
+            parameters.add(new Parameter(id, new Type(type)));
+        }
+        eat(MyTokenType.RIGHT_PARENTESIS);
+        return new FunParameters(parameters);
+
+    }
+
     private AST program() {
-        AST node = compound_statement();
+        AST node = new Program();
+        while(current.getType() != MyTokenType.EOF){
+            ((Program)node).addFunction(function());
+        }
         return node;
     }
 
-    private AST compound_statement() {
+    public AST compound_statement() { // todo set private
         eat(MyTokenType.LEFT_BRACE);
         ArrayList<AST> nodes = statement_list();
         eat(MyTokenType.RIGHT_BRACE);
@@ -167,8 +215,10 @@ public class MyParser {
             eat(MyTokenType.SEMICOLLON);
             result.add(statement());
         }
+
         if (current.getType() == MyTokenType.ID) {
             error();
+            return null;
         }
         return result;
     }
@@ -184,7 +234,37 @@ public class MyParser {
             node = initStatement();
             return node;
         }
+        if(current.getType() == MyTokenType.IF){
+            node = ifStatement();
+            return node;
+        }
+        if(current.getType() == MyTokenType.LOOP){
+            node = whileStatement();
+            return node;
+        }
         return null;
+    }
+
+    private AST whileStatement(){
+        eat(MyTokenType.LOOP);
+        eat(MyTokenType.LEFT_PARENTESIS);
+        AST condition = condition();
+        eat(MyTokenType.RIGHT_PARENTESIS);
+        AST trueBlock = compound_statement();
+        return new WhileStatement(condition, trueBlock);
+    }
+    private AST ifStatement(){
+        eat(MyTokenType.IF);
+        eat(MyTokenType.LEFT_PARENTESIS);
+        AST condition = condition();
+        eat(MyTokenType.RIGHT_PARENTESIS);
+        AST trueBlock = compound_statement();
+        AST falseBlock = null ;
+        if(current.getType() == MyTokenType.ELSE){
+            eat(MyTokenType.ELSE);
+            falseBlock = compound_statement();
+        }
+        return new IfStatement(condition, trueBlock, falseBlock);
     }
 
     private AST initStatement() {
@@ -244,9 +324,6 @@ public class MyParser {
     }
 
 
-    //todo part of interpreter to delete
-
-//todo end of interpreter part
 }
 
 

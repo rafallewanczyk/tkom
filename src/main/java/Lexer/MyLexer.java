@@ -32,7 +32,7 @@ public class MyLexer {
     public MyToken nextToken() {
 
         //Found EOF, don't read any more tokens
-        if(block){
+        if (block) {
             return new MyToken(MyTokenType.EOF, "EOF", x, y);
         }
 
@@ -68,8 +68,6 @@ public class MyLexer {
             return new MyToken(MyTokenType.LEFT_BRACE, "{", x++, y);
         } else if (character == '}') {
             return new MyToken(MyTokenType.RIGHT_BRACE, "}", x++, y);
-        } else if (character == '!') {
-            return new MyToken(MyTokenType.UNARY_OP, "!", x++, y);
         } else if (character == '+' || character == '-') {
             return new MyToken(MyTokenType.ADDITIVE_OP, Character.toString(character), x++, y);
         } else if (character == '*' || character == '%') {
@@ -88,6 +86,14 @@ public class MyLexer {
                 return new MyToken(MyTokenType.EQUAL_OP, "==", x++, y);
             }
             return new MyToken(MyTokenType.ASSIGNMENT_OP, "=", x++, y);
+
+        } else if (character == '!') {
+            character_buffer = scanner.getNextSymbol();
+            if (character_buffer == '=') {
+                character_buffer = '\0';
+                return new MyToken(MyTokenType.EQUAL_OP, "!=", x++, y);
+            }
+            return new MyToken(MyTokenType.UNARY_OP, "=", x++, y);
 
         } else if (character == '/') {
             character_buffer = scanner.getNextSymbol();

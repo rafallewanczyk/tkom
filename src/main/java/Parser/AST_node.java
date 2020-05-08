@@ -74,16 +74,77 @@ public class AST_node{
 
     }
 
-    public static class Bool implements AST{
-        MyToken token;
-        public boolean value;
-        public Bool(MyToken token){
-            this.token = token;
-            value = Integer.parseInt(token.getValue()) > 0 ? true : false;
+    public static class FunDeclaration implements AST{
+        MyToken name;
+        AST parameters;
+        AST compound;
+
+        public FunDeclaration(MyToken name, AST parameters, AST compound) {
+            this.name = name;
+            this.parameters = parameters;
+            this.compound = compound;
         }
 
-        public boolean isValue() {
-            return value;
+        public MyToken getName() {
+            return name;
+        }
+
+        public AST getParameters() {
+            return parameters;
+        }
+
+        public AST getCompound() {
+            return compound;
+        }
+    }
+
+    public static class FunParameters implements AST{
+       ArrayList<AST> parameters;
+
+        public FunParameters(ArrayList<AST> parameters) {
+            this.parameters = parameters;
+        }
+    }
+
+    public static class IfStatement implements AST{
+        AST condition;
+        AST trueCompound;
+        AST falseCompound;
+
+        public AST getCondition() {
+            return condition;
+        }
+
+        public AST getTrueCompound() {
+            return trueCompound;
+        }
+
+        public AST getFalseCompound() {
+            return falseCompound;
+        }
+
+        public IfStatement(AST condition, AST trueCompound, AST falseCompound) {
+            this.condition = condition;
+            this.trueCompound = trueCompound;
+            this.falseCompound = falseCompound;
+        }
+    }
+
+    public static class WhileStatement implements AST {
+        AST condition;
+        AST trueCompound;
+
+        public AST getCondition() {
+            return condition;
+        }
+
+        public AST getTrueCompound() {
+            return trueCompound;
+        }
+
+        public WhileStatement(AST condition, AST trueCompound) {
+            this.condition = condition;
+            this.trueCompound = trueCompound;
         }
     }
 
@@ -153,10 +214,31 @@ public class AST_node{
         }
     }
 
+    public static class Parameter implements AST{
+        MyToken name;
+        AST type;
+
+        public Parameter(MyToken name, AST type) {
+            this.name = name;
+            this.type = type;
+        }
+    }
+
     public static class Type implements AST{
         MyToken token;
         public Type(MyToken token){
             this.token = token;
+        }
+    }
+
+    public static class Program implements AST{
+        private ArrayList<AST> functions = new ArrayList<AST>();
+
+        public ArrayList<AST> getFunctions() {
+            return functions;
+        }
+        public void addFunction(AST function){
+            functions.add(function);
         }
     }
 }
