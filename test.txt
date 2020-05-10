@@ -1,1 +1,1 @@
-function main(){int v = 0;while(v < 10){v = v + 1;};}function test(int a, int b, int c){int k = 0;while(k < 10){k = k + 1;};}
+{real v = 10;int x = 10;v = v / 4;}

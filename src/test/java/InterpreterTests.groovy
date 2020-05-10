@@ -105,6 +105,31 @@ class InterpreterTests extends Specification{
         interpreter.results() == expected
     }
 
+    def "different types test"(){
+        given:
+        FileWriter writer = new FileWriter("test.txt")
+        writer.write("" +
+                "{" +
+                "real v = 10;" +
+                "int x = 10;" +
+                "v = v / 4;" +
+                "}"
+        )
+
+        writer.close();
+
+        MyLexer lexer = new MyLexer("test.txt")
+        MyParser parser = new MyParser(lexer)
+        MyInterpreter interpreter = new MyInterpreter(parser.compound_statement())
+
+        HashMap<MyToken, Integer> expected = new HashMap<MyToken, Integer>();
+        expected.put(new MyToken(MyTokenType.ID, "v", 0, 0), 10);
+        expected.put(new MyToken(MyTokenType.ID, "x", 0, 0), 11);
+
+        expect:
+        interpreter.results() == expected
+    }
+
     def "program with if false without else statement"(){
         given:
         FileWriter writer = new FileWriter("test.txt")
