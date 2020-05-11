@@ -197,6 +197,11 @@ public class AST_node{
 
     public static class VarDeclaration implements AST{
         AST variable;
+
+        public AST getType() {
+            return type;
+        }
+
         AST type;
         AST expression;
         public VarDeclaration(AST variable, AST type, AST expression){
@@ -225,6 +230,10 @@ public class AST_node{
     }
 
     public static class Type implements AST{
+        public MyToken getToken() {
+            return token;
+        }
+
         MyToken token;
         public Type(MyToken token){
             this.token = token;

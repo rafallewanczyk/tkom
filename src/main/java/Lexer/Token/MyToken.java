@@ -14,6 +14,13 @@ public class MyToken {
         this.y = y;
     }
 
+    public MyToken(MyTokenType type, String value) {
+        this.type = type;
+        this.value = value;
+        this.x = 0;
+        this.y =0;
+    }
+
     public MyTokenType getType() {
         return type;
     }

@@ -2,19 +2,19 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="901d7ea8-dce2-45c8-8810-4a1262e58aba" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/Parser/MySymbolTable/BuiltInTypeSymbol.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Parser/MySymbolTable/Symbol.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Parser/MySymbolTable/SymbolTable.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Parser/MySymbolTable/VarSymbol.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Parser/MySymbolTable/MySymbolTableBuilder.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/META-INF/TKOM1.main.kotlin_module" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/META-INF/TKOM1.main.kotlin_module" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/Lexer/Token/MyToken.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/Lexer/Token/MyToken.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/classes/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/test/classes/InterpreterTests.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/test/classes/InterpreterTests.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Lexer/Token/MyToken.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Lexer/Token/MyToken.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/InterpreterTests.groovy" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/InterpreterTests.groovy" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Parser/AST_node.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Parser/AST_node.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Parser/MySymbolTable/Symbol.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Parser/MySymbolTable/Symbol.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Parser/MySymbolTable/SymbolTable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Parser/MySymbolTable/MySymbolTable.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Parser/MySymbolTable/VarSymbol.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Parser/MySymbolTable/VarSymbol.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/ParserTests.groovy" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/ParserTests.groovy" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/test.txt" beforeDir="false" afterPath="$PROJECT_DIR$/test.txt" afterDir="false" />
     </list>
-    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -59,19 +59,7 @@
     <property name="restartRequiresConfirmation" value="false" />
     <property name="settings.editor.selected.configurable" value="reference.settingsdialog.project.gradle" />
   </component>
-  <component name="RunDashboard">
-    <option name="ruleStates">
-      <list>
-        <RuleState>
-          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
-        </RuleState>
-        <RuleState>
-          <option name="name" value="StatusDashboardGroupingRule" />
-        </RuleState>
-      </list>
-    </option>
-  </component>
-  <component name="RunManager" selected="Application.Main">
+  <component name="RunManager" selected="JUnit.ParserTests.running main function">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Main" />
       <module name="TKOM1.main" />
@@ -98,21 +86,21 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="InterpreterTests.multiple functions declarations " type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="ParserTests.running main function" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="TKOM1.test" />
       <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="InterpreterTests" />
-      <option name="METHOD_NAME" value="multiple functions declarations " />
+      <option name="MAIN_CLASS_NAME" value="ParserTests" />
+      <option name="METHOD_NAME" value="running main function" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="InterpreterTests.running main function" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="ParserTests.unknown variable" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="TKOM1.test" />
       <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="InterpreterTests" />
-      <option name="METHOD_NAME" value="running main function" />
+      <option name="MAIN_CLASS_NAME" value="ParserTests" />
+      <option name="METHOD_NAME" value="unknown variable" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -120,13 +108,25 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.ParserTests.running main function" />
+        <item itemvalue="JUnit.ParserTests.unknown variable" />
         <item itemvalue="Application.Main" />
         <item itemvalue="JUnit.InterpreterTests.different types test" />
         <item itemvalue="JUnit.InterpreterTests" />
-        <item itemvalue="JUnit.InterpreterTests.multiple functions declarations " />
-        <item itemvalue="JUnit.InterpreterTests.running main function" />
       </list>
     </recent_temporary>
+  </component>
+  <component name="ServiceViewManager">
+    <option name="viewStates">
+      <list>
+        <serviceView>
+          <treeState>
+            <expand />
+            <select />
+          </treeState>
+        </serviceView>
+      </list>
+    </option>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -164,7 +164,9 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>
@@ -182,10 +184,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="818" y="138" width="774" height="840" key="#com.intellij.execution.junit2.states.ComparisonFailureState$DiffDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1588339697733" />
-    <state x="318" y="243" key="#com.intellij.ide.util.MemberChooser" timestamp="1588951874385">
+    <state x="318" y="243" key="#com.intellij.ide.util.MemberChooser" timestamp="1589232413867">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="318" y="243" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1588951874385" />
+    <state x="318" y="243" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1589232413867" />
     <state x="690" y="271" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1587815892062">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -194,38 +196,38 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="740" y="279" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1587808363546" />
-    <state width="1877" height="288" key="GridCell.Tab.0.bottom" timestamp="1588952759023">
+    <state width="1877" height="315" key="GridCell.Tab.0.bottom" timestamp="1589233368702">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="288" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1588952759023" />
-    <state width="1877" height="288" key="GridCell.Tab.0.center" timestamp="1588952759023">
+    <state width="1877" height="315" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1589233368702" />
+    <state width="1877" height="315" key="GridCell.Tab.0.center" timestamp="1589233368702">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="288" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1588952759023" />
-    <state width="1877" height="288" key="GridCell.Tab.0.left" timestamp="1588952759023">
+    <state width="1877" height="315" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1589233368702" />
+    <state width="1877" height="315" key="GridCell.Tab.0.left" timestamp="1589233368702">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="288" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1588952759023" />
-    <state width="1877" height="288" key="GridCell.Tab.0.right" timestamp="1588952759023">
+    <state width="1877" height="315" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1589233368702" />
+    <state width="1877" height="315" key="GridCell.Tab.0.right" timestamp="1589233368702">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="288" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1588952759023" />
-    <state width="1877" height="315" key="GridCell.Tab.1.bottom" timestamp="1588952388548">
+    <state width="1877" height="315" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1589233368702" />
+    <state width="1877" height="315" key="GridCell.Tab.1.bottom" timestamp="1589233368703">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="315" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1588952388548" />
-    <state width="1877" height="315" key="GridCell.Tab.1.center" timestamp="1588952388547">
+    <state width="1877" height="315" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1589233368703" />
+    <state width="1877" height="315" key="GridCell.Tab.1.center" timestamp="1589233368702">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="315" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1588952388547" />
-    <state width="1877" height="315" key="GridCell.Tab.1.left" timestamp="1588952388547">
+    <state width="1877" height="315" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1589233368702" />
+    <state width="1877" height="315" key="GridCell.Tab.1.left" timestamp="1589233368702">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="315" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1588952388547" />
-    <state width="1877" height="315" key="GridCell.Tab.1.right" timestamp="1588952388547">
+    <state width="1877" height="315" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1589233368702" />
+    <state width="1877" height="315" key="GridCell.Tab.1.right" timestamp="1589233368702">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="315" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1588952388547" />
+    <state width="1877" height="315" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1589233368702" />
     <state x="41" y="146" key="SettingsEditor" timestamp="1587733168281">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

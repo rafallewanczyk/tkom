@@ -5,13 +5,13 @@ import Lexer.Token.MyTokenType;
 
 public class Symbol {
     public MyToken name;
-    public MyTokenType type;
+    public MyToken type;
 
     public Symbol(MyToken name) {
         this.name = name;
     }
 
-    public Symbol(MyToken name, MyTokenType type) {
+    public Symbol(MyToken name, MyToken type) {
         this.name = name;
         this.type = type;
     }

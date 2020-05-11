@@ -1,1 +1,1 @@
-{real v = 10;int x = 10;v = v / 4;}
+function main(){int v = 0;while(vi < 10){v = t + 1;};}
