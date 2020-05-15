@@ -9,6 +9,6 @@ public class BuiltInTypeSymbol extends Symbol {
 
     @Override
     public String toString(){
-        return name.toString();
+        return "<" + this.getClass().getSimpleName() + " " + name.toString() + ">";
     }
 }

@@ -10,6 +10,6 @@ public class VarSymbol extends Symbol {
 
     @Override
     public String toString() {
-       return "<" + name.toString() + " : "  + type.toString() + ">";
+       return "<" + this.getClass().getSimpleName() + " " +  name.toString() + " : "  + type.toString() + ">";
     }
 }

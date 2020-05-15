@@ -7,6 +7,8 @@ import java.util.HashMap;
 
 public class MySymbolTable {
     HashMap<MyToken, Symbol> symbols = new HashMap<>();
+    MyToken scopeName;
+    int scopeLevel;
 
     public MySymbolTable(){
         defineSymbol(new BuiltInTypeSymbol(new MyToken(MyTokenType.INT, "int", 0, 0)));

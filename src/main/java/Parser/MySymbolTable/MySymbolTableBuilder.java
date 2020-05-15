@@ -14,7 +14,7 @@ public class MySymbolTableBuilder {
         visit(root);
     }
 
-    void visit(AST node) {
+    void visit(AST node) throws SemanticException {
         if (node instanceof BinOperator) {
             BinOperator casted = (BinOperator) node;
             visit(casted.left);
@@ -35,8 +35,7 @@ public class MySymbolTableBuilder {
             MyToken varName = casted.getToken();
             Symbol test = symbolTable.lookupSymbol(varName);
             if (test == null) {
-                System.out.println("unknown variable name " + varName);
-                return;
+                throw new SemanticException("unknown variable name" + varName);
             }
             visit(casted.getValue());
 
@@ -45,8 +44,7 @@ public class MySymbolTableBuilder {
             MyToken varName = casted.getToken();
             Symbol test = symbolTable.lookupSymbol(varName);
             if (test == null) {
-                System.out.println("unknown variable name " + varName);
-                return;
+                throw new SemanticException("unknown variable name" + varName);
             }
 
         } else if (node instanceof VarDeclaration) {
@@ -55,6 +53,9 @@ public class MySymbolTableBuilder {
             Symbol typeSybmol = symbolTable.lookupSymbol(type);
             //todo handle unknown type exception
             MyToken varName = ((Variable) casted.getVariable()).getToken();
+            if (symbolTable.lookupSymbol(varName) != null) {
+                throw new SemanticException("redeclaration of variable");
+            }
             symbolTable.defineSymbol(new VarSymbol(varName, type));
         } else if (node instanceof BinLogicOperator) {
             BinLogicOperator casted = (BinLogicOperator) node;
@@ -63,7 +64,7 @@ public class MySymbolTableBuilder {
 
         } else if (node instanceof WhileStatement) {
             WhileStatement casted = (WhileStatement) node;
-            visit(casted.getCondition()); 
+            visit(casted.getCondition());
             visit(casted.getTrueCompound());
         } else if (node instanceof IfStatement) {
             IfStatement casted = (IfStatement) node;

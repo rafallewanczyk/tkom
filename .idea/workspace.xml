@@ -2,15 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="901d7ea8-dce2-45c8-8810-4a1262e58aba" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/Parser/MySymbolTable/MySymbolTableBuilder.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Parser/MySymbolTable/SemanticException.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/Lexer/Token/MyToken.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/Lexer/Token/MyToken.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Lexer/Token/MyToken.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Lexer/Token/MyToken.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Parser/AST_node.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Parser/AST_node.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Parser/MySymbolTable/Symbol.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Parser/MySymbolTable/Symbol.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Parser/MySymbolTable/SymbolTable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Parser/MySymbolTable/MySymbolTable.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/Parser/MySymbolTable/BuiltInTypeSymbol.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/Parser/MySymbolTable/BuiltInTypeSymbol.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/Parser/MySymbolTable/MySymbolTableBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/Parser/MySymbolTable/MySymbolTableBuilder.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/Parser/MySymbolTable/VarSymbol.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/Parser/MySymbolTable/VarSymbol.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Parser/MySymbolTable/BuiltInTypeSymbol.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Parser/MySymbolTable/BuiltInTypeSymbol.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Parser/MySymbolTable/MySymbolTableBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Parser/MySymbolTable/MySymbolTableBuilder.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Parser/MySymbolTable/VarSymbol.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Parser/MySymbolTable/VarSymbol.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/ParserTests.groovy" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/ParserTests.groovy" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/test.txt" beforeDir="false" afterPath="$PROJECT_DIR$/test.txt" afterDir="false" />
@@ -52,14 +50,14 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$USER_HOME$/source/repos/TIN/server" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="restartRequiresConfirmation" value="false" />
     <property name="settings.editor.selected.configurable" value="reference.settingsdialog.project.gradle" />
   </component>
-  <component name="RunManager" selected="JUnit.ParserTests.running main function">
+  <component name="RunManager" selected="JUnit.ParserTests.redeclared variable">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Main" />
       <module name="TKOM1.main" />
@@ -67,30 +65,31 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="InterpreterTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="ParserTests.first program" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="TKOM1.test" />
       <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="InterpreterTests" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="InterpreterTests.different types test" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="TKOM1.test" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="InterpreterTests" />
-      <option name="METHOD_NAME" value="different types test" />
+      <option name="MAIN_CLASS_NAME" value="ParserTests" />
+      <option name="METHOD_NAME" value="first program" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ParserTests.running main function" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="ParserTests.parse expression" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="TKOM1.test" />
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="ParserTests" />
-      <option name="METHOD_NAME" value="running main function" />
+      <option name="METHOD_NAME" value="parse expression" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ParserTests.redeclared variable" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="TKOM1.test" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="ParserTests" />
+      <option name="METHOD_NAME" value="redeclared variable" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -108,11 +107,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.ParserTests.running main function" />
+        <item itemvalue="JUnit.ParserTests.redeclared variable" />
+        <item itemvalue="JUnit.ParserTests.first program" />
+        <item itemvalue="JUnit.ParserTests.parse expression" />
         <item itemvalue="JUnit.ParserTests.unknown variable" />
         <item itemvalue="Application.Main" />
-        <item itemvalue="JUnit.InterpreterTests.different types test" />
-        <item itemvalue="JUnit.InterpreterTests" />
       </list>
     </recent_temporary>
   </component>
@@ -153,6 +152,8 @@
       <workItem from="1588859386528" duration="6916000" />
       <workItem from="1588877281503" duration="1688000" />
       <workItem from="1588948470316" duration="4870000" />
+      <workItem from="1589275228193" duration="4700000" />
+      <workItem from="1589539744708" duration="2801000" />
     </task>
     <servers />
   </component>
@@ -192,26 +193,26 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="690" y="271" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1587815892062" />
-    <state x="740" y="279" key="FileChooserDialogImpl" timestamp="1587808363546">
+    <state x="555" y="210" key="FileChooserDialogImpl" timestamp="1589539968126">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="740" y="279" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1587808363546" />
-    <state width="1877" height="315" key="GridCell.Tab.0.bottom" timestamp="1589233368702">
+    <state x="555" y="210" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1589539968126" />
+    <state width="1877" height="284" key="GridCell.Tab.0.bottom" timestamp="1589541936776">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="315" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1589233368702" />
-    <state width="1877" height="315" key="GridCell.Tab.0.center" timestamp="1589233368702">
+    <state width="1877" height="284" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1589541936776" />
+    <state width="1877" height="284" key="GridCell.Tab.0.center" timestamp="1589541936776">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="315" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1589233368702" />
-    <state width="1877" height="315" key="GridCell.Tab.0.left" timestamp="1589233368702">
+    <state width="1877" height="284" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1589541936776" />
+    <state width="1877" height="284" key="GridCell.Tab.0.left" timestamp="1589541936775">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="315" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1589233368702" />
-    <state width="1877" height="315" key="GridCell.Tab.0.right" timestamp="1589233368702">
+    <state width="1877" height="284" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1589541936775" />
+    <state width="1877" height="284" key="GridCell.Tab.0.right" timestamp="1589541936776">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="315" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1589233368702" />
+    <state width="1877" height="284" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1589541936776" />
     <state width="1877" height="315" key="GridCell.Tab.1.bottom" timestamp="1589233368703">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -236,10 +237,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="552" y="257" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1588416105428" />
-    <state x="0" y="0" key="com.intellij.ide.util.TipDialog" timestamp="1588948476898">
+    <state x="0" y="0" key="com.intellij.ide.util.TipDialog" timestamp="1589539744946">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="0" y="0" key="com.intellij.ide.util.TipDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1588948476898" />
+    <state x="0" y="0" key="com.intellij.ide.util.TipDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1589539744946" />
     <state x="524" y="260" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2" timestamp="1588864854930">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -248,6 +249,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="741" y="237" key="git4idea.branch.GitSmartOperationDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1588416121313" />
+    <state x="0" y="139" key="new project wizard" timestamp="1589539982343">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="0" y="139" key="new project wizard/0.0.1920.1040@0.0.1920.1040" timestamp="1589539982343" />
     <state x="601" y="246" width="700" height="530" key="recent.locations.popup" timestamp="1588614088930">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
