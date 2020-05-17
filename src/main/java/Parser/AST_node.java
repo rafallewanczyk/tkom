@@ -2,6 +2,7 @@ package Parser;
 
 import Lexer.Token.MyToken;
 import Lexer.Token.MyTokenType;
+import Parser.MySymbolTable.Symbol;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -78,15 +79,21 @@ public class AST_node{
         MyToken name;
         AST parameters;
         AST compound;
+        AST type;
 
-        public FunDeclaration(MyToken name, AST parameters, AST compound) {
+        public FunDeclaration(MyToken name, AST type, AST parameters, AST compound) {
             this.name = name;
             this.parameters = parameters;
             this.compound = compound;
+            this.type = type;
         }
 
         public MyToken getName() {
             return name;
+        }
+
+        public AST getType() {
+            return type;
         }
 
         public AST getParameters() {
@@ -98,8 +105,39 @@ public class AST_node{
         }
     }
 
+    public static class FunCall implements AST{
+        MyToken name;
+        ArrayList<AST> arguments;
+        Symbol funSymbol;
+
+        public void setFunSymbol(Symbol funSymbol) {
+            this.funSymbol = funSymbol;
+        }
+
+        public Symbol getFunSymbol() {
+            return funSymbol;
+        }
+
+        public FunCall(MyToken name, ArrayList<AST> arguments) {
+            this.name = name;
+            this.arguments = arguments;
+        }
+
+        public MyToken getName() {
+            return name;
+        }
+
+        public ArrayList<AST> getArguments() {
+            return arguments;
+        }
+    }
+
     public static class FunParameters implements AST{
-       ArrayList<AST> parameters;
+        public ArrayList<AST> getParameters() {
+            return parameters;
+        }
+
+        ArrayList<AST> parameters;
 
         public FunParameters(ArrayList<AST> parameters) {
             this.parameters = parameters;
@@ -220,11 +258,19 @@ public class AST_node{
     }
 
     public static class Parameter implements AST{
-        MyToken name;
+        AST variable;
         AST type;
 
-        public Parameter(MyToken name, AST type) {
-            this.name = name;
+        public AST getVariable() {
+            return variable;
+        }
+
+        public AST getType() {
+            return type;
+        }
+
+        public Parameter(AST variable, AST type) {
+            this.variable = variable;
             this.type = type;
         }
     }

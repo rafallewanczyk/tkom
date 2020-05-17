@@ -3,6 +3,8 @@ import Lexer.MyLexer
 import Lexer.Token.MyToken
 import Lexer.Token.MyTokenType
 import Parser.MyParser
+import Parser.MySymbolTable.MySymbolTableBuilder
+import Parser.MySymbolTable.SemanticException
 import spock.lang.Specification;
 
 class InterpreterTests extends Specification{
@@ -270,7 +272,7 @@ class InterpreterTests extends Specification{
         given:
         FileWriter writer = new FileWriter("test.txt")
         writer.write("" +
-                "function main(){" +
+                "int main(){" +
                 "int v = 0;" +
                 "while(v < 10){" +
                 "v = v + 1;" +
@@ -295,13 +297,13 @@ class InterpreterTests extends Specification{
         given:
         FileWriter writer = new FileWriter("test.txt")
         writer.write("" +
-                "function main(){" +
+                "int main(){" +
                 "int v = 0;" +
                 "while(v < 10){" +
                 "v = v + 1;" +
                 "};" +
                 "}"+
-                "function test(int a, int b, int c){" +
+                "int test(int a, int b, int c){" +
                 "int k = 0;" +
                 "while(k < 10){" +
                 "k = k + 1;" +
@@ -321,5 +323,34 @@ class InterpreterTests extends Specification{
         expect:
         interpreter.results() == expected
     }
+
+    def "function call"(){
+        given:
+        FileWriter writer = new FileWriter("test.txt")
+        writer.write("" +
+                "int test(int a, int b, int c){" +
+                "int k = 10;" +
+                "a = a + 7;" +
+                "b = b + 9;" +
+                "c = c + a + b;"+
+                "}" +
+                "int main(){" +
+                "int v = 0;" +
+                "test(1, 2, 3);" +
+                "te(2);" +
+                "}"
+        )
+
+        writer.close();
+
+        MyLexer lexer = new MyLexer("test.txt")
+        MyParser parser = new MyParser(lexer)
+        MySymbolTableBuilder table = new MySymbolTableBuilder(parser.program());
+        MyInterpreter interpreter = new MyInterpreter(table.getRoot());
+
+
+    }
+
+
 }
 

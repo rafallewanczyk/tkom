@@ -29,6 +29,19 @@ public class MyLexer {
         scanner = new MyScanner(path);
     }
 
+    public char getCharacter() {
+        if(character_buffer != '\0'){
+            return character_buffer;
+        }
+
+        while(character == ' '){
+            character = scanner.getNextSymbol();
+        }
+        character_buffer = character;
+        return character;
+    }
+
+
     public MyToken nextToken() {
 
         //Found EOF, don't read any more tokens
@@ -55,6 +68,7 @@ public class MyLexer {
             return nextToken();
         } else if (character == '\n' || character == '\r') {
             y++;
+            x = 0;
             return nextToken();
         } else if (character == ',') {
             return new MyToken(MyTokenType.COMMA, ",", x++, y);
@@ -74,8 +88,6 @@ public class MyLexer {
             return new MyToken(MyTokenType.MULTIPLICATIVE_OP, Character.toString(character), x++, y);
         } else if (character == '\"') {
             return new MyToken(MyTokenType.QUOTE, "\"", x++, y);
-        } else if (character == '*') {
-            return new MyToken(MyTokenType.MULTIPLICATIVE_OP, "*", x++, y);
         }
 
         //Double or single character token

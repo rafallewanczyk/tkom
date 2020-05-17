@@ -29,13 +29,13 @@ class LexerTests extends Specification {
         MyLexer lexer = new MyLexer("test.txt");
 
         expect:
-        lexer.nextToken() == new MyToken(MyTokenType.NUMBER, "1234", 0, 0);
-        lexer.nextToken() == new MyToken(MyTokenType.NUMBER, "12.84", 1, 0);
-        lexer.nextToken() == new MyToken(MyTokenType.NUMBER, "0", 2, 0);
-        lexer.nextToken() == new MyToken(MyTokenType.NUMBER, "0", 3, 0);
-        lexer.nextToken() == new MyToken(MyTokenType.NUMBER, "123", 4, 0);
+        lexer.nextToken() == new MyToken(MyTokenType.INT_NUMBER, "1234", 0, 0);
+        lexer.nextToken() == new MyToken(MyTokenType.REAL_NUMBER, "12.84", 1, 0);
+        lexer.nextToken() == new MyToken(MyTokenType.INT_NUMBER, "0", 2, 0);
+        lexer.nextToken() == new MyToken(MyTokenType.INT_NUMBER, "0", 3, 0);
+        lexer.nextToken() == new MyToken(MyTokenType.INT_NUMBER, "123", 4, 0);
         lexer.nextToken() == new MyToken(MyTokenType.UNKNOWN, "123.", 5, 0);
-        lexer.nextToken() == new MyToken(MyTokenType.NUMBER, "1.3", 6, 0);
+        lexer.nextToken() == new MyToken(MyTokenType.REAL_NUMBER, "1.3", 6, 0);
         lexer.nextToken() == new MyToken(MyTokenType.ID, "a123", 7, 0);
     }
 
@@ -48,9 +48,9 @@ class LexerTests extends Specification {
         MyLexer lexer = new MyLexer("test.txt");
 
         expect:
-        lexer.nextToken() == new MyToken(MyTokenType.NUMBER, "123.456", 0, 0);
+        lexer.nextToken() == new MyToken(MyTokenType.REAL_NUMBER, "123.456", 0, 0);
         lexer.nextToken() == new MyToken(MyTokenType.UNKNOWN, ".", 1, 0);
-        lexer.nextToken() == new MyToken(MyTokenType.NUMBER, "123", 2, 0);
+        lexer.nextToken() == new MyToken(MyTokenType.INT_NUMBER, "123", 2, 0);
 
     }
 
@@ -84,7 +84,7 @@ class LexerTests extends Specification {
         lexer.nextToken() == new MyToken(MyTokenType.IF, "if", 0, 0);
         lexer.nextToken() == new MyToken(MyTokenType.ID, "zmienna", 1, 0);
         lexer.nextToken() == new MyToken(MyTokenType.RETURN, "return", 2, 0);
-        lexer.nextToken() == new MyToken(MyTokenType.NUMBER, "123", 3, 0);
+        lexer.nextToken() == new MyToken(MyTokenType.INT_NUMBER, "123", 3, 0);
 
 
     }
@@ -109,12 +109,12 @@ class LexerTests extends Specification {
     def "test for y"(){
         given:
         FileWriter writer = new FileWriter("test.txt");
-        writer.write("var zmienna = VI;\nzmienna = zmienna + MMCDX;");
+        writer.write("rom zmienna = VI;\nzmienna = zmienna + MMCDX;");
         writer.close();
 
         MyLexer lexer = new MyLexer("test.txt");
         expect:
-        lexer.nextToken() == new MyToken(MyTokenType.VAR, "var", 0, 0);
+        lexer.nextToken() == new MyToken(MyTokenType.ROMMAN, "rom", 0, 0);
         lexer.nextToken() == new MyToken(MyTokenType.ID, "zmienna", 1, 0);
         lexer.nextToken() == new MyToken(MyTokenType.ASSIGNMENT_OP, "=", 2, 0);
         lexer.nextToken() == new MyToken(MyTokenType.ROMMAN, "6", 3, 0);

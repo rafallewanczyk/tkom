@@ -29,6 +29,14 @@ public class MyToken {
        return (type == MyTokenType.EMPTY);
     }
 
+    public int getX() {
+        return x;
+    }
+
+    public int getY() {
+        return y;
+    }
+
     public void setType(MyTokenType type){
         this.type = type;
     }
