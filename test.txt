@@ -1,1 +1,1 @@
-int test(int a, int b, int c){int k = 10;a = a + 7;b = b + 9;c = c + a + b;}int main(){int v = 0;test(1, 2, 3);te(2);}
+int fun(int q, int w){int k = q + w;}int test(int a, int b, int c){int k = 10;a = a + 7;b = b + 9;c = c + a + b;fun(a, c);}int main(){int v = 0;test(1, 2, 3);}

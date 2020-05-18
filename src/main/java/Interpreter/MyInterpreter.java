@@ -159,9 +159,9 @@ public class MyInterpreter {
         } else if (node instanceof FunCall) {
             FunCall casted = (FunCall) node;
 
-            ActivationRecord ar = new ActivationRecord(casted.getName(), ActivationType.FUNCION, callStack.peek().getNestingLevel() + 1);
-
             Symbol function = casted.getFunSymbol();
+            ActivationRecord ar = new ActivationRecord(casted.getName(), ActivationType.FUNCION,function.scopeLevel + 1);
+
             ArrayList<Symbol> formal_params = ((FunctionSymbol) function).getParams();
             ArrayList<AST> arguments = casted.getArguments();
 

@@ -2,52 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="901d7ea8-dce2-45c8-8810-4a1262e58aba" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/Interpreter/CallStack/ActivationRecord.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Interpreter/CallStack/ActivationType.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Parser/MySymbolTable/FunctionSymbol.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Parser/ParserException.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/Interpreter/MyInterpreter.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/Interpreter/MyInterpreter.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/Lexer/MyLexer.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/Lexer/MyLexer.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/Lexer/Token/MyToken.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/Lexer/Token/MyToken.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/META-INF/TKOM1.main.kotlin_module" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/Parser/AST_node$AssignStatement.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/Parser/AST_node$AssignStatement.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/Parser/AST_node$BinLogicOperator.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/Parser/AST_node$BinLogicOperator.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/Parser/AST_node$BinOperator.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/Parser/AST_node$BinOperator.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/Parser/AST_node$Compound.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/Parser/AST_node$Compound.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/Parser/AST_node$FunDeclaration.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/Parser/AST_node$FunDeclaration.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/Parser/AST_node$FunParameters.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/Parser/AST_node$FunParameters.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/Parser/AST_node$IfStatement.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/Parser/AST_node$IfStatement.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/Parser/AST_node$Num.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/Parser/AST_node$Num.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/Parser/AST_node$Parameter.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/Parser/AST_node$Parameter.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/Parser/AST_node$Program.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/Parser/AST_node$Program.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/Parser/AST_node$Type.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/Parser/AST_node$Type.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/Parser/AST_node$UnOperator.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/Parser/AST_node$UnOperator.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/Parser/AST_node$VarDeclaration.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/Parser/AST_node$VarDeclaration.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/Parser/AST_node$Variable.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/Parser/AST_node$Variable.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/Parser/AST_node$WhileStatement.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/Parser/AST_node$WhileStatement.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/Parser/AST_node.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/Parser/AST_node.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/Parser/MyParser.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/Parser/MyParser.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/Parser/MySymbolTable/MySymbolTable.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/Parser/MySymbolTable/MySymbolTableBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/Parser/MySymbolTable/MySymbolTableBuilder.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/Parser/MySymbolTable/SymbolTable.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/test/classes/InterpreterTests.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/test/classes/InterpreterTests.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/test/classes/LexerTests.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/test/classes/LexerTests.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/test/classes/ParserTests.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/test/classes/ParserTests.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Interpreter/MyInterpreter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Interpreter/MyInterpreter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Lexer/MyLexer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Lexer/MyLexer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Lexer/Token/MyToken.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Lexer/Token/MyToken.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Parser/AST.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Parser/AST.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Parser/AST_node.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Parser/AST_node.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Parser/MyParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Parser/MyParser.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Parser/MySymbolTable/MySymbolTable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Parser/MySymbolTable/MyScopedSymbolTable.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Parser/MySymbolTable/MySymbolTableBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Parser/MySymbolTable/MySymbolTableBuilder.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/InterpreterTests.groovy" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/InterpreterTests.groovy" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/LexerTests.groovy" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/LexerTests.groovy" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/ParserTests.groovy" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/ParserTests.groovy" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test.txt" beforeDir="false" afterPath="$PROJECT_DIR$/test.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Parser/MySymbolTable/MyScopedSymbolTable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Parser/MySymbolTable/MyScopedSymbolTable.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Parser/MySymbolTable/Symbol.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Parser/MySymbolTable/Symbol.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -194,7 +152,7 @@
       <workItem from="1589539744708" duration="8851000" />
       <workItem from="1589635774341" duration="6405000" />
       <workItem from="1589643967640" duration="4475000" />
-      <workItem from="1589744340459" duration="7698000" />
+      <workItem from="1589744340459" duration="8546000" />
     </task>
     <servers />
   </component>
@@ -242,22 +200,22 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="555" y="210" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1589539968126" />
-    <state width="1877" height="417" key="GridCell.Tab.0.bottom" timestamp="1589753388127">
+    <state width="1877" height="417" key="GridCell.Tab.0.bottom" timestamp="1589792726672">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="417" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1589753388127" />
-    <state width="1877" height="417" key="GridCell.Tab.0.center" timestamp="1589753388126">
+    <state width="1877" height="417" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1589792726672" />
+    <state width="1877" height="417" key="GridCell.Tab.0.center" timestamp="1589792726672">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="417" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1589753388126" />
-    <state width="1877" height="417" key="GridCell.Tab.0.left" timestamp="1589753388126">
+    <state width="1877" height="417" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1589792726672" />
+    <state width="1877" height="417" key="GridCell.Tab.0.left" timestamp="1589792726672">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="417" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1589753388126" />
-    <state width="1877" height="417" key="GridCell.Tab.0.right" timestamp="1589753388127">
+    <state width="1877" height="417" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1589792726672" />
+    <state width="1877" height="417" key="GridCell.Tab.0.right" timestamp="1589792726672">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="417" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1589753388127" />
+    <state width="1877" height="417" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1589792726672" />
     <state width="1877" height="403" key="GridCell.Tab.1.bottom" timestamp="1589753067047">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

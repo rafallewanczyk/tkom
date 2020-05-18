@@ -7,8 +7,8 @@ import Parser.MySymbolTable.MySymbolTableBuilder
 import Parser.MySymbolTable.SemanticException
 import spock.lang.Specification;
 
-class InterpreterTests extends Specification{
-    def "expression test"(){
+class InterpreterTests extends Specification {
+    def "expression test"() {
         given:
         FileWriter writer = new FileWriter("test.txt")
         writer.write("" +
@@ -34,7 +34,8 @@ class InterpreterTests extends Specification{
 
 
     }
-    def "or condition test"(){
+
+    def "or condition test"() {
         given:
         FileWriter writer = new FileWriter("test.txt")
         writer.write("1 || 0"
@@ -49,7 +50,8 @@ class InterpreterTests extends Specification{
         expect:
         interpreter.getOut() == 1;
     }
-    def "and condition test"(){
+
+    def "and condition test"() {
         given:
         FileWriter writer = new FileWriter("test.txt")
         writer.write("1 && 0"
@@ -64,7 +66,8 @@ class InterpreterTests extends Specification{
         expect:
         interpreter.getOut() == 0;
     }
-    def "mixed condition test"(){
+
+    def "mixed condition test"() {
         given:
         FileWriter writer = new FileWriter("test.txt")
         writer.write("1 && 0 || 1 && 0 || 90 == 90"
@@ -79,7 +82,8 @@ class InterpreterTests extends Specification{
         expect:
         interpreter.getOut() == 1;
     }
-    def "program with if true without else statement"(){
+
+    def "program with if true without else statement"() {
         given:
         FileWriter writer = new FileWriter("test.txt")
         writer.write("" +
@@ -107,7 +111,7 @@ class InterpreterTests extends Specification{
         interpreter.results() == expected
     }
 
-    def "different types test"(){
+    def "different types test"() {
         given:
         FileWriter writer = new FileWriter("test.txt")
         writer.write("" +
@@ -132,7 +136,7 @@ class InterpreterTests extends Specification{
         interpreter.results() == expected
     }
 
-    def "program with if false without else statement"(){
+    def "program with if false without else statement"() {
         given:
         FileWriter writer = new FileWriter("test.txt")
         writer.write("" +
@@ -140,8 +144,8 @@ class InterpreterTests extends Specification{
                 "int v = 10;" +
                 "int x = 10;" +
                 "if(x != 10) {" +
-                        "v = 1 ;" +
-                    "};" +
+                "v = 1 ;" +
+                "};" +
                 "x = x  + 1;" +
                 "}"
         )
@@ -159,7 +163,8 @@ class InterpreterTests extends Specification{
         expect:
         interpreter.results() == expected
     }
-    def "program with if true with else statement"(){
+
+    def "program with if true with else statement"() {
         given:
         FileWriter writer = new FileWriter("test.txt")
         writer.write("" +
@@ -189,7 +194,7 @@ class InterpreterTests extends Specification{
         interpreter.results() == expected
     }
 
-    def "program with if false with else statement"(){
+    def "program with if false with else statement"() {
         given:
         FileWriter writer = new FileWriter("test.txt")
         writer.write("" +
@@ -219,7 +224,7 @@ class InterpreterTests extends Specification{
         interpreter.results() == expected
     }
 
-    def "while test"(){
+    def "while test"() {
         given:
         FileWriter writer = new FileWriter("test.txt")
         writer.write("" +
@@ -243,7 +248,8 @@ class InterpreterTests extends Specification{
         expect:
         interpreter.results() == expected
     }
-    def "while with 0 iterations test"(){
+
+    def "while with 0 iterations test"() {
         given:
         FileWriter writer = new FileWriter("test.txt")
         writer.write("" +
@@ -268,7 +274,7 @@ class InterpreterTests extends Specification{
         interpreter.results() == expected
     }
 
-    def "running main function"(){
+    def "running main function"() {
         given:
         FileWriter writer = new FileWriter("test.txt")
         writer.write("" +
@@ -293,7 +299,7 @@ class InterpreterTests extends Specification{
         interpreter.results() == expected
     }
 
-    def "multiple functions declarations "(){
+    def "multiple functions declarations "() {
         given:
         FileWriter writer = new FileWriter("test.txt")
         writer.write("" +
@@ -302,7 +308,7 @@ class InterpreterTests extends Specification{
                 "while(v < 10){" +
                 "v = v + 1;" +
                 "};" +
-                "}"+
+                "}" +
                 "int test(int a, int b, int c){" +
                 "int k = 0;" +
                 "while(k < 10){" +
@@ -324,20 +330,26 @@ class InterpreterTests extends Specification{
         interpreter.results() == expected
     }
 
-    def "function call"(){
+    def "function call"() {
         given:
         FileWriter writer = new FileWriter("test.txt")
         writer.write("" +
+                "int fun(int q, int w){" +
+                "int k = q + w;" +
+                "}" +
+                "" +
+
                 "int test(int a, int b, int c){" +
                 "int k = 10;" +
                 "a = a + 7;" +
                 "b = b + 9;" +
-                "c = c + a + b;"+
+                "c = c + a + b;" +
+                "fun(a, c);" +
                 "}" +
+
                 "int main(){" +
                 "int v = 0;" +
                 "test(1, 2, 3);" +
-                "te(2);" +
                 "}"
         )
 

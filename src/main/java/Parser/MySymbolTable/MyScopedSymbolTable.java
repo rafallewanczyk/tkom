@@ -38,6 +38,7 @@ public class MyScopedSymbolTable {
 
     public void defineSymbol(Symbol symbol) {
         symbols.put(symbol.name, symbol);
+        symbol.scopeLevel = scopeLevel;
 
     }
 
