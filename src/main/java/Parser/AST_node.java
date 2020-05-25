@@ -144,6 +144,18 @@ public class AST_node{
         }
     }
 
+    public static class ReturnStatement implements AST{
+        AST retValue;
+
+        public ReturnStatement(AST retValue) {
+            this.retValue = retValue;
+        }
+
+        public AST getRetValue() {
+            return retValue;
+        }
+    }
+
     public static class IfStatement implements AST{
         AST condition;
         AST trueCompound;

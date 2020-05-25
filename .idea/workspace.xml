@@ -3,9 +3,19 @@
   <component name="ChangeListManager">
     <list default="true" id="901d7ea8-dce2-45c8-8810-4a1262e58aba" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/Interpreter/CallStack/ActivationRecord.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/Interpreter/CallStack/ActivationRecord.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/Interpreter/CallStack/ActivationType.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/Interpreter/CallStack/ActivationType.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/Interpreter/MyInterpreter.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/Interpreter/MyInterpreter.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/test/classes/InterpreterTests.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/test/classes/InterpreterTests.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Interpreter/CallStack/ActivationRecord.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Interpreter/CallStack/ActivationRecord.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Interpreter/CallStack/ActivationType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Interpreter/CallStack/ActivationType.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Interpreter/MyInterpreter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Interpreter/MyInterpreter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Parser/MySymbolTable/MyScopedSymbolTable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Parser/MySymbolTable/MyScopedSymbolTable.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Parser/MySymbolTable/Symbol.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Parser/MySymbolTable/Symbol.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Parser/AST_node.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Parser/AST_node.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Parser/MyParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Parser/MyParser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Parser/MySymbolTable/MySymbolTableBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Parser/MySymbolTable/MySymbolTableBuilder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/InterpreterTests.groovy" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/InterpreterTests.groovy" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test.txt" beforeDir="false" afterPath="$PROJECT_DIR$/test.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -44,7 +54,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$USER_HOME$/source/repos/TIN/server" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -52,6 +62,13 @@
     <property name="settings.editor.selected.configurable" value="reference.settings.project.statistic.project.settings" />
   </component>
   <component name="RunManager" selected="JUnit.InterpreterTests.function call">
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Main" />
+      <module name="TKOM1.main" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="InterpreterTests.function call" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="TKOM1.test" />
       <option name="PACKAGE_NAME" value="" />
@@ -62,31 +79,21 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="InterpreterTests.if statement" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="TKOM1.test" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="InterpreterTests" />
+      <option name="METHOD_NAME" value="if statement" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="LexerTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="TKOM1.test" />
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="LexerTests" />
       <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="LexerTests.number with mulitple dots" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="TKOM1.test" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="LexerTests" />
-      <option name="METHOD_NAME" value="number with mulitple dots" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="LexerTests.test for y" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="TKOM1.test" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="LexerTests" />
-      <option name="METHOD_NAME" value="test for y" />
-      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -104,10 +111,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="JUnit.InterpreterTests.function call" />
+        <item itemvalue="JUnit.InterpreterTests.if statement" />
+        <item itemvalue="Application.Main" />
         <item itemvalue="JUnit.ParserTests.declaration in different functions" />
         <item itemvalue="JUnit.LexerTests" />
-        <item itemvalue="JUnit.LexerTests.test for y" />
-        <item itemvalue="JUnit.LexerTests.number with mulitple dots" />
       </list>
     </recent_temporary>
   </component>
@@ -152,7 +159,10 @@
       <workItem from="1589539744708" duration="8851000" />
       <workItem from="1589635774341" duration="6405000" />
       <workItem from="1589643967640" duration="4475000" />
-      <workItem from="1589744340459" duration="8546000" />
+      <workItem from="1589744340459" duration="9466000" />
+      <workItem from="1589796568624" duration="3389000" />
+      <workItem from="1590077779670" duration="2879000" />
+      <workItem from="1590416796447" duration="9420000" />
     </task>
     <servers />
   </component>
@@ -184,10 +194,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="818" y="138" width="774" height="840" key="#com.intellij.execution.junit2.states.ComparisonFailureState$DiffDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1588339697733" />
-    <state x="318" y="243" key="#com.intellij.ide.util.MemberChooser" timestamp="1589752079162">
+    <state x="318" y="243" key="#com.intellij.ide.util.MemberChooser" timestamp="1590421215745">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="318" y="243" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1589752079162" />
+    <state x="318" y="243" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1590421215745" />
     <state x="690" y="271" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1587815892062">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -196,42 +206,42 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="407" height="466" key="DebuggerActiveHint/0.0.1920.1040@0.0.1920.1040" timestamp="1589752867479" />
-    <state x="555" y="210" key="FileChooserDialogImpl" timestamp="1589539968126">
+    <state x="555" y="210" key="FileChooserDialogImpl" timestamp="1589793502126">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="555" y="210" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1589539968126" />
-    <state width="1877" height="417" key="GridCell.Tab.0.bottom" timestamp="1589792726672">
+    <state x="555" y="210" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1589793502126" />
+    <state width="1877" height="405" key="GridCell.Tab.0.bottom" timestamp="1590427536282">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="417" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1589792726672" />
-    <state width="1877" height="417" key="GridCell.Tab.0.center" timestamp="1589792726672">
+    <state width="1877" height="405" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1590427536282" />
+    <state width="1877" height="405" key="GridCell.Tab.0.center" timestamp="1590427536281">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="417" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1589792726672" />
-    <state width="1877" height="417" key="GridCell.Tab.0.left" timestamp="1589792726672">
+    <state width="1877" height="405" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1590427536281" />
+    <state width="1877" height="405" key="GridCell.Tab.0.left" timestamp="1590427536281">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="417" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1589792726672" />
-    <state width="1877" height="417" key="GridCell.Tab.0.right" timestamp="1589792726672">
+    <state width="1877" height="405" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1590427536281" />
+    <state width="1877" height="405" key="GridCell.Tab.0.right" timestamp="1590427536282">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="417" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1589792726672" />
-    <state width="1877" height="403" key="GridCell.Tab.1.bottom" timestamp="1589753067047">
+    <state width="1877" height="405" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1590427536282" />
+    <state width="1877" height="355" key="GridCell.Tab.1.bottom" timestamp="1590427021113">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="403" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1589753067047" />
-    <state width="1877" height="403" key="GridCell.Tab.1.center" timestamp="1589753067047">
+    <state width="1877" height="355" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1590427021113" />
+    <state width="1877" height="355" key="GridCell.Tab.1.center" timestamp="1590427021112">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="403" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1589753067047" />
-    <state width="1877" height="403" key="GridCell.Tab.1.left" timestamp="1589753067047">
+    <state width="1877" height="355" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1590427021112" />
+    <state width="1877" height="355" key="GridCell.Tab.1.left" timestamp="1590427021112">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="403" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1589753067047" />
-    <state width="1877" height="403" key="GridCell.Tab.1.right" timestamp="1589753067047">
+    <state width="1877" height="355" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1590427021112" />
+    <state width="1877" height="355" key="GridCell.Tab.1.right" timestamp="1590427021112">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="403" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1589753067047" />
+    <state width="1877" height="355" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1590427021112" />
     <state x="41" y="146" key="SettingsEditor" timestamp="1589644267973">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -240,10 +250,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="552" y="257" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1588416105428" />
-    <state x="0" y="0" key="com.intellij.ide.util.TipDialog" timestamp="1589744527175">
+    <state x="101" y="134" key="com.intellij.ide.util.TipDialog" timestamp="1590416801593">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="0" y="0" key="com.intellij.ide.util.TipDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1589744527175" />
+    <state x="101" y="134" key="com.intellij.ide.util.TipDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1590416801593" />
     <state x="524" y="260" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2" timestamp="1588864854930">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -270,23 +280,23 @@
       <breakpoints>
         <line-breakpoint type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/Parser/MyParser.java</url>
-          <line>237</line>
+          <line>258</line>
           <option name="timeStamp" value="22" />
         </line-breakpoint>
         <line-breakpoint type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/Parser/MyParser.java</url>
-          <line>338</line>
+          <line>359</line>
           <option name="timeStamp" value="24" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/Interpreter/MyInterpreter.java</url>
-          <line>37</line>
-          <option name="timeStamp" value="25" />
+          <line>192</line>
+          <option name="timeStamp" value="43" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/Parser/MySymbolTable/MySymbolTableBuilder.java</url>
-          <line>24</line>
-          <option name="timeStamp" value="27" />
+          <url>file://$PROJECT_DIR$/src/main/java/Interpreter/MyInterpreter.java</url>
+          <line>74</line>
+          <option name="timeStamp" value="45" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

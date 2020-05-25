@@ -115,13 +115,13 @@ public class MyParser {
 
         ArrayList<AST> arguments = new ArrayList<AST>();
         if (current.getType() != MyTokenType.RIGHT_PARENTESIS) {
-            AST node = expression();
+            AST node =assignable();
             arguments.add(node);
         }
 
         while (current.getType() == MyTokenType.COMMA) {
             eat(MyTokenType.COMMA);
-            AST node = expression();
+            AST node =assignable();
             arguments.add(node);
         }
 
@@ -148,13 +148,10 @@ public class MyParser {
 
         while (current.getType() == MyTokenType.SEMICOLLON) {
             eat(MyTokenType.SEMICOLLON);
-            result.add(statement());
+            if(current.getType() != MyTokenType.RIGHT_BRACE)
+                result.add(statement());
         }
 
-        if (current.getType() == MyTokenType.ID) {
-            error("expected ID got :" + current.getType() + " at " + current.getX()+":"+current.getY());
-            return null;
-        }
         return result;
     }
 
@@ -162,8 +159,8 @@ public class MyParser {
         AST node;
 
         if(current.getType() == MyTokenType.ID && lexer.getCharacter() == '('){
-           node = functionCall();
-           return node;
+            node = functionCall();
+            return node;
         }
         if (current.getType() == MyTokenType.ID) {
             node = assignmentStatement();
@@ -182,7 +179,30 @@ public class MyParser {
             node = whileStatement();
             return node;
         }
+        else if(current.getType() == MyTokenType.RETURN){
+            node = returnStatement();
+            return node;
+        }
         return null;
+    }
+
+    private AST returnStatement(){
+        eat(MyTokenType.RETURN);
+
+        return new ReturnStatement(assignable());
+    }
+
+    private AST assignable(){
+        AST node;
+
+        if(current.getType() == MyTokenType.ID && lexer.getCharacter() == '('){
+            node = functionCall();
+        }
+
+        else {
+            node = expression();
+        }
+        return node;
     }
 
     private AST whileStatement() {
@@ -214,10 +234,11 @@ public class MyParser {
         MyToken var = current;
         eat(MyTokenType.ID);
 
+        AST node = null;
 
         if (current.getType() == MyTokenType.ASSIGNMENT_OP) {
             eat(MyTokenType.ASSIGNMENT_OP);
-            return new VarDeclaration(new Variable(var), new Type(type), expression());
+            return new VarDeclaration(new Variable(var), new Type(type), assignable());
         }
 
         return new VarDeclaration(new Variable(var), new Type(type), null);
@@ -229,7 +250,7 @@ public class MyParser {
         left = current;
         eat(MyTokenType.ID);
         eat(MyTokenType.ASSIGNMENT_OP);
-        right = expression();
+        right = assignable();
         return new AssignStatement(left, right);
     }
 

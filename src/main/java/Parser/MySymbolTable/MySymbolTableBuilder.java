@@ -64,12 +64,14 @@ public class MySymbolTableBuilder {
                 throw new SemanticException("redeclaration of variable" +  varName + " at " + varName.getX() + ":"+varName.getY());
             }
             currentScope.defineSymbol(new VarSymbol(varName, type));
+            visit(casted.getExpression());
         } else if (node instanceof BinLogicOperator) {
             BinLogicOperator casted = (BinLogicOperator) node;
             visit(casted.left);
             visit(casted.right);
 
         } else if (node instanceof WhileStatement) {
+            //todo semantic analysis
             WhileStatement casted = (WhileStatement) node;
             visit(casted.getCondition());
             visit(casted.getTrueCompound());
@@ -140,6 +142,9 @@ public class MySymbolTableBuilder {
             casted.setFunSymbol(funSymbol);
             //todo check arguments nuber
             //todo check exsistance of function
+        } else if(node instanceof  ReturnStatement){
+            ReturnStatement casted = (ReturnStatement)node;
+            visit(casted.getRetValue());
         }
     }
 }

@@ -9,8 +9,7 @@ import Parser.AST_node.*;
 import Parser.MySymbolTable.FunctionSymbol;
 import Parser.MySymbolTable.Symbol;
 
-import java.util.ArrayList;
-import java.util.Stack;
+import java.util.*;
 
 
 public class MyInterpreter {
@@ -21,6 +20,21 @@ public class MyInterpreter {
 
     public int getOut() {
         return out;
+    }
+
+    private ActivationRecord searchInStack(MyToken name) {
+        Iterator<ActivationRecord> iter = callStack.iterator();
+        while (iter.hasNext()) {
+            try {
+                ActivationRecord ret = iter.next();
+                ret.getItem(name);
+                return ret;
+            } catch (NullPointerException e) {
+                continue;
+            }
+
+        }
+        return null;
     }
 
     public MyInterpreter(AST root) {
@@ -60,20 +74,26 @@ public class MyInterpreter {
         } else if (node instanceof Compound) {
             Compound casted = (Compound) node;
             for (AST child : casted.getChildren()) {
-                visit(child);
+                if(child instanceof ReturnStatement)
+                    return visit(child);
+                else {
+                    visit(child);
+                }
             }
+
         } else if (node instanceof AssignStatement) {
             AssignStatement casted = (AssignStatement) node;
             MyToken token = casted.getToken();
-            ActivationRecord ar = callStack.peek();
+            ActivationRecord ar = searchInStack(token);
             ar.pushItem(token, visit(casted.getValue()));
+
         } else if (node instanceof Variable) {
             Variable casted = (Variable) node;
             MyToken token = casted.getToken();
-            ActivationRecord ar = callStack.peek();
+            ActivationRecord ar = searchInStack(token);
             int val = ar.getItem(token);
-
             return val;
+
         } else if (node instanceof VarDeclaration) {
             VarDeclaration casted = (VarDeclaration) node;
             MyToken token = ((Variable) (casted.getVariable())).getToken();
@@ -119,17 +139,31 @@ public class MyInterpreter {
         } else if (node instanceof IfStatement) {
             IfStatement casted = (IfStatement) node;
             int condition = visit(casted.getCondition());
+
+            ActivationRecord ar = new ActivationRecord(new MyToken(MyTokenType.IF, "if"), ActivationType.IF, callStack.peek().getNestingLevel() + 1);
+            log("Entering " + ar.getName());
+            callStack.push(ar);
+
             if (condition == 1) {
-                return visit(casted.getTrueCompound());
+                visit(casted.getTrueCompound());
             } else if (casted.getFalseCompound() != null) {
-                return visit(casted.getFalseCompound());
+                visit(casted.getFalseCompound());
             }
+            log("Leaving " + ar.getName());
+            log(callStack.peek().toString());
+            callStack.pop();
 
         } else if (node instanceof WhileStatement) {
+            //todo callstack implementation
             WhileStatement casted = (WhileStatement) node;
             while (visit(casted.getCondition()) == 1) {
                 visit(casted.getTrueCompound());
             }
+        } else if (node instanceof ReturnStatement) {
+            ReturnStatement casted = (ReturnStatement) node;
+            int eval = visit(casted.getRetValue());
+            return eval;
+
         } else if (node instanceof Program) {
             Program casted = (Program) node;
             MyToken name = new MyToken(MyTokenType.ID, "program");
@@ -155,12 +189,11 @@ public class MyInterpreter {
             callStack.pop();
 
 
-
         } else if (node instanceof FunCall) {
             FunCall casted = (FunCall) node;
 
             Symbol function = casted.getFunSymbol();
-            ActivationRecord ar = new ActivationRecord(casted.getName(), ActivationType.FUNCION,function.scopeLevel + 1);
+            ActivationRecord ar = new ActivationRecord(casted.getName(), ActivationType.FUNCION, function.scopeLevel + 1);
 
             ArrayList<Symbol> formal_params = ((FunctionSymbol) function).getParams();
             ArrayList<AST> arguments = casted.getArguments();
@@ -171,23 +204,17 @@ public class MyInterpreter {
             log("Entering procedure " + casted.getName());
             callStack.push(ar);
 
-            visit(((FunctionSymbol) function).getBody());
+            int retVal = visit(((FunctionSymbol) function).getBody());
 
             log("Leaving procedure " + casted.getName());
             log(callStack.peek().toString());
             callStack.pop();
 
-            return 0;
+            return retVal;
         }
         return 0;
 
     }
 
-//    public HashMap<MyToken, Integer> results() {
-//        GLOBAL_SCOPE.entrySet().forEach(entry -> {
-//            System.out.println(entry.getKey() + " " + entry.getValue());
-//        });
-//        return GLOBAL_SCOPE;
-//    }
 
 }

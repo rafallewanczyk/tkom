@@ -335,7 +335,8 @@ class InterpreterTests extends Specification {
         FileWriter writer = new FileWriter("test.txt")
         writer.write("" +
                 "int fun(int q, int w){" +
-                "int k = q + w;" +
+                "return q + w;" +
+                "return q * w;" +
                 "}" +
                 "" +
 
@@ -344,12 +345,19 @@ class InterpreterTests extends Specification {
                 "a = a + 7;" +
                 "b = b + 9;" +
                 "c = c + a + b;" +
-                "fun(a, c);" +
+                "return fun(a, c);" +
+                "}" +
+
+                "int ret(){" +
+                "int a = 12; " +
+                "int d = 22;" +
+                "return fun(fun(5, 3), d);" +
                 "}" +
 
                 "int main(){" +
-                "int v = 0;" +
-                "test(1, 2, 3);" +
+                "int v = 9;" +
+                "test(1,2,3);" +
+                "int h = ret();" +
                 "}"
         )
 
@@ -363,6 +371,28 @@ class InterpreterTests extends Specification {
 
     }
 
+    def "if statement"() {
+        given:
+        FileWriter writer = new FileWriter("test.txt")
+        writer.write("" +
+                "int main(){" +
+                "int v = 0;" +
+                "if(v == 0){" +
+                "int k = 66;" +
+                "v = 10;" +
+                "};" +
+                "}"
+        )
+
+        writer.close();
+
+        MyLexer lexer = new MyLexer("test.txt")
+        MyParser parser = new MyParser(lexer)
+        MySymbolTableBuilder table = new MySymbolTableBuilder(parser.program());
+        MyInterpreter interpreter = new MyInterpreter(table.getRoot());
+
+
+    }
 
 }
 

@@ -8,19 +8,23 @@ public class ActivationRecord {
     MyToken name;
     ActivationType type;
     int nestingLevel;
-    HashMap<MyToken, Integer> members = new HashMap();
+    HashMap<MyToken, Integer> members = new HashMap<>();
 
     public ActivationRecord(MyToken name, ActivationType type, int nestingLevel) {
-        name = name;
+        this.name = name;
         this.type = type;
         this.nestingLevel = nestingLevel;
     }
 
-    public int getItem(MyToken key){
+    public void setMembers(HashMap<MyToken, Integer> members) {
+        this.members = members;
+    }
+
+    public int getItem(MyToken key) {
         return members.get(key);
     }
 
-    public void pushItem(MyToken key, int value){
+    public void pushItem(MyToken key, int value) {
         members.put(key, value);
     }
 
@@ -41,8 +45,8 @@ public class ActivationRecord {
     }
 
     @Override
-    public String toString(){
-        StringBuilder s  = new StringBuilder("name: " + name + " type: " + type + " nestingLevel: " + nestingLevel +"\n");
+    public String toString() {
+        StringBuilder s = new StringBuilder("name: " + name + " type: " + type + " nestingLevel: " + nestingLevel + "\n");
         members.entrySet().forEach(entry -> {
             s.append(entry.getKey() + " " + entry.getValue());
         });
