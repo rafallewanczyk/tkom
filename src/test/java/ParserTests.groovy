@@ -10,6 +10,20 @@ import spock.lang.Specification;
 
 class ParserTests extends Specification {
 
+    def "expression with integers"(){
+        given:
+        FileWriter writer = new FileWriter("test.txt");
+        writer.write("""
+               int main(){
+                    int v = 50 - 90 * 10; 
+               } 
+        """)
+        writer.close();
+        MyLexer lexer = new MyLexer("test.txt")
+        MyParser parser = new MyParser(lexer)
+        MySymbolTableBuilder table = new MySymbolTableBuilder(parser.program());
+        MyInterpreter interpreter = new MyInterpreter(table.getRoot());
+    }
     def "unknown variable"() {
         given:
         FileWriter writer = new FileWriter("test.txt")

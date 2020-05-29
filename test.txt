@@ -1,1 +1,1 @@
-int fun(int q, int w){return q + w;return q * w;}int test(int a, int b, int c){int k = 10;a = a + 7;b = b + 9;c = c + a + b;return fun(a, c);}int ret(){int a = 12; int d = 22;return fun(fun(5, 3), d);}int main(){int v = 9;test(1,2,3);int h = ret();}
+int fun(int q, int w){return q + w;return q * w;}int main(){int v = 9;int h = fun(9, 12);}

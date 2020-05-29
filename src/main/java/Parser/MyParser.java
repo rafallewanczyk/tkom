@@ -4,12 +4,9 @@ import Lexer.MyLexer;
 import Lexer.Token.MyToken;
 import Lexer.Token.MyTokenType;
 import Parser.AST_node.*;
-import Parser.AST;
 
 import javax.swing.text.html.parser.Parser;
-import java.awt.image.AreaAveragingScaleFilter;
 import java.util.ArrayList;
-import java.util.List;
 
 public class MyParser {
 
@@ -21,7 +18,7 @@ public class MyParser {
     public MyParser(MyLexer lexer) {
         this.lexer = lexer;
         current = lexer.nextToken();
-        tokenBuffer = new MyToken(MyTokenType.EMPTY, "empty", 0, 0);
+//        tokenBuffer = new MyToken(MyTokenType.EMPTY, "empty", 0, 0);
 
     }
 
@@ -304,7 +301,7 @@ public class MyParser {
 
         if (current.getType() == MyTokenType.INT_NUMBER) {
             eat(MyTokenType.INT_NUMBER);
-            return new Num(token);
+            return new IntNum(token);
         } else if (token.getType() == MyTokenType.LEFT_PARENTESIS) {
             eat(MyTokenType.LEFT_PARENTESIS);
             AST node = condition();
@@ -321,10 +318,26 @@ public class MyParser {
     private AST factor() {
         MyToken token = current;
 
+        if(token.getType() == MyTokenType.ADDITIVE_OP){
+            if(token.getValue().equals("-")){
+                eat(MyTokenType.ADDITIVE_OP);
+                return new UnOperator(token, factor());
+            }
+
+            if(token.getValue().equals("+")){
+                eat(MyTokenType.ADDITIVE_OP);
+                return new UnOperator(token, factor());
+            }
+        }
         if (current.getType() == MyTokenType.INT_NUMBER) {
             eat(MyTokenType.INT_NUMBER);
-            return new Num(token);
-        } else if (token.getType() == MyTokenType.LEFT_PARENTESIS) {
+            return new IntNum(token);
+        }else if(current.getType() == MyTokenType.REAL_NUMBER){
+            eat(MyTokenType.REAL_NUMBER);
+            return new RealNum(token);
+        }
+
+        else if (token.getType() == MyTokenType.LEFT_PARENTESIS) {
             eat(MyTokenType.LEFT_PARENTESIS);
             AST node = expression();
             eat(MyTokenType.RIGHT_PARENTESIS);

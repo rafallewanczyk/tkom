@@ -14,13 +14,9 @@ import java.util.*;
 
 public class MyInterpreter {
     AST root;
-    int out;
-    Stack<ActivationRecord> callStack = new Stack<>();
+    ArrayDeque<ActivationRecord> callStack = new ArrayDeque<>();
     boolean logStack = true;
 
-    public int getOut() {
-        return out;
-    }
 
     private ActivationRecord searchInStack(MyToken name) {
         Iterator<ActivationRecord> iter = callStack.iterator();
@@ -39,7 +35,7 @@ public class MyInterpreter {
 
     public MyInterpreter(AST root) {
         this.root = root;
-        out = visit(root);
+        visit(root);
     }
 
     private void log(String msg) {
@@ -48,33 +44,86 @@ public class MyInterpreter {
         }
     }
 
-    int visit(AST node) {
+    AST visit(AST node) {
         if (node instanceof BinOperator) {
             BinOperator casted = (BinOperator) node;
-            if (casted.operation.getValue().equals("+")) {
-                return visit(casted.left) + visit(casted.right);
-            } else if (casted.operation.getValue().equals("-")) {
-                return visit(casted.left) - visit(casted.right);
-            } else if (casted.operation.getValue().equals("*")) {
-                return visit(casted.left) * visit(casted.right);
-            } else if (casted.operation.getValue().equals("/")) {
-                return visit(casted.left) / visit(casted.right);
+            AST left = visit(casted.left);
+            AST right = visit(casted.right);
+
+            if (left instanceof IntNum) {
+                IntNum leftCasted = (IntNum) left;
+                IntNum rightCasted = (IntNum) right;
+
+                if (casted.operation.getValue().equals("+")) {
+                    return new IntNum(leftCasted.value + rightCasted.value);
+                }
+                if (casted.operation.getValue().equals("-")) {
+                    return new IntNum(leftCasted.value - rightCasted.value);
+                }
+                if (casted.operation.getValue().equals("/")) {
+                    return new IntNum(leftCasted.value / rightCasted.value);
+                }
+                if (casted.operation.getValue().equals("*")) {
+                    return new IntNum(leftCasted.value * rightCasted.value);
+                }
             }
 
-        } else if (node instanceof Num) {
-            Num casted = (Num) node;
-            return casted.value;
+            if (left instanceof RealNum) {
+                RealNum leftCasted = (RealNum) left;
+                RealNum rightCasted = (RealNum) right;
+
+                if (casted.operation.getValue().equals("+")) {
+                    return new RealNum(leftCasted.value + rightCasted.value);
+                }
+                if (casted.operation.getValue().equals("-")) {
+                    return new RealNum(leftCasted.value - rightCasted.value);
+                }
+                if (casted.operation.getValue().equals("/")) {
+                    return new RealNum(leftCasted.value / rightCasted.value);
+                }
+                if (casted.operation.getValue().equals("*")) {
+                    return new RealNum(leftCasted.value * rightCasted.value);
+                }
+            }
+        }
+//
+//            if (casted.operation.getValue().equals("+")) {
+//                return visit(casted.left) + visit(casted.right);
+//            } else if (casted.operation.getValue().equals("-")) {
+//                return visit(casted.left) - visit(casted.right);
+//            } else if (casted.operation.getValue().equals("*")) {
+//                return visit(casted.left) * visit(casted.right);
+//            } else if (casted.operation.getValue().equals("/")) {
+//                return visit(casted.left) / visit(casted.right);
+//            }
+
+        else if (node instanceof IntNum) {
+            IntNum casted = (IntNum) node;
+            return casted;
+
+        } else if (node instanceof RealNum) {
+            RealNum casted = (RealNum) node;
+            return casted;
         } else if (node instanceof UnOperator) {
             UnOperator casted = (UnOperator) node;
             if (casted.getType().equals("-")) {
-                return -visit(casted.getExpression());
+                AST value = visit(casted.getExpression());
+
+                if (value instanceof IntNum) {
+                    IntNum ret = new IntNum(-((IntNum) value).value);
+                    return ret;
+                }
+                if (value instanceof RealNum) {
+                    RealNum ret = new RealNum(-((RealNum) value).value);
+                    return ret;
+                }
             } else {
                 return visit(casted.getExpression());
             }
         } else if (node instanceof Compound) {
             Compound casted = (Compound) node;
             for (AST child : casted.getChildren()) {
-                if(child instanceof ReturnStatement)
+                if (child instanceof ReturnStatement)
                     return visit(child);
                 else {
                     visit(child);
@@ -91,20 +140,46 @@ public class MyInterpreter {
             Variable casted = (Variable) node;
             MyToken token = casted.getToken();
             ActivationRecord ar = searchInStack(token);
-            int val = ar.getItem(token);
+            AST val = ar.getItem(token);
             return val;
 
         } else if (node instanceof VarDeclaration) {
             VarDeclaration casted = (VarDeclaration) node;
             MyToken token = ((Variable) (casted.getVariable())).getToken();
+            MyTokenType type = ((Type) casted.getType()).getToken().getType();
             ActivationRecord ar = callStack.peek();
             if (casted.getExpression() == null) {
-                ar.pushItem(token, 0);
+                if (((Type) casted.getType()).getToken().getType() == MyTokenType.INT)
+                    ar.pushItem(token, new IntNum(0));
+                if (((Type) casted.getType()).getToken().getType() == MyTokenType.REAL)
+                    ar.pushItem(token, new RealNum(0));
             } else {
-                ar.pushItem(token, visit(casted.getExpression()));
+                AST result = visit(casted.getExpression());
+                if (((Type) casted.getType()).getToken().getType() == MyTokenType.INT)
+                    ar.pushItem(token, (IntNum) result);
+                if (((Type) casted.getType()).getToken().getType() == MyTokenType.REAL)
+                    ar.pushItem(token, (RealNum) result);
             }
         } else if (node instanceof BinLogicOperator) {
             BinLogicOperator casted = (BinLogicOperator) node;
+            var left = visit(casted.left);
+            AST right = visit(casted.right);
+
+
+
+            if (left instanceof IntNum) {
+                IntNum castedLeft = (IntNum) left;
+            }
+            if (left instanceof RealNum) {
+                RealNum castedLeft = (RealNum) left;
+            }
+            if (right instanceof IntNum) {
+                IntNum castedRight = (IntNum) right;
+            }
+            if (right instanceof RealNum) {
+                RealNum castedRight = (RealNum) left;
+            }
+
             if (casted.operation.getValue().equals("||")) {
                 return (visit(casted.left) != 0 || visit(casted.right) != 0) ? 1 : 0;
             }
@@ -136,32 +211,32 @@ public class MyInterpreter {
             if (casted.operation.getValue().equals("<=")) {
                 return (visit(casted.left) <= visit(casted.right)) ? 1 : 0;
             }
-        } else if (node instanceof IfStatement) {
-            IfStatement casted = (IfStatement) node;
-            int condition = visit(casted.getCondition());
-
-            ActivationRecord ar = new ActivationRecord(new MyToken(MyTokenType.IF, "if"), ActivationType.IF, callStack.peek().getNestingLevel() + 1);
-            log("Entering " + ar.getName());
-            callStack.push(ar);
-
-            if (condition == 1) {
-                visit(casted.getTrueCompound());
-            } else if (casted.getFalseCompound() != null) {
-                visit(casted.getFalseCompound());
-            }
-            log("Leaving " + ar.getName());
-            log(callStack.peek().toString());
-            callStack.pop();
-
-        } else if (node instanceof WhileStatement) {
-            //todo callstack implementation
-            WhileStatement casted = (WhileStatement) node;
-            while (visit(casted.getCondition()) == 1) {
-                visit(casted.getTrueCompound());
-            }
+//        } else if (node instanceof IfStatement) {
+//            IfStatement casted = (IfStatement) node;
+//            int condition = visit(casted.getCondition());
+//
+//            ActivationRecord ar = new ActivationRecord(new MyToken(MyTokenType.IF, "if"), ActivationType.IF, callStack.peek().getNestingLevel() + 1);
+//            log("Entering " + ar.getName());
+//            callStack.push(ar);
+//
+//            if (condition == 1) {
+//                visit(casted.getTrueCompound());
+//            } else if (casted.getFalseCompound() != null) {
+//                visit(casted.getFalseCompound());
+//            }
+//            log("Leaving " + ar.getName());
+//            log(callStack.peek().toString());
+//            callStack.pop();
+//
+//        } else if (node instanceof WhileStatement) {
+//            //todo callstack implementation
+//            WhileStatement casted = (WhileStatement) node;
+//            while (visit(casted.getCondition()) == 1) {
+//                visit(casted.getTrueCompound());
+//            }
         } else if (node instanceof ReturnStatement) {
             ReturnStatement casted = (ReturnStatement) node;
-            int eval = visit(casted.getRetValue());
+            AST eval = visit(casted.getRetValue());
             return eval;
 
         } else if (node instanceof Program) {
@@ -179,7 +254,7 @@ public class MyInterpreter {
             }
 
             if (main == null) {
-                return -1;
+                return null;
             } else {
                 visit(((FunDeclaration) main).getCompound());
             }
@@ -187,6 +262,7 @@ public class MyInterpreter {
             log("Leaving program");
             log(ar.toString());
             callStack.pop();
+            return null;
 
 
         } else if (node instanceof FunCall) {
@@ -204,7 +280,7 @@ public class MyInterpreter {
             log("Entering procedure " + casted.getName());
             callStack.push(ar);
 
-            int retVal = visit(((FunctionSymbol) function).getBody());
+            AST retVal = visit(((FunctionSymbol) function).getBody());
 
             log("Leaving procedure " + casted.getName());
             log(callStack.peek().toString());
@@ -212,9 +288,7 @@ public class MyInterpreter {
 
             return retVal;
         }
-        return 0;
-
+        return null;
     }
-
 
 }

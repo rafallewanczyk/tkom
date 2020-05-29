@@ -1,4 +1,5 @@
 import java.io.FileNotFoundException;
+import java.util.*;
 
 import Interpreter.CallStack.ActivationRecord;
 import Interpreter.CallStack.ActivationType;
@@ -13,20 +14,19 @@ import static Lexer.Token.MyTokenType.*;
 public class Main {
 
     public static void main(String [] args) throws FileNotFoundException {
-        ActivationRecord ar = new ActivationRecord(new MyToken(IF, "if"), ActivationType.FUNCION, 0);
-        ar.pushItem(new MyToken(ID, "value"), 10);
-        System.out.println(ar);
+        Deque<Integer> s = new ArrayDeque<>();
+        s.push(1);
+        s.push(2);
+        s.push(3);
 
-        int val = ar.getItem(new MyToken(ID, "value"));
-        System.out.println(val);
+        s.pop();
 
-        int val1 ;
-        try{
-            val1 = ar.getItem(new MyToken(ID, "test"));
-        } catch (NullPointerException e){
-            System.out.println("no such variable");
+        Iterator<Integer> i = s.iterator();
+        while(i.hasNext()){
+            System.out.println(i.next());
         }
-        Integer v = 100;
+
+
 
     }
 }

@@ -6,7 +6,6 @@ import Parser.AST;
 import Parser.AST_node.*;
 
 import java.util.ArrayList;
-import java.util.List;
 
 public class MySymbolTableBuilder {
     AST root;
@@ -27,7 +26,7 @@ public class MySymbolTableBuilder {
             visit(casted.left);
             visit(casted.right);
 
-        } else if (node instanceof Num) {
+        } else if (node instanceof IntNum) {
             return;
         } else if (node instanceof UnOperator) {
             UnOperator casted = (UnOperator) node;

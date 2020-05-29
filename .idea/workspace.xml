@@ -3,18 +3,15 @@
   <component name="ChangeListManager">
     <list default="true" id="901d7ea8-dce2-45c8-8810-4a1262e58aba" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/Interpreter/CallStack/ActivationRecord.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/Interpreter/CallStack/ActivationRecord.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/Interpreter/CallStack/ActivationType.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/Interpreter/CallStack/ActivationType.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/Interpreter/MyInterpreter.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/Interpreter/MyInterpreter.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/test/classes/InterpreterTests.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/test/classes/InterpreterTests.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Interpreter/CallStack/ActivationRecord.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Interpreter/CallStack/ActivationRecord.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Interpreter/CallStack/ActivationType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Interpreter/CallStack/ActivationType.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Interpreter/MyInterpreter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Interpreter/MyInterpreter.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Parser/AST_node.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Parser/AST_node.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Parser/MyParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Parser/MyParser.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Parser/MySymbolTable/MySymbolTableBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Parser/MySymbolTable/MySymbolTableBuilder.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/InterpreterTests.groovy" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/InterpreterTests.groovy" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/ParserTests.groovy" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/ParserTests.groovy" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/test.txt" beforeDir="false" afterPath="$PROJECT_DIR$/test.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -61,10 +58,30 @@
     <property name="restartRequiresConfirmation" value="false" />
     <property name="settings.editor.selected.configurable" value="reference.settings.project.statistic.project.settings" />
   </component>
-  <component name="RunManager" selected="JUnit.InterpreterTests.function call">
+  <component name="RunManager" selected="JUnit.InterpreterTests.simple fun call">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Main" />
       <module name="TKOM1.main" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="InterpreterTests.expression with unary var" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="TKOM1.test" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="InterpreterTests" />
+      <option name="METHOD_NAME" value="expression with unary var" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="InterpreterTests.expression with var" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="TKOM1.test" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="InterpreterTests" />
+      <option name="METHOD_NAME" value="expression with var" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -79,30 +96,11 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="InterpreterTests.if statement" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="InterpreterTests.simple fun call" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="TKOM1.test" />
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="InterpreterTests" />
-      <option name="METHOD_NAME" value="if statement" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="LexerTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="TKOM1.test" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="LexerTests" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="ParserTests.declaration in different functions" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="TKOM1.test" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="ParserTests" />
-      <option name="METHOD_NAME" value="declaration in different functions" />
+      <option name="METHOD_NAME" value="simple fun call" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -110,11 +108,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.InterpreterTests.function call" />
-        <item itemvalue="JUnit.InterpreterTests.if statement" />
+        <item itemvalue="JUnit.InterpreterTests.simple fun call" />
         <item itemvalue="Application.Main" />
-        <item itemvalue="JUnit.ParserTests.declaration in different functions" />
-        <item itemvalue="JUnit.LexerTests" />
+        <item itemvalue="JUnit.InterpreterTests.function call" />
+        <item itemvalue="JUnit.InterpreterTests.expression with unary var" />
+        <item itemvalue="JUnit.InterpreterTests.expression with var" />
       </list>
     </recent_temporary>
   </component>
@@ -163,6 +161,7 @@
       <workItem from="1589796568624" duration="3389000" />
       <workItem from="1590077779670" duration="2879000" />
       <workItem from="1590416796447" duration="9420000" />
+      <workItem from="1590753177920" duration="12771000" />
     </task>
     <servers />
   </component>
@@ -210,38 +209,38 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="555" y="210" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1589793502126" />
-    <state width="1877" height="405" key="GridCell.Tab.0.bottom" timestamp="1590427536282">
+    <state width="1877" height="294" key="GridCell.Tab.0.bottom" timestamp="1590777822066">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="405" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1590427536282" />
-    <state width="1877" height="405" key="GridCell.Tab.0.center" timestamp="1590427536281">
+    <state width="1877" height="294" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1590777822066" />
+    <state width="1877" height="294" key="GridCell.Tab.0.center" timestamp="1590777822065">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="405" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1590427536281" />
-    <state width="1877" height="405" key="GridCell.Tab.0.left" timestamp="1590427536281">
+    <state width="1877" height="294" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1590777822065" />
+    <state width="1877" height="294" key="GridCell.Tab.0.left" timestamp="1590777822065">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="405" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1590427536281" />
-    <state width="1877" height="405" key="GridCell.Tab.0.right" timestamp="1590427536282">
+    <state width="1877" height="294" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1590777822065" />
+    <state width="1877" height="294" key="GridCell.Tab.0.right" timestamp="1590777822065">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="405" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1590427536282" />
-    <state width="1877" height="355" key="GridCell.Tab.1.bottom" timestamp="1590427021113">
+    <state width="1877" height="294" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1590777822065" />
+    <state width="1877" height="294" key="GridCell.Tab.1.bottom" timestamp="1590777822066">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="355" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1590427021113" />
-    <state width="1877" height="355" key="GridCell.Tab.1.center" timestamp="1590427021112">
+    <state width="1877" height="294" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1590777822066" />
+    <state width="1877" height="294" key="GridCell.Tab.1.center" timestamp="1590777822066">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="355" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1590427021112" />
-    <state width="1877" height="355" key="GridCell.Tab.1.left" timestamp="1590427021112">
+    <state width="1877" height="294" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1590777822066" />
+    <state width="1877" height="294" key="GridCell.Tab.1.left" timestamp="1590777822066">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="355" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1590427021112" />
-    <state width="1877" height="355" key="GridCell.Tab.1.right" timestamp="1590427021112">
+    <state width="1877" height="294" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1590777822066" />
+    <state width="1877" height="294" key="GridCell.Tab.1.right" timestamp="1590777822066">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="355" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1590427021112" />
+    <state width="1877" height="294" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1590777822066" />
     <state x="41" y="146" key="SettingsEditor" timestamp="1589644267973">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -280,23 +279,28 @@
       <breakpoints>
         <line-breakpoint type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/Parser/MyParser.java</url>
-          <line>258</line>
+          <line>255</line>
           <option name="timeStamp" value="22" />
         </line-breakpoint>
         <line-breakpoint type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/Parser/MyParser.java</url>
-          <line>359</line>
+          <line>372</line>
           <option name="timeStamp" value="24" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/Interpreter/MyInterpreter.java</url>
-          <line>192</line>
-          <option name="timeStamp" value="43" />
+          <url>file://$PROJECT_DIR$/src/main/java/Parser/MyParser.java</url>
+          <line>244</line>
+          <option name="timeStamp" value="46" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/Parser/MyParser.java</url>
+          <line>246</line>
+          <option name="timeStamp" value="47" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/Interpreter/MyInterpreter.java</url>
-          <line>74</line>
-          <option name="timeStamp" value="45" />
+          <line>21</line>
+          <option name="timeStamp" value="54" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

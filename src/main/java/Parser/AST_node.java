@@ -59,13 +59,53 @@ public class AST_node{
     }
 
 
-    public static class Num implements AST{
+    public static class IntNum implements AST{
         MyToken token;
         public int value;
 
-        public Num(MyToken token) {
+        public IntNum(MyToken token) {
             this.token = token;
             value = Integer.parseInt(token.getValue());
+        }
+
+        public IntNum(int value){
+            this.value = value;
+        }
+
+        @Override
+        public String toString() {
+            return Integer.toString(value);
+        }
+
+    }
+
+    public static class RealNum implements AST{
+        MyToken token;
+        public double value;
+
+        public RealNum(MyToken token) {
+            this.token = token;
+            value = Double.parseDouble(token.getValue());
+        }
+
+        public RealNum(double value){
+            this.value = value;
+        }
+
+        @Override
+        public String toString() {
+            return Double.toString(value);
+        }
+
+    }
+
+    public static class BoolNum implements AST{
+        MyToken token;
+        public boolean value;
+
+        public BoolNum (MyToken token) {
+            this.token = token;
+            value = Boolean.parseBoolean(token.getValue());
         }
 
         @Override

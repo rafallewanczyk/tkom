@@ -8,6 +8,96 @@ import Parser.MySymbolTable.SemanticException
 import spock.lang.Specification;
 
 class InterpreterTests extends Specification {
+
+
+    def "expression with integers"() {
+        given:
+        FileWriter writer = new FileWriter("test.txt");
+        writer.write("""
+               int main(){
+                    int v = 50 - 90 * 10; 
+               } 
+        """)
+        writer.close();
+        MyLexer lexer = new MyLexer("test.txt")
+        MyParser parser = new MyParser(lexer)
+        MySymbolTableBuilder table = new MySymbolTableBuilder(parser.program());
+        MyInterpreter interpreter = new MyInterpreter(table.getRoot());
+    }
+
+    def "expression with real"() {
+        given:
+        FileWriter writer = new FileWriter("test.txt");
+        writer.write("""
+               int main(){
+                    real v = (50.0 - 90.0 * 10.0)/3.0;
+               } 
+        """)
+        writer.close();
+        MyLexer lexer = new MyLexer("test.txt")
+        MyParser parser = new MyParser(lexer)
+        MySymbolTableBuilder table = new MySymbolTableBuilder(parser.program());
+        MyInterpreter interpreter = new MyInterpreter(table.getRoot());
+    }
+
+    def "expression with var"() {
+        given:
+        FileWriter writer = new FileWriter("test.txt");
+        writer.write("""
+               int main(){
+                    real v = (50.0 - 90.0 * 10.0)/3.0;
+                    real x = v - 5.6;
+               } 
+        """)
+        writer.close();
+        MyLexer lexer = new MyLexer("test.txt")
+        MyParser parser = new MyParser(lexer)
+        MySymbolTableBuilder table = new MySymbolTableBuilder(parser.program());
+        MyInterpreter interpreter = new MyInterpreter(table.getRoot());
+    }
+
+    def "expression with unary var"() {
+        given:
+        FileWriter writer = new FileWriter("test.txt");
+        writer.write("""
+               int main(){
+                    real v = (50.0 - 90.0 * 10.0)/3.0;
+                    real x = -v;
+               } 
+        """)
+        writer.close();
+        MyLexer lexer = new MyLexer("test.txt")
+        MyParser parser = new MyParser(lexer)
+        MySymbolTableBuilder table = new MySymbolTableBuilder(parser.program());
+        MyInterpreter interpreter = new MyInterpreter(table.getRoot());
+    }
+
+    def "simple fun call"() {
+        given:
+        FileWriter writer = new FileWriter("test.txt")
+        writer.write("" +
+                "int fun(int q, int w){" +
+                "return q + w;" +
+                "return q * w;" +
+                "}" +
+                "" +
+
+                "int main(){" +
+                "int v = 9;" +
+                "int h = fun(9, 12);" +
+                "}"
+        )
+
+        writer.close();
+
+        MyLexer lexer = new MyLexer("test.txt")
+        MyParser parser = new MyParser(lexer)
+        MySymbolTableBuilder table = new MySymbolTableBuilder(parser.program());
+        MyInterpreter interpreter = new MyInterpreter(table.getRoot());
+
+
+    }
+
     def "expression test"() {
         given:
         FileWriter writer = new FileWriter("test.txt")

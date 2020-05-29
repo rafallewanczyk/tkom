@@ -1,6 +1,7 @@
 package Interpreter.CallStack;
 
 import Lexer.Token.MyToken;
+import Parser.AST;
 
 import java.util.HashMap;
 
@@ -8,7 +9,7 @@ public class ActivationRecord {
     MyToken name;
     ActivationType type;
     int nestingLevel;
-    HashMap<MyToken, Integer> members = new HashMap<>();
+    HashMap<MyToken, AST> members = new HashMap<>();
 
     public ActivationRecord(MyToken name, ActivationType type, int nestingLevel) {
         this.name = name;
@@ -16,15 +17,15 @@ public class ActivationRecord {
         this.nestingLevel = nestingLevel;
     }
 
-    public void setMembers(HashMap<MyToken, Integer> members) {
+    public void setMembers(HashMap<MyToken,AST> members) {
         this.members = members;
     }
 
-    public int getItem(MyToken key) {
+    public AST getItem(MyToken key) {
         return members.get(key);
     }
 
-    public void pushItem(MyToken key, int value) {
+    public void pushItem(MyToken key, AST value) {
         members.put(key, value);
     }
 
@@ -40,7 +41,7 @@ public class ActivationRecord {
         return nestingLevel;
     }
 
-    public HashMap<MyToken, Integer> getMembers() {
+    public HashMap<MyToken, AST> getMembers() {
         return members;
     }
 
