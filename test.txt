@@ -1,17 +1,1 @@
-
-            int main(){
-                int n = 100;
-                int k; 
-                if(n < 200){
-                    if(n > 15){
-                        k = 100; 
-                        return 10;
-                        return 11;
-                        
-                    }; 
-                    return 12; 
-                };
-                return 30; 
-                return 20; 
-            } 
-            
+var test = "zmienna"
