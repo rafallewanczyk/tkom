@@ -3,9 +3,9 @@ package Lexer.Token;
 import java.util.Objects;
 
 public class MyToken {
-    MyTokenType type;
-    String value;
-    int x, y;
+    public MyTokenType type;
+    public String value;
+    public int x, y;
 
     public MyToken(MyTokenType type, String value, int x, int y) {
         this.type = type;

@@ -98,9 +98,9 @@ class LexerTests extends Specification {
         MyLexer lexer = new MyLexer("test.txt");
 
         expect:
-        lexer.nextToken() == new MyToken(MyTokenType.ROMMAN, "1411", 0, 0);
+        lexer.nextToken() == new MyToken(MyTokenType.ROMAN_NUMBER, "1411", 0, 0);
         lexer.nextToken() == new MyToken(MyTokenType.SEMICOLLON, ";", 1, 0);
-        lexer.nextToken() == new MyToken(MyTokenType.ROMMAN, "9", 2, 0);
+        lexer.nextToken() == new MyToken(MyTokenType.ROMAN_NUMBER, "9", 2, 0);
         lexer.nextToken() == new MyToken(MyTokenType.ID, "IXI", 3, 0);
 
 
@@ -114,19 +114,42 @@ class LexerTests extends Specification {
 
         MyLexer lexer = new MyLexer("test.txt");
         expect:
-        lexer.nextToken() == new MyToken(MyTokenType.ROMMAN, "rom", 0, 0);
+        lexer.nextToken() == new MyToken(MyTokenType.ROM, "rom", 0, 0);
         lexer.nextToken() == new MyToken(MyTokenType.ID, "zmienna", 1, 0);
         lexer.nextToken() == new MyToken(MyTokenType.ASSIGNMENT_OP, "=", 2, 0);
-        lexer.nextToken() == new MyToken(MyTokenType.ROMMAN, "6", 3, 0);
+        lexer.nextToken() == new MyToken(MyTokenType.ROMAN_NUMBER, "6", 3, 0);
         lexer.nextToken() == new MyToken(MyTokenType.SEMICOLLON, ";", 4, 0);
         lexer.nextToken() == new MyToken(MyTokenType.ID, "zmienna", 5, 1);
         lexer.nextToken() == new MyToken(MyTokenType.ASSIGNMENT_OP, "=", 6, 1);
         lexer.nextToken() == new MyToken(MyTokenType.ID, "zmienna", 7, 1);
         lexer.nextToken() == new MyToken(MyTokenType.ADDITIVE_OP, "+", 8, 1);
-        lexer.nextToken() == new MyToken(MyTokenType.ROMMAN, "2410", 9, 1);
+        lexer.nextToken() == new MyToken(MyTokenType.ROMAN_NUMBER, "2410", 9, 1);
         lexer.nextToken() == new MyToken(MyTokenType.SEMICOLLON, ";", 10, 1);
     }
+    def "comment test"(){
+        given:
+        FileWriter writer = new FileWriter("test.txt");
+        writer.write("""
+                    rom zmienna = VI;
+                    //comment
+                    zmienna = zmienna + MMCDX;
+                    """);
+        writer.close();
 
+        MyLexer lexer = new MyLexer("test.txt");
+        expect:
+        lexer.nextToken() == new MyToken(MyTokenType.ROM, "rom", 0, 0);
+        lexer.nextToken() == new MyToken(MyTokenType.ID, "zmienna", 1, 0);
+        lexer.nextToken() == new MyToken(MyTokenType.ASSIGNMENT_OP, "=", 2, 0);
+        lexer.nextToken() == new MyToken(MyTokenType.ROMAN_NUMBER, "6", 3, 0);
+        lexer.nextToken() == new MyToken(MyTokenType.SEMICOLLON, ";", 4, 0);
+        lexer.nextToken() == new MyToken(MyTokenType.ID, "zmienna", 5, 1);
+        lexer.nextToken() == new MyToken(MyTokenType.ASSIGNMENT_OP, "=", 6, 1);
+        lexer.nextToken() == new MyToken(MyTokenType.ID, "zmienna", 7, 1);
+        lexer.nextToken() == new MyToken(MyTokenType.ADDITIVE_OP, "+", 8, 1);
+        lexer.nextToken() == new MyToken(MyTokenType.ROMAN_NUMBER, "2410", 9, 1);
+        lexer.nextToken() == new MyToken(MyTokenType.SEMICOLLON, ";", 10, 1);
+    }
     def "empty input"(){
         given:
         FileWriter writer = new FileWriter("test.txt");

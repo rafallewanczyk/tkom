@@ -22,7 +22,8 @@ public class ActivationRecord {
     }
 
     public AST getItem(MyToken key) {
-        return members.get(key);
+        AST ret = members.get(key);
+        return ret;
     }
 
     public void pushItem(MyToken key, AST value) {

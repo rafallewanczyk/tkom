@@ -10,14 +10,22 @@ import java.util.ArrayList;
 public class MySymbolTableBuilder {
     AST root;
     MyScopedSymbolTable currentScope = null;
+    boolean log;
 
-    public MySymbolTableBuilder(AST root) {
+    public MySymbolTableBuilder(AST root, boolean log) {
         this.root = root;
+        this.log = log;
         visit(root);
     }
 
     public AST getRoot() {
         return root;
+    }
+
+    void log(String msg){
+       if(log){
+           System.out.println(msg);
+       }
     }
 
     void visit(AST node) throws SemanticException {
@@ -70,34 +78,38 @@ public class MySymbolTableBuilder {
             visit(casted.right);
 
         } else if (node instanceof WhileStatement) {
-            //todo semantic analysis
             WhileStatement casted = (WhileStatement) node;
             visit(casted.getCondition());
+
+            MyScopedSymbolTable scope = new MyScopedSymbolTable(new MyToken(MyTokenType.LOOP, "while"), currentScope.getScopeLevel()+1, currentScope);
+            currentScope = scope;
             visit(casted.getTrueCompound());
+            currentScope = scope.getEnclosingScope();
+
         } else if (node instanceof IfStatement) {
             IfStatement casted = (IfStatement) node;
+            visit(casted.getCondition());
 
             MyScopedSymbolTable scope = new MyScopedSymbolTable(new MyToken(MyTokenType.IF, "if"), currentScope.getScopeLevel() +1, currentScope);
             currentScope = scope;
-            visit(casted.getCondition());
-            System.out.println("ENTER " + currentScope.getScopeName());
+            log("ENTER " + currentScope.getScopeName());
 
             visit(casted.getTrueCompound());
             visit(casted.getFalseCompound());
-            currentScope.print();
+            if(log)currentScope.print();
 
-            System.out.println("LEAVE " + currentScope.getScopeName());
+            log("LEAVE " + currentScope.getScopeName());
             currentScope = scope.getEnclosingScope();
         } else if (node instanceof Program) {
             currentScope = new MyScopedSymbolTable(new MyToken(MyTokenType.ID, "GLOBAL"), 0, null);
             currentScope.addBuiltins();
-            System.out.println("ENTER " + currentScope.getScopeName());
+            log("ENTER " + currentScope.getScopeName());
             Program casted = (Program) node;
             for (AST f : casted.getFunctions()) {
                 visit(f);
             }
-            currentScope.print();
-            System.out.println("LEAVE "+currentScope.getScopeName());
+            if(log)currentScope.print();
+            log("LEAVE "+currentScope.getScopeName());
 
 
         } else if (node instanceof FunDeclaration) {
@@ -109,7 +121,7 @@ public class MySymbolTableBuilder {
             currentScope.defineSymbol(functionSymbol);
             MyScopedSymbolTable funScope = new MyScopedSymbolTable(funName, currentScope.getScopeLevel()+ 1, currentScope);
             currentScope = funScope;
-            System.out.println("ENTER " + currentScope.getScopeName());
+            log("ENTER " + currentScope.getScopeName());
             try {
 
                 ArrayList<AST> parameters = ((FunParameters) (casted.getParameters())).getParameters();
@@ -121,12 +133,11 @@ public class MySymbolTableBuilder {
                     functionSymbol.addParameter(parameter);
 
                 }
-            } catch (NullPointerException e) {
+            } catch (NullPointerException ignored){}
 
-            }
             visit(casted.getCompound());
-            currentScope.print();
-            System.out.println("LEAVE " + currentScope.getScopeName());
+            if(log)currentScope.print();
+            log("LEAVE " + currentScope.getScopeName());
             currentScope = currentScope.getEnclosingScope();
 
         } else if(node instanceof FunCall){

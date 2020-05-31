@@ -1,16 +1,85 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="ArtifactsWorkspaceSettings">
+    <artifacts-to-build>
+      <artifact name="TKOM1:jar" />
+    </artifacts-to-build>
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="901d7ea8-dce2-45c8-8810-4a1262e58aba" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/artifacts/TKOM1_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/program.rom" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Interpreter/InterpreterException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Lexer/Token/RomanToken.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/executionHistory/executionHistory.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/executionHistory/executionHistory.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/fileHashes/fileHashes.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/fileHashes/fileHashes.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/javaCompile/classAnalysis.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/javaCompile/classAnalysis.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/javaCompile/javaCompile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/javaCompile/javaCompile.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/javaCompile/taskHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/javaCompile/taskHistory.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/Lexer/Add.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/Lexer/MyLexer.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/Lexer/MyLexer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/Lexer/Token/MyToken.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/Lexer/Token/MyToken.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/Lexer/Token/MyTokenPrefix.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/Lexer/Token/MyTokenPrefix.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/Lexer/Token/MyTokenType.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/Lexer/Token/MyTokenType.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/Interpreter/CallStack/ActivationRecord.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/Interpreter/CallStack/ActivationRecord.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/Interpreter/CallStack/ActivationType.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/Interpreter/CallStack/ActivationType.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/Interpreter/MyInterpreter.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/Interpreter/MyInterpreter.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/Lexer/MyLexer.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/Lexer/MyLexer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/Lexer/RomanNumerals/RomanLexer.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/Lexer/RomanNumerals/RomanLexer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/Lexer/Token/MyToken.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/Lexer/Token/MyToken.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/Lexer/Token/MyTokenPrefix.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/Lexer/Token/MyTokenPrefix.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/Lexer/Token/MyTokenType.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/Lexer/Token/MyTokenType.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/Parser/AST_node$AssignStatement.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/Parser/AST_node$AssignStatement.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/Parser/AST_node$BinLogicOperator.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/Parser/AST_node$BinLogicOperator.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/Parser/AST_node$BinOperator.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/Parser/AST_node$BinOperator.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/Parser/AST_node$BoolNum.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/Parser/AST_node$BoolNum.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/Parser/AST_node$Compound.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/Parser/AST_node$Compound.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/Parser/AST_node$FunCall.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/Parser/AST_node$FunCall.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/Parser/AST_node$FunDeclaration.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/Parser/AST_node$FunDeclaration.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/Parser/AST_node$FunParameters.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/Parser/AST_node$FunParameters.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/Parser/AST_node$IfStatement.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/Parser/AST_node$IfStatement.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/Parser/AST_node$IntNum.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/Parser/AST_node$IntNum.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/Parser/AST_node$Parameter.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/Parser/AST_node$Parameter.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/Parser/AST_node$Program.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/Parser/AST_node$Program.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/Parser/AST_node$RealNum.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/Parser/AST_node$RealNum.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/Parser/AST_node$ReturnStatement.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/Parser/AST_node$ReturnStatement.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/Parser/AST_node$Type.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/Parser/AST_node$Type.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/Parser/AST_node$UnOperator.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/Parser/AST_node$UnOperator.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/Parser/AST_node$VarDeclaration.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/Parser/AST_node$VarDeclaration.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/Parser/AST_node$Variable.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/Parser/AST_node$Variable.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/Parser/AST_node$WhileStatement.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/Parser/AST_node$WhileStatement.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/Parser/AST_node.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/Parser/AST_node.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/Parser/MyParser.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/Parser/MyParser.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/Parser/MySymbolTable/MyScopedSymbolTable.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/Parser/MySymbolTable/MyScopedSymbolTable.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/Parser/MySymbolTable/MySymbolTableBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/Parser/MySymbolTable/MySymbolTableBuilder.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/Parser/ParserException.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/Parser/ParserException.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/test/classes/InterpreterTests.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/test/classes/InterpreterTests.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/test/classes/LexerTests.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/test/classes/LexerTests.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/test/classes/ParserTests.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/test/classes/ParserTests.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Interpreter/CallStack/ActivationRecord.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Interpreter/CallStack/ActivationRecord.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Interpreter/CallStack/ActivationType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Interpreter/CallStack/ActivationType.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Interpreter/MyInterpreter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Interpreter/MyInterpreter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Lexer/MyLexer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Lexer/MyLexer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Lexer/RomanNumerals/RomanLexer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Lexer/RomanNumerals/RomanLexer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Lexer/Token/MyToken.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Lexer/Token/MyToken.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Lexer/Token/MyTokenPrefix.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Lexer/Token/MyTokenPrefix.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Lexer/Token/MyTokenType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Lexer/Token/MyTokenType.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Parser/AST_node.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Parser/AST_node.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Parser/MyParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Parser/MyParser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Parser/MySymbolTable/MyScopedSymbolTable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Parser/MySymbolTable/MyScopedSymbolTable.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Parser/MySymbolTable/MySymbolTableBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Parser/MySymbolTable/MySymbolTableBuilder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Parser/ParserException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Parser/ParserException.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/InterpreterTests.groovy" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/InterpreterTests.groovy" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/LexerTests.groovy" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/LexerTests.groovy" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/ParserTests.groovy" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/ParserTests.groovy" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/test.txt" beforeDir="false" afterPath="$PROJECT_DIR$/test.txt" afterDir="false" />
     </list>
@@ -28,8 +97,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Interface" />
-        <option value="Class" />
         <option value="Enum" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -51,68 +120,95 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="project.structure.last.edited" value="Modules" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/java" />
+    <property name="project.structure.last.edited" value="Artifacts" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="restartRequiresConfirmation" value="false" />
+    <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
     <property name="settings.editor.selected.configurable" value="reference.settings.project.statistic.project.settings" />
   </component>
-  <component name="RunManager" selected="JUnit.InterpreterTests.simple fun call">
-    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Main" />
-      <module name="TKOM1.main" />
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\rafal\IdeaProjects\TKOM" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\rafal\IdeaProjects\TKOM\src\main\java" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Gradle.TKOM [fatJar]">
+    <configuration name="TKOM [fatJar]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="fatJar" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <GradleScriptDebugEnabled>true</GradleScriptDebugEnabled>
+      <method v="2" />
+    </configuration>
+    <configuration name="InterpreterTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="TKOM1.test" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="InterpreterTests" />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="InterpreterTests.expression with unary var" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="InterpreterTests.if check" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="TKOM1.test" />
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="InterpreterTests" />
-      <option name="METHOD_NAME" value="expression with unary var" />
+      <option name="METHOD_NAME" value="if check" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="InterpreterTests.expression with var" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="InterpreterTests.nested if check" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="TKOM1.test" />
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="InterpreterTests" />
-      <option name="METHOD_NAME" value="expression with var" />
+      <option name="METHOD_NAME" value="nested if check" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="InterpreterTests.function call" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="InterpreterTests.nested while with return" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="TKOM1.test" />
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="InterpreterTests" />
-      <option name="METHOD_NAME" value="function call" />
+      <option name="METHOD_NAME" value="nested while with return" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="InterpreterTests.simple fun call" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="TKOM1.test" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="InterpreterTests" />
-      <option name="METHOD_NAME" value="simple fun call" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+    <list>
+      <item itemvalue="Gradle.TKOM [fatJar]" />
+      <item itemvalue="JUnit.InterpreterTests" />
+      <item itemvalue="JUnit.InterpreterTests.if check" />
+      <item itemvalue="JUnit.InterpreterTests.nested while with return" />
+      <item itemvalue="JUnit.InterpreterTests.nested if check" />
+    </list>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.InterpreterTests.simple fun call" />
-        <item itemvalue="Application.Main" />
-        <item itemvalue="JUnit.InterpreterTests.function call" />
-        <item itemvalue="JUnit.InterpreterTests.expression with unary var" />
-        <item itemvalue="JUnit.InterpreterTests.expression with var" />
+        <item itemvalue="Gradle.TKOM [fatJar]" />
+        <item itemvalue="JUnit.InterpreterTests.nested if check" />
+        <item itemvalue="JUnit.InterpreterTests.nested while with return" />
+        <item itemvalue="JUnit.InterpreterTests.if check" />
+        <item itemvalue="JUnit.InterpreterTests" />
       </list>
     </recent_temporary>
   </component>
@@ -161,7 +257,11 @@
       <workItem from="1589796568624" duration="3389000" />
       <workItem from="1590077779670" duration="2879000" />
       <workItem from="1590416796447" duration="9420000" />
-      <workItem from="1590753177920" duration="12771000" />
+      <workItem from="1590753177920" duration="22078000" />
+      <workItem from="1590826999703" duration="12896000" />
+      <workItem from="1590853098206" duration="627000" />
+      <workItem from="1590918609365" duration="20313000" />
+      <workItem from="1590955063976" duration="5390000" />
     </task>
     <servers />
   </component>
@@ -185,122 +285,190 @@
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="552" y="182" width="816" height="771" key="#Intentions" timestamp="1590835962808">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="552" y="182" width="816" height="771" key="#Intentions/0.0.1920.1040@0.0.1920.1040" timestamp="1590835962808" />
+    <state x="552" y="182" key="#Plugins" timestamp="1590955202733">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="552" y="182" key="#Plugins/0.0.1920.1040@0.0.1920.1040" timestamp="1590955202733" />
     <state x="149" y="213" key="#Project_Structure" timestamp="1587731736782">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="149" y="213" key="#Project_Structure/0.0.1920.1040@0.0.1920.1040" timestamp="1587731736782" />
-    <state x="818" y="138" width="774" height="840" key="#com.intellij.execution.junit2.states.ComparisonFailureState$DiffDialog" timestamp="1588339697733">
+    <state x="414" y="179" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1590953406670">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="818" y="138" width="774" height="840" key="#com.intellij.execution.junit2.states.ComparisonFailureState$DiffDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1588339697733" />
-    <state x="318" y="243" key="#com.intellij.ide.util.MemberChooser" timestamp="1590421215745">
+    <state x="414" y="179" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1590953406670" />
+    <state x="14" y="296" width="774" height="840" key="#com.intellij.execution.junit2.states.ComparisonFailureState$DiffDialog" timestamp="1590944333562">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="318" y="243" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1590421215745" />
+    <state x="14" y="296" width="774" height="840" key="#com.intellij.execution.junit2.states.ComparisonFailureState$DiffDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1590944333562" />
+    <state x="318" y="243" key="#com.intellij.ide.util.MemberChooser" timestamp="1590936064969">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="318" y="243" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1590936064969" />
+    <state x="291" y="358" key="#com.intellij.ide.util.TreeClassChooserDialog" timestamp="1590953404416">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="291" y="358" key="#com.intellij.ide.util.TreeClassChooserDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1590953404416" />
     <state x="690" y="271" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1587815892062">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="690" y="271" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1587815892062" />
+    <state x="552" y="217" key="#xdebugger.evaluate" timestamp="1590944480886">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="552" y="217" key="#xdebugger.evaluate/0.0.1920.1040@0.0.1920.1040" timestamp="1590944480886" />
+    <state x="711" y="372" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1" timestamp="1590951649134">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="711" y="372" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.0.1920.1040@0.0.1920.1040" timestamp="1590951649134" />
     <state width="407" height="466" key="DebuggerActiveHint" timestamp="1589752867479">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="407" height="466" key="DebuggerActiveHint/0.0.1920.1040@0.0.1920.1040" timestamp="1589752867479" />
-    <state x="555" y="210" key="FileChooserDialogImpl" timestamp="1589793502126">
+    <state x="555" y="210" key="FileChooserDialogImpl" timestamp="1590953929611">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="555" y="210" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1589793502126" />
-    <state width="1877" height="294" key="GridCell.Tab.0.bottom" timestamp="1590777822066">
+    <state x="555" y="210" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1590953929611" />
+    <state width="1877" height="324" key="GridCell.Tab.0.bottom" timestamp="1590961895598">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="294" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1590777822066" />
-    <state width="1877" height="294" key="GridCell.Tab.0.center" timestamp="1590777822065">
+    <state width="1877" height="324" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1590961895598" />
+    <state width="1877" height="324" key="GridCell.Tab.0.center" timestamp="1590961895597">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="294" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1590777822065" />
-    <state width="1877" height="294" key="GridCell.Tab.0.left" timestamp="1590777822065">
+    <state width="1877" height="324" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1590961895597" />
+    <state width="1877" height="324" key="GridCell.Tab.0.left" timestamp="1590961895597">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="294" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1590777822065" />
-    <state width="1877" height="294" key="GridCell.Tab.0.right" timestamp="1590777822065">
+    <state width="1877" height="324" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1590961895597" />
+    <state width="1877" height="324" key="GridCell.Tab.0.right" timestamp="1590961895598">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="294" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1590777822065" />
-    <state width="1877" height="294" key="GridCell.Tab.1.bottom" timestamp="1590777822066">
+    <state width="1877" height="324" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1590961895598" />
+    <state width="1877" height="220" key="GridCell.Tab.1.bottom" timestamp="1590961020928">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="294" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1590777822066" />
-    <state width="1877" height="294" key="GridCell.Tab.1.center" timestamp="1590777822066">
+    <state width="1877" height="220" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1590961020928" />
+    <state width="1877" height="220" key="GridCell.Tab.1.center" timestamp="1590961020928">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="294" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1590777822066" />
-    <state width="1877" height="294" key="GridCell.Tab.1.left" timestamp="1590777822066">
+    <state width="1877" height="220" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1590961020928" />
+    <state width="1877" height="220" key="GridCell.Tab.1.left" timestamp="1590961020928">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="294" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1590777822066" />
-    <state width="1877" height="294" key="GridCell.Tab.1.right" timestamp="1590777822066">
+    <state width="1877" height="220" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1590961020928" />
+    <state width="1877" height="220" key="GridCell.Tab.1.right" timestamp="1590961020928">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="294" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1590777822066" />
-    <state x="41" y="146" key="SettingsEditor" timestamp="1589644267973">
+    <state width="1877" height="220" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1590961020928" />
+    <state x="388" y="151" key="SettingsEditor" timestamp="1590952944854">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="41" y="146" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1589644267973" />
+    <state x="388" y="151" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1590952944854" />
     <state x="552" y="257" key="Vcs.Push.Dialog.v2" timestamp="1588416105428">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="552" y="257" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1588416105428" />
-    <state x="101" y="134" key="com.intellij.ide.util.TipDialog" timestamp="1590416801593">
+    <state x="101" y="134" key="com.intellij.ide.util.TipDialog" timestamp="1590919018301">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="101" y="134" key="com.intellij.ide.util.TipDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1590416801593" />
-    <state x="524" y="260" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2" timestamp="1588864854930">
+    <state x="101" y="134" key="com.intellij.ide.util.TipDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1590919018301" />
+    <state x="524" y="260" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2" timestamp="1590936998309">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="524" y="260" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2/0.0.1920.1040@0.0.1920.1040" timestamp="1588864854930" />
+    <state x="524" y="260" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2/0.0.1920.1040@0.0.1920.1040" timestamp="1590936998309" />
+    <state x="667" y="276" width="586" height="488" key="find.popup" timestamp="1590958529629">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="667" y="276" width="586" height="488" key="find.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1590958529629" />
     <state x="741" y="237" key="git4idea.branch.GitSmartOperationDialog" timestamp="1588416121313">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="741" y="237" key="git4idea.branch.GitSmartOperationDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1588416121313" />
-    <state x="0" y="139" key="new project wizard" timestamp="1589539982343">
+    <state x="154" y="149" key="new project wizard" timestamp="1590955269057">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="0" y="139" key="new project wizard/0.0.1920.1040@0.0.1920.1040" timestamp="1589539982343" />
+    <state x="154" y="149" key="new project wizard/0.0.1920.1040@0.0.1920.1040" timestamp="1590955269057" />
     <state x="601" y="246" width="700" height="530" key="recent.locations.popup" timestamp="1588614088930">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="601" y="246" width="700" height="530" key="recent.locations.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1588614088930" />
-    <state x="143" y="230" width="672" height="678" key="search.everywhere.popup" timestamp="1588950319606">
+    <state x="143" y="230" width="672" height="678" key="search.everywhere.popup" timestamp="1590955124217">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="143" y="230" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1588950319606" />
+    <state x="143" y="230" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1590955124217" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/Parser/MyParser.java</url>
-          <line>255</line>
+          <line>251</line>
           <option name="timeStamp" value="22" />
         </line-breakpoint>
         <line-breakpoint type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/Parser/MyParser.java</url>
-          <line>372</line>
+          <line>368</line>
           <option name="timeStamp" value="24" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/Parser/MyParser.java</url>
-          <line>244</line>
-          <option name="timeStamp" value="46" />
+        <line-breakpoint type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/Interpreter/MyInterpreter.java</url>
+          <line>280</line>
+          <option name="timeStamp" value="61" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
+        <line-breakpoint type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/Interpreter/MyInterpreter.java</url>
+          <line>159</line>
+          <option name="timeStamp" value="68" />
+        </line-breakpoint>
+        <line-breakpoint type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/Interpreter/MyInterpreter.java</url>
+          <line>183</line>
+          <option name="timeStamp" value="71" />
+        </line-breakpoint>
+        <line-breakpoint type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/Interpreter/MyInterpreter.java</url>
+          <line>131</line>
+          <option name="timeStamp" value="73" />
+        </line-breakpoint>
+        <line-breakpoint type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/Interpreter/MyInterpreter.java</url>
+          <line>125</line>
+          <option name="timeStamp" value="74" />
+        </line-breakpoint>
+        <line-breakpoint type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/Parser/MySymbolTable/MySymbolTableBuilder.java</url>
+          <line>46</line>
+          <option name="timeStamp" value="78" />
+        </line-breakpoint>
+        <line-breakpoint type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/Parser/MyParser.java</url>
-          <line>246</line>
-          <option name="timeStamp" value="47" />
+          <line>158</line>
+          <option name="timeStamp" value="80" />
+        </line-breakpoint>
+        <line-breakpoint type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/Parser/MyParser.java</url>
+          <line>62</line>
+          <option name="timeStamp" value="82" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/Interpreter/MyInterpreter.java</url>
-          <line>21</line>
-          <option name="timeStamp" value="54" />
+          <line>344</line>
+          <option name="timeStamp" value="88" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/Lexer/MyLexer.java</url>
+          <line>109</line>
+          <option name="timeStamp" value="94" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/Interpreter/MyInterpreter.java</url>
+          <line>291</line>
+          <option name="timeStamp" value="98" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

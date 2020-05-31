@@ -1,1 +1,17 @@
-int fun(int q, int w){return q + w;return q * w;}int main(){int v = 9;int h = fun(9, 12);}
+
+            int main(){
+                int n = 100;
+                int k; 
+                if(n < 200){
+                    if(n > 15){
+                        k = 100; 
+                        return 10;
+                        return 11;
+                        
+                    }; 
+                    return 12; 
+                };
+                return 30; 
+                return 20; 
+            } 
+            

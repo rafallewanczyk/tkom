@@ -21,7 +21,7 @@ public class MyScopedSymbolTable {
     public void addBuiltins() {
         defineSymbol(new BuiltInTypeSymbol(new MyToken(MyTokenType.INT, "int", 0, 0)));
         defineSymbol(new BuiltInTypeSymbol(new MyToken(MyTokenType.REAL, "real", 0, 0)));
-        defineSymbol(new BuiltInTypeSymbol(new MyToken(MyTokenType.ROMMAN, "rom", 0, 0)));
+        defineSymbol(new BuiltInTypeSymbol(new MyToken(MyTokenType.ROMAN_NUMBER, "rom", 0, 0)));
     }
 
     public HashMap<MyToken, Symbol> getSymbols() {

@@ -18,14 +18,14 @@ public class MyTokenPrefix {
     }
 
     public static boolean isWhite(char c){
-        return c == ' ' ||  c == '\r' || c == '\n';
+        return c == ' ' ||  c == '\r' || c == '\n' || c == '\t';
     }
 
     public static boolean isNotWhiteAndSpecial(char c){
         return isNotWhite(c) && !isSpecial(c) && !isEOF(c);
     }
     public static boolean isNotWhite(char c){
-        return c != ' ' && c != '\r' && c != '\n';
+        return c != ' ' && c != '\r' && c != '\n' && c != '\t';
     }
 
     public static boolean isRoman(char c){
@@ -41,6 +41,10 @@ public class MyTokenPrefix {
 
     public static boolean isUnknown(char c){
         return !isRoman(c) && Character.isUpperCase(c);
+    }
+
+    public static boolean isNotNewLine(char c){
+        return (c != '\n' && c != '\r') ;
     }
 
     public static boolean isSpecial(char c) {

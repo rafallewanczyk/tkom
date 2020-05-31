@@ -23,9 +23,10 @@ public enum MyTokenType {
     FUNCTION,//function
     INT,//int
     REAL,//float
+    ROM,//rom
     INT_NUMBER,//[0..9]
     REAL_NUMBER,//[0..9]
-    ROMMAN,//IVX..
+    ROMAN_NUMBER,//IVX..
     QUOTE,// " "
     RETURN,
     EOF,

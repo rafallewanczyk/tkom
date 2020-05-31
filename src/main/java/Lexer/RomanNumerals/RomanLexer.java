@@ -5,7 +5,6 @@ import Lexer.Token.MyToken;
 import Lexer.Token.MyTokenPrefix;
 import Lexer.Token.MyTokenType;
 
-import java.util.Arrays;
 import java.util.function.Function;
 
 public class RomanLexer {
@@ -14,7 +13,7 @@ public class RomanLexer {
     StringBuilder numeral, total;
     public char current;
 
-    public MyToken readRoman(MyScanner scanner, char character, Function<Character, Boolean> condition) {
+    public MyToken readRoman(MyScanner scanner, char character, Function<Character, Boolean> condition, int x, int y) {
         numeral = new StringBuilder();
         int result = 0;
         boolean thausends = false, hundreds = false, tens = false, ones = false;
@@ -35,10 +34,11 @@ public class RomanLexer {
                 current = scanner.getNextSymbol();
             }
 
-            return new MyToken(MyTokenType.ID, total.toString(), 0, 0);
+            return new MyToken(MyTokenType.ID, total.toString(), x, y);
         }
 
-        return new MyToken(MyTokenType.ROMMAN, Integer.toString(result), 0, 0);
+//        return new RomanToken(Integer.toString(result), total.toString(), x, y);
+        return new MyToken(MyTokenType.ROMAN_NUMBER, Integer.toString(result), x, y);
     }
 
     public <T extends Enum<T>> int checkMagnitude(Class<T> magnitude, MyScanner scanner, Function<Character, Boolean> condition) {

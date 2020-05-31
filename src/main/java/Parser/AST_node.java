@@ -6,6 +6,7 @@ import Parser.MySymbolTable.Symbol;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 public class AST_node{
 
@@ -59,19 +60,73 @@ public class AST_node{
     }
 
 
-    public static class IntNum implements AST{
-        MyToken token;
-        public int value;
-
-        public IntNum(MyToken token) {
-            this.token = token;
-            value = Integer.parseInt(token.getValue());
-        }
-
-        public IntNum(int value){
+    public static class Num <T> implements AST{
+        public MyToken token;
+        public T value;
+        public Num(T value){
             this.value = value;
         }
 
+        @Override
+        public boolean equals(Object o) {
+            if (this == o) return true;
+            if (o == null || getClass() != o.getClass()) return false;
+            Num<?> num = (Num<?>) o;
+            return Objects.equals(value, num.value);
+        }
+
+        @Override
+        public int hashCode() {
+            return Objects.hash(value);
+        }
+    }
+
+    public static class RomNum extends Num<Integer> implements AST{
+        public RomNum(MyToken token) {
+            super(Integer.parseInt(token.getValue()));
+            this.token = token;
+        }
+
+        public RomNum(int value){
+            super(value);
+        }
+        @Override
+        public String toString() {
+            int value = this.value;
+            if(value <=0 || value > 3999){
+                return "OVERFLOW";
+            }
+            StringBuilder res = new StringBuilder();
+            int num[] = {1,4,5,9,10,40,50,90,100,400,500,900,1000};
+            String sym[] = {"I","IV","V","IX","X","XL","L","XC","C","CD","D","CM","M"};
+            int i=12;
+            while(value>0)
+            {
+                int div =value/num[i];
+                value=value%num[i];
+                while(div-- != 0)
+                {
+                    res.append(sym[i]);
+                }
+                i--;
+            }
+            return res.toString();
+        }
+
+
+
+    }
+
+    public static class IntNum extends Num<Integer> implements AST{
+
+        public IntNum(MyToken token) {
+            super(Integer.parseInt(token.getValue()));
+            this.token = token;
+        }
+
+        public IntNum(int value){
+            super(value);
+        }
         @Override
         public String toString() {
             return Integer.toString(value);
@@ -79,38 +134,37 @@ public class AST_node{
 
     }
 
-    public static class RealNum implements AST{
-        MyToken token;
-        public double value;
 
-        public RealNum(MyToken token) {
+    public static class BoolNum extends Num<Boolean> implements AST{
+
+        public BoolNum(MyToken token) {
+            super(Boolean.parseBoolean(token.getValue()));
             this.token = token;
-            value = Double.parseDouble(token.getValue());
         }
 
-        public RealNum(double value){
-            this.value = value;
+        public BoolNum(boolean value){
+            super(value);
         }
-
         @Override
         public String toString() {
-            return Double.toString(value);
+            return Boolean.toString(value);
         }
 
     }
 
-    public static class BoolNum implements AST{
-        MyToken token;
-        public boolean value;
+    public static class RealNum extends Num<Double> implements AST{
 
-        public BoolNum (MyToken token) {
+        public RealNum(MyToken token) {
+            super(Double.parseDouble(token.getValue()));
             this.token = token;
-            value = Boolean.parseBoolean(token.getValue());
         }
 
+        public RealNum(double value){
+            super(value);
+        }
         @Override
         public String toString() {
-            return token.getValue();
+            return Double.toString(value);
         }
 
     }
@@ -170,6 +224,7 @@ public class AST_node{
         public ArrayList<AST> getArguments() {
             return arguments;
         }
+
     }
 
     public static class FunParameters implements AST{
@@ -340,6 +395,7 @@ public class AST_node{
 
     public static class Program implements AST{
         private ArrayList<AST> functions = new ArrayList<AST>();
+
 
         public ArrayList<AST> getFunctions() {
             return functions;

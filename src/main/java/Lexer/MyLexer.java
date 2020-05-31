@@ -2,16 +2,12 @@ package Lexer;
 
 
 import Lexer.RomanNumerals.RomanLexer;
-import Lexer.RomanNumerals.RomanNumeralsLookup;
 import Lexer.Scanner.MyScanner;
 import Lexer.Token.MyToken;
 import Lexer.Token.MyTokenPrefix;
 import Lexer.Token.MyTokenType;
 
-import java.awt.image.LookupOp;
 import java.io.FileNotFoundException;
-import java.util.ArrayList;
-import java.util.List;
 import java.util.function.Function;
 
 public class MyLexer {
@@ -64,9 +60,9 @@ public class MyLexer {
         }
 
         //Single character tokens
-        if (character == ' ') {
+        if (character == ' '|| character == '\t') {
             return nextToken();
-        } else if (character == '\n' || character == '\r') {
+        } else if (character == '\n' || character == '\r' ) {
             y++;
             x = 0;
             return nextToken();
@@ -111,9 +107,10 @@ public class MyLexer {
             character_buffer = scanner.getNextSymbol();
             if (character_buffer == '/') {
                 character_buffer = '\0';
-                return new MyToken(MyTokenType.COMMENT, "//", x++, y);
+                readWord(MyTokenPrefix::isNotNewLine);
+                return nextToken();
             }
-            return new MyToken(MyTokenType.MULTIPLICATIVE_OP, "/", x++, y);
+            else return new MyToken(MyTokenType.MULTIPLICATIVE_OP, "/", x++, y);
         } else if (character == '>' || character == '<') {
             character_buffer = scanner.getNextSymbol();
             if (character_buffer == '=') {
@@ -172,7 +169,7 @@ public class MyLexer {
         //Roman numerals
         else if (MyTokenPrefix.isRoman(character)) {
 
-            MyToken ret = romanLexer.readRoman(scanner, character, MyTokenPrefix::isRoman);
+            MyToken ret = romanLexer.readRoman(scanner, character, MyTokenPrefix::isRoman, x, y);
             ret.setCordinates(x++, y);
             character_buffer = romanLexer.current;
             return ret;
@@ -213,7 +210,7 @@ public class MyLexer {
             case "real":
                 return MyTokenType.REAL;
             case "rom":
-                return MyTokenType.ROMMAN;
+                return MyTokenType.ROM;
             case "else":
                 return MyTokenType.ELSE;
             case "return":
